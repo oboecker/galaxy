@@ -44,9 +44,9 @@ python -m galaxy.cli.territories --project my/project.toml --svg build/galaxy.sv
 `--world` picks a timeline branch; without it only holdings valid in every
 branch count. This command always renders at 5600 × 5600.
 
-From Python: `GalaxyMapGenerator(width=6000, height=6000,
-interactive=False).generate(data, output_path, territories=None)`. Note the
-class's default size differs from the CLI's.
+From Python: `GalaxyMapGenerator(width=5600, height=5600,
+interactive=False).generate(data, output_path, territories=None)`, the same
+default size as the CLI's.
 
 The input format is the catalogue's ([data-formats.md](data-formats.md#the-catalogue));
 the renderer also accepts the older keys `galaxy_labels` (for `labels`) and
@@ -59,10 +59,8 @@ Each system's `coordinate_system` says how its `x` and `y` are read:
 - `"galactic"`: light years in the catalogue's frame (galactic centre at 0,
   0; Sol at −513, 24 995). Converted with `galaxy/coords.py`. `z` is
   ignored.
-- `"graphic"` **or absent**: SVG pixels, used as they are.
-
-Write `"coordinate_system": "galactic"` on every catalogue system; the real
-sky's systems and those promoted from the procedural galaxy carry it.
+- `"galactic"` **or absent**, as everywhere else in the engine.
+- `"graphic"`: SVG pixels, used as they are.
 
 `CoordinateConverter(center_x, center_y)` maps galactic to graphic
 linearly, anchored on two points: the galactic centre at the canvas centre,
@@ -209,9 +207,10 @@ opacity (a dark nebula 75 %). Its name is written below in 3.5 px. Group id
 ```
 
 `x`, `y` are SVG pixels (no coordinate conversion), the text's start.
-`rotation` (degrees, optional) is applied as `transform="rotate(r)"`,
-which turns about the SVG origin (0, 0), not about the label, so a
-rotated label moves. 56 px, `#4d4d4d`; id `label_<text in lower case,
+`rotation` (degrees, optional) is applied as `transform="rotate(r)"`, as
+Inkscape writes a rotated text: the frame turns about the SVG origin (0, 0)
+and `x`, `y` are read in the turned frame. A label drawn and rotated in
+Inkscape keeps its place; one placed by hand gives its point in that frame. 56 px, `#4d4d4d`; id `label_<text in lower case,
 spaces as underscores>`.
 
 ## Territories

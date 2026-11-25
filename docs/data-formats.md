@@ -130,7 +130,7 @@ the planet; position, spectral class and Hipparcos number come from
 |---|---|---|
 | `name` | yes | Unique among systems. |
 | `x`, `y`, `z` | yes | Position in light years (after merging: a project's layer may leave them to an earlier layer). |
-| `coordinate_system` | no | `"galactic"` for the frame above. Only the [SVG renderer](svg-map.md#coordinates) reads it, and it defaults to `"graphic"` (SVG pixels) when absent, so write `"galactic"` on every system meant for the SVG map. The 3D maps always read galactic coordinates. |
+| `coordinate_system` | no | `"galactic"` (the default) for the frame above. Only the [SVG renderer](svg-map.md#coordinates) reads it, which also takes `"graphic"` (SVG pixels). The 3D maps always read galactic coordinates. |
 | `spectral_class` | no | MK class: letter `O B A F G K M`, optional subtype, luminosity class, peculiarity marks (`K3V`, `M4.5Ve`, `K3IIIb`, `G2`). Validation checks the first letter. With `stars`, derived from the primary. |
 | `object_type` | no | `star` (default), `white_dwarf`, `neutron_star`, `pulsar`, `black_hole`, `wormhole`, `anomaly`, `quasar`. The four from `white_dwarf` to `black_hole` are stellar remnants with physical properties (mass, light) used by the maps; `wormhole`, `anomaly` and `quasar` only change how the SVG map draws the system. |
 | `stars` | no | [Stars](#stars), for a multiple system or a named star. |
@@ -440,7 +440,7 @@ Who held which system, when, and in which timeline branch
 | `nations.<id>.name` | Display name. |
 | `nations.<id>.claim_radius` | Light years each held system claims around it. Default 1000. |
 | `nations.<id>.color` | `#rrggbb`. Default: a hue from the nation's position in the file, so keep the order append-only. |
-| `nations.<id>.holdings` | A system name (held throughout), or `{system, from?, to?, world?}`. `from` absent: since before any record. `to` absent: still held; `to` is exclusive. `world`: the timeline branch the holding belongs to, a short marker string such as `+`; absent holds in every branch. |
+| `nations.<id>.holdings` | A system name (held throughout), or `{system, from?, to?, world?}`. `from` absent: since before any record. `to` absent: still held; `to` is exclusive. `world`: the timeline branch the holding belongs to, any short string (`+`, say); absent holds in every branch. |
 
 A territory is a volume: every held system claims a sphere of the claim
 radius, and where claims meet a point belongs to the nearest held system.
@@ -502,7 +502,7 @@ python -m galaxy.cli.build --project my/project.toml --out public/galaxy [--proc
 | `nebulae.json` | The nebulae as the skies draw them: `[{name, kind, colour, at: [x, y, z], size}]`. |
 | `glow.json` | The galaxy's light for the band in the skies (only with `procedural.json`). |
 | `trips.json` | The stored trips with their routes: `{"galaxy": [...], "systems": {"<system>": [...]}}`. |
-| `travel-settings.json` | `{"maps": {...}, "modes": {"<name>": {kind, label, leg, from_point?}}}`: travel.json's `maps` and the modes without their numbers. |
+| `travel-settings.json` | `{"maps": {...}, "modes": {"<name>": {kind, label, leg, from_point?}}, "sublight": {"g": …}}`: travel.json's `maps`, the modes without their numbers, and the sublight drive's top thrust (the system map's thrust slider ends there). |
 | `territories/` | Only with nations: `index.json` and snapshot files `s0.json`, … |
 | `procedural.json`, `procedural-gates.json`, `procedural/` | Only with `--procedural` (takes minutes; `--within` limits it to a radius around Sol). |
 
@@ -519,7 +519,8 @@ URLs.
             "territories": "territories/", "procedural": "procedural.json",
             "proceduralGates": "procedural-gates.json"},
  "system": {"systems": "systems.json", "nebulae": "nebulae.json", "glow": "glow.json",
-            "travelSettings": "travel-settings.json"},
+            "travelSettings": "travel-settings.json", "trips": "trips.json",
+            "procedural": "procedural.json"},
  "calendar": {"eras": {...}, "written": [...], "epoch": "AD 2400"}}
 ```
 

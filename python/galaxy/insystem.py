@@ -600,7 +600,8 @@ def _hop_days(au: float, grade: str, gates: dict[str, Any]) -> float:
 
 def jumpgate_pairs(doc_system: dict[str, Any]) -> dict[str, tuple[str, str]]:
     """Each jumpgate with a partner: its id → (the partner's id, grade)."""
-    gates = {str(p["id"]): p for p in doc_system.get("points_of_interest") or [] if p.get("kind") == "jumpgate"}
+    gates = {str(p["id"]): p for p in doc_system.get("points_of_interest") or []
+             if p.get("kind") == "jumpgate" and p.get("id") is not None}
     return {ref: (str(p["pair"]), p.get("grade", "mature")) for ref, p in gates.items()
             if str(p.get("pair")) in gates}
 

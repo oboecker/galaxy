@@ -51,6 +51,7 @@ async function show() {
   const nebulae = system.nebulae ? await (await fetch(system.nebulae)).json() : []
   current = createSystemMap(view, systems[name], {
     sky: Object.values(systems), nebulae, glow: system.glow, travelSettings: system.travelSettings,
+    trips: system.trips, procedural: system.procedural,
     links: { galaxy: () => '#/' },
   })
 }

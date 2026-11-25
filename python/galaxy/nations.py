@@ -26,8 +26,6 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-# The branch markers a timeline uses for its world branches.
-WORLDS = ("+", "-", "~")
 
 
 @dataclass(frozen=True)

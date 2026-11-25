@@ -29,3 +29,8 @@ def test_a_shortcut_has_no_speed_while_moving():
 def test_the_maps_learn_a_modes_name_not_its_numbers():
     settings = public.travel_settings({"maps": {}, "modes": {"Warp": {"kind": "jump", "minutes": 5, "about": "x"}}})
     assert settings["modes"] == {"Warp": {"kind": "jump", "leg": "warp", "label": "Warp"}}
+
+
+def test_the_maps_learn_the_top_thrust():
+    assert public.travel_settings({"sublight": {"g": 1.5, "star_clearance_au": 0.1}})["sublight"] == {"g": 1.5}
+    assert "sublight" not in public.travel_settings({})

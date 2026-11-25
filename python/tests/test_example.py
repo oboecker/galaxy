@@ -49,3 +49,11 @@ def test_its_own_modes_join_the_engines(example):
     route = trips.route(catalogue.read(), catalogue.read()["trips"][0])
     assert route["option"]["name"] == "gates", "the fastest that flies, not the jump"
     assert route["check"]["in_time"]
+
+
+def test_a_jumpgate_without_an_id_is_left_unpaired():
+    from galaxy import insystem
+    system = {"points_of_interest": [{"kind": "jumpgate", "pair": "g2"},
+                                     {"kind": "jumpgate", "id": "g2", "pair": "g3"},
+                                     {"kind": "jumpgate", "id": "g3", "pair": "g2", "grade": "early"}]}
+    assert insystem.jumpgate_pairs(system) == {"g2": ("g3", "mature"), "g3": ("g2", "early")}

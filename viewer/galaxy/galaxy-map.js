@@ -1669,8 +1669,9 @@ export function createGalaxyMap(root, options = {}) {
             .then(([textures, heights]) => ({ textures, heights }));
 
         // The layers merged as galaxy.catalogue merges them: by name, a later
-        // layer's fields over an earlier one's; a system belongs to the first
-        // layer that has it. Gate links joined, nebulae by name.
+        // layer's fields over an earlier one's, its `_removed` taken away; a
+        // system belongs to the first layer that has it. Gate links joined,
+        // nebulae by name.
         async function loadLayers() {
             const docs = await Promise.all(LAYERS.map(layer => fetch(layer.url)
                 .then(r => (r.ok ? r.json() : {})).catch(() => ({}))));
@@ -1678,7 +1679,11 @@ export function createGalaxyMap(root, options = {}) {
             docs.forEach((doc, k) => {
                 (doc.star_systems || []).forEach(obj => {
                     const earlier = systems.get(obj.name);
-                    systems.set(obj.name, earlier ? { ...earlier, ...obj, _layer: earlier._layer } : { ...obj, _layer: LAYERS[k] });
+                    const merged = earlier ? { ...earlier, ...obj, _layer: earlier._layer } : { ...obj, _layer: LAYERS[k] };
+                    // The fields a later layer takes away (`_removed`).
+                    (obj._removed || []).forEach(key => { delete merged[key]; });
+                    delete merged._removed;
+                    systems.set(obj.name, merged);
                 });
                 (doc.nebulae || []).forEach(n => nebulae.set(n.name, { ...(nebulae.get(n.name) || {}), ...n }));
                 links.push(...(doc.gate_links || []));

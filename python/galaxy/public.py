@@ -107,11 +107,16 @@ def galaxy(doc: dict[str, Any]) -> dict[str, Any]:
 
 def travel_settings(doc: dict[str, Any]) -> dict[str, Any]:
     """travel.json's drawing settings (`maps`) with only what TRAVEL_MAPS
-    allows, and its modes as the maps name them (TRAVEL_MODE: no numbers)."""
+    allows, its modes as the maps name them (TRAVEL_MODE: no numbers), and
+    the sublight drive's top thrust."""
     from galaxy import travel
-    return {"maps": allowed(doc.get("maps") or {}, TRAVEL_MAPS),
-            "modes": {name: {k: v for k, v in mode.items() if k in TRAVEL_MODE}
-                      for name, mode in travel.modes(doc).items()}}
+    out = {"maps": allowed(doc.get("maps") or {}, TRAVEL_MAPS),
+           "modes": {name: {k: v for k, v in mode.items() if k in TRAVEL_MODE}
+                     for name, mode in travel.modes(doc).items()}}
+    # The sublight drive's top thrust, the system map's thrust slider's end.
+    if (doc.get("sublight") or {}).get("g") is not None:
+        out["sublight"] = {"g": doc["sublight"]["g"]}
+    return out
 
 
 def bundle(out: Path, *, galaxy_json: Optional[Path] = None, travel_json: Optional[Path] = None,

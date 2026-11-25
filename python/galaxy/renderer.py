@@ -25,7 +25,7 @@ REAL_SIZE = 0.35
 class GalaxyMapGenerator:
     """Generates SVG galaxy map with sectors, grid, and star systems."""
     
-    def __init__(self, width: int = 6000, height: int = 6000, interactive: bool = False):
+    def __init__(self, width: int = 5600, height: int = 5600, interactive: bool = False):
         self.width = width
         self.height = height
         # When set, the SVG carries viewBox-based zoom/pan controls.  This is the
@@ -715,7 +715,7 @@ class GalaxyMapGenerator:
         sector_counts = {}
 
         for obj in celestial_objects:
-            coord_system = obj.get('coordinate_system', 'graphic')
+            coord_system = obj.get('coordinate_system', 'galactic')
 
             if coord_system == 'galactic':
                 x_gal = obj.get('x', 0)
@@ -804,7 +804,7 @@ class GalaxyMapGenerator:
         all_positions = []
         out_of_bounds_count = 0
         for obj in celestial_objects:
-            coord_system = obj.get('coordinate_system', 'graphic')
+            coord_system = obj.get('coordinate_system', 'galactic')
             if coord_system == 'galactic':
                 x_gal = obj.get('x', 0)
                 y_gal = obj.get('y', 0)
@@ -817,7 +817,7 @@ class GalaxyMapGenerator:
 
         for obj in celestial_objects:
             name = obj.get('name', 'Unknown')
-            coord_system = obj.get('coordinate_system', 'graphic')
+            coord_system = obj.get('coordinate_system', 'galactic')
             object_type = obj.get('object_type', 'star')  # Defaults to 'star'
             # Get spectral class, or generate a deterministic one based on star name
             spectral_class = obj.get('spectral_class', None)

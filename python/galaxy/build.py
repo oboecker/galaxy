@@ -102,7 +102,9 @@ def write(out: Path, *, here: Optional[project.Project] = None, procedural_galax
         },
         "system": {"systems": "systems.json", "nebulae": "nebulae.json",
                    "glow": "glow.json" if model is not None else None,
-                   "travelSettings": "travel-settings.json"},
+                   "travelSettings": "travel-settings.json",
+                   "trips": "trips.json",
+                   "procedural": "procedural.json" if gates else None},
         "calendar": calendar.load(here.calendar).as_dict(),
     }
     put("manifest.json", dumps(manifest))
