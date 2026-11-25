@@ -1130,10 +1130,14 @@ export function createGalaxyMap(root, options = {}) {
                 color: 0x00ffff,
                 transparent: true,
                 opacity: 0.8,
-                side: THREE.DoubleSide
+                side: THREE.DoubleSide,
+                // No depth of its own: in the galactic plane, as a black
+                // hole's disc is, the disc failed against it pixel by pixel.
+                depthWrite: false
             });
             const ring = new THREE.Mesh(ringGeometry, ringMaterial);
             ring.rotation.x = Math.PI / 2;
+            ring.renderOrder = 4;           // over a black hole's disc and halo (3)
             indicatorGroup.add(ring);
 
             // Add a second smaller ring for more emphasis
@@ -1144,10 +1148,12 @@ export function createGalaxyMap(root, options = {}) {
                 color: 0xffffff,
                 transparent: true,
                 opacity: 0.6,
-                side: THREE.DoubleSide
+                side: THREE.DoubleSide,
+                depthWrite: false
             });
             const innerRing = new THREE.Mesh(innerRingGeometry, innerRingMaterial);
             innerRing.rotation.x = Math.PI / 2;
+            innerRing.renderOrder = 4;
             indicatorGroup.add(innerRing);
 
             indicatorGroup.position.copy(star.position);
