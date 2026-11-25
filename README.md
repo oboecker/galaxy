@@ -11,6 +11,22 @@ dates, and its own calendar.
 
 Early days: the data formats will still change (see *Status*).
 
+## Try it
+
+Needs [uv](https://docs.astral.sh/uv/), Node.js with npm, and Python 3.11+.
+
+```sh
+make install   # the Python environment (python/.venv) and three.js (node_modules/)
+make demo      # builds examples/minimal into demo/data, then serves the repo
+```
+
+Open http://localhost:8040/demo/: the galaxy map, with the example's
+systems among the real stars. Double-click a star, or select it and follow
+*Enter system*, for that system's map (`#/system/<name>`); Ctrl+C stops the
+server.
+`demo/data/` is build output, so run `make demo` again after you change the
+example.
+
 ## Parts
 
 | | | |
@@ -39,6 +55,7 @@ constellations = "constellations.json"
 procedural = "procedural.json"      # the procedural galaxy's measured numbers
 density = "@milky-way"              # the image its density is read from: the engine's, or your own
 calendar = "calendar.json"          # eras on one axis of years (galaxy.calendar)
+objects = "objects.json"            # optional: the project's own kinds of point of interest
 namer = "package.module:function"   # optional: names for the procedural galaxy
 drafts = "…"                        # optional: an editor's working state
 public = "…"                        # optional: where the maps' data is written
@@ -97,6 +114,14 @@ The axis is the Gregorian year, so the real sky's positions and the story's
 dates share it. `written` says which era a year is written in. `epoch` is
 the date the orbits' phases are given for.
 
+The build and the maps meet only in that folder: Python works the data out
+once, and the viewer reads JSON and never calls Python. The library does more
+than the CLIs: `galaxy.service` is an editing session over the catalogue
+(edits held until saved, only the project's layer written back),
+`galaxy.schema` checks a catalogue, `galaxy.travel` plans a journey,
+`galaxy.trips` routes the stored trips, `galaxy.objects` lists the kinds of
+point of interest.
+
 ## Example and demo
 
 `examples/minimal/` is a small story: three systems near Sol, a planet for
@@ -145,6 +170,60 @@ planet.
 Icons are [Remix Icon](https://remixicon.com) (Apache 2.0, see
 `viewer/space/icons.LICENSE`), generated into `viewer/space/icons.js` by
 `npm run icons`.
+
+## Using it from your project
+
+Nothing is published to npm or PyPI; a project points both package managers
+at this repository, at a tag, the same one in both:
+
+```jsonc
+// package.json: npm installs only viewer/ (the package's "files")
+"dependencies": {
+  "galaxy": "github:oboecker/galaxy#v0.4.0",
+  "three": "^0.182.0"
+}
+```
+
+```toml
+# pyproject.toml
+[project]
+dependencies = ["galaxy"]
+
+[tool.uv.sources]
+galaxy = { git = "https://github.com/oboecker/galaxy", tag = "v0.4.0", subdirectory = "python" }
+```
+
+`three` is the project's own dependency (a peer of the viewer), supplied by
+its bundler or an import map, as `demo/index.html` shows. Start a project
+from a copy of `examples/minimal/`.
+
+To move to a newer tag, change it in both places and re-lock. npm keeps a
+git dependency its lock already resolves even when `package.json` names
+another tag, so name the package when you install:
+`npm install galaxy@github:oboecker/galaxy#v0.5.0`, then `uv lock
+--upgrade-package galaxy`.
+
+To work on the engine and a project together, point both at a checkout
+instead of the tag, and change back before committing:
+
+```jsonc
+"galaxy": "file:../galaxy"
+```
+
+```toml
+galaxy = { path = "../galaxy/python", editable = true }
+```
+
+Python changes then show at once; the viewer's, after the project's bundler
+builds again.
+
+## Releasing
+
+1. `make test`; check the viewer with `make demo`.
+2. Give `package.json` and `python/pyproject.toml` the new version (`0.5.0`):
+   a project's lockfile records the version, which is how a pin can be
+   checked against its tag.
+3. Commit, tag `v0.5.0`, push the branch and the tag.
 
 ## Documentation
 
