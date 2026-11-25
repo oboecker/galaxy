@@ -67,7 +67,7 @@ def main():
     if error:
         sys.exit(f"Error: {args.nations}: {error}")
     for name in attach(data, doc):
-        print(f"Warning: holding names unknown system {name!r}, skipped (see make check)",
+        print(f"Warning: holding names unknown system {name!r}, skipped",
               file=sys.stderr)
 
     if args.out:

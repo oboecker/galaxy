@@ -16,7 +16,7 @@ What this module adds over `json.load` / `json.dump`:
    save is much cheaper than shipping the breakage.
 3. **Stable formatting.**  `galaxy.json` is exactly `json.dumps(indent=2)` plus a
    trailing newline.  Reproducing that byte for byte keeps diffs to the actual
-   edit instead of rewriting all 43 KB, which is what makes the file reviewable.
+   edit instead of rewriting the whole file, which is what makes the file reviewable.
 4. **An mtime-checked cache.**  Edits made outside the UI are picked up rather
    than silently overwritten from a stale in-memory copy.
 """

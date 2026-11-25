@@ -1,10 +1,9 @@
 """Galactic <-> graphic coordinate conversion.
 
-Ported from the anchor constants in docs/conversion.js.
-The scales are anisotropic (x ~0.042885, y ~-0.042208) because they are derived
-by anchoring on Sol rather than from a single uniform factor. That ~1.6%
-mismatch is reproduced deliberately: correcting it would move all 165 systems
-on a finished piece of artwork.
+Anchored on two points: the galactic centre at the canvas centre, and Sol at
+its place on the map. The scales are anisotropic (x ~0.042885, y ~-0.042208)
+because they come from that anchoring rather than from one uniform factor;
+the ~1.6% mismatch is kept, as maps already drawn on it rely on it.
 """
 from typing import Tuple
 
@@ -13,7 +12,7 @@ class CoordinateConverter:
     """Handles conversion between galactic and graphic coordinate systems."""
     
     def __init__(self, center_x: float, center_y: float):
-        # Reference points from conversion.js
+        # The two anchor points: the galactic centre and Sol.
         self.center_galactic = {'x': 0, 'y': 0, 'z': 0}
         self.center_graphic = {'x': center_x, 'y': center_y}
         self.sol_galactic = {'x': -513, 'y': 24995, 'z': 50}

@@ -146,6 +146,15 @@ Icons are [Remix Icon](https://remixicon.com) (Apache 2.0, see
 `viewer/space/icons.LICENSE`), generated into `viewer/space/icons.js` by
 `npm run icons`.
 
+## Documentation
+
+- [docs/data-formats.md](docs/data-formats.md): every file a project
+  supplies and every file the build writes, field by field.
+- [docs/viewer.md](docs/viewer.md): the three maps' options, supplying
+  three.js, the shared modules, browser state.
+- [docs/svg-map.md](docs/svg-map.md): the 2D SVG map and its coordinate
+  conversion.
+
 ## Status
 
 Planned next:
@@ -157,9 +166,11 @@ Planned next:
 - Bright stars: the HYG database (astronexus.com), CC BY-SA, in
   `python/galaxy/data/bright-stars.csv`, and placed from it in the real-sky
   layer, `python/galaxy/data/real-sky.json` (CC BY-SA as well).
-- Constellation figures and boundaries: `python/galaxy/data/`.
-- Real nebulae: positions and distances checked against SIMBAD (CDS,
-  Strasbourg), `python/galaxy/data/real-nebulae.csv`.
+- Constellation names and boundaries: `python/galaxy/data/` (a project may add
+  figures in its `constellations.json`).
+- Real nebulae: positions and sizes from OpenNGC (CC BY-SA 4.0) where it has
+  them, else SIMBAD (CDS, Strasbourg) or the literature; distances from the
+  literature, checked against SIMBAD: `python/galaxy/data/real-nebulae.csv`.
 - The Milky Way's arms, which the procedural galaxy's density follows:
   NASA/JPL-Caltech/R. Hurt (SSC-Caltech), `python/galaxy/data/milky-way.jpg`.
 

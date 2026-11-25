@@ -118,21 +118,21 @@ export function createGalaxyMap(root, options = {}) {
             'F': {
                 color: SATURATED.F, physical: PHYSICAL.F,
                 radius: 0.9,  // Bigger!
-                hasGlow: true,  // ENABLE FLASHY EFFECTS!
+                hasGlow: true,
                 temperature: '6,000-7,500 K',
                 description: 'Yellow-white'
             },
             'G': {
                 color: SATURATED.G, physical: PHYSICAL.G,
                 radius: 0.8,  // Bigger!
-                hasGlow: true,  // ENABLE FLASHY EFFECTS!
+                hasGlow: true,
                 temperature: '5,200-6,000 K',
                 description: 'Yellow, like Sol'
             },
             'K': {
                 color: SATURATED.K, physical: PHYSICAL.K,
                 radius: 0.7,  // Bigger!
-                hasGlow: true,  // ENABLE FLASHY EFFECTS!
+                hasGlow: true,
                 temperature: '3,700-5,200 K',
                 description: 'Orange, cooler main sequence'
             },
@@ -166,7 +166,7 @@ export function createGalaxyMap(root, options = {}) {
         };
 
         // A planet's look — texture, light, tilt, rings, atmosphere — is the
-        // shared planet module's (theme/planet/planet-look.js), which the page
+        // shared planet module's (../planet/planet-look.js), which the page
 
 
         // Centralized texture loading system with caching, async loading,
@@ -2442,7 +2442,7 @@ export function createGalaxyMap(root, options = {}) {
                         const ask = document.createElement('div');
                         ask.className = 'trip-confirm';
                         ask.setAttribute('role', 'alertdialog');
-                        ask.innerHTML = `<span>Remove the trip <strong>${escapeHtml(trip.name)}</strong>? It goes with the next Commit.</span>`;
+                        ask.innerHTML = `<span>Remove the trip <strong>${escapeHtml(trip.name)}</strong>? It goes with the next save.</span>`;
                         const yes = document.createElement('button'), no = document.createElement('button');
                         yes.type = no.type = 'button';
                         yes.className = 'trip-confirm-yes';
@@ -2538,7 +2538,7 @@ export function createGalaxyMap(root, options = {}) {
             travel.replacing = null;
             button.textContent = 'Keep';
             if (!response.ok) { hint.textContent = data.error || response.statusText; return; }
-            hint.textContent = `${taken ? 'Replaced' : 'Kept'} the trip ${data.name} — it goes with the next Commit.`;
+            hint.textContent = `${taken ? 'Replaced' : 'Kept'} the trip ${data.name} — it goes with the next save.`;
             await loadTrips();
             if (CONFIG.onChange) CONFIG.onChange();
         }

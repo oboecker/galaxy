@@ -1663,7 +1663,7 @@ export function createSystemMap(container, system, options = {}) {
     container.querySelector('.sm-trip-go').addEventListener('click', () => plan())
 
     // Kept (options.tripSave, an editor): the way chosen, as
-    // planned; goes with the next Commit. A name already stored asks first.
+    // planned; goes with the next save. A name already stored asks first.
     const keepButton = container.querySelector('.sm-keep-go')
     const keepName = container.querySelector('.sm-keep-name'), keepBy = container.querySelector('.sm-keep-by')
     let replacing = null
@@ -1699,7 +1699,7 @@ export function createSystemMap(container, system, options = {}) {
       const data = await response.json()
       unask()
       if (!response.ok) { hint.textContent = data.error || response.statusText; return }
-      hint.textContent = `${taken ? 'Replaced' : 'Kept'} the trip ${data.name} — it goes with the next Commit.`
+      hint.textContent = `${taken ? 'Replaced' : 'Kept'} the trip ${data.name} — it goes with the next save.`
       if (stored) stored.load()
       if (options.onChange) options.onChange()
     })
@@ -1834,7 +1834,7 @@ export function createSystemMap(container, system, options = {}) {
               const ask = document.createElement('div')
               ask.className = 'sm-confirm'
               ask.setAttribute('role', 'alertdialog')
-              ask.innerHTML = `<span>Remove the trip <strong>${escape(item.name)}</strong>? It goes with the next Commit.</span>`
+              ask.innerHTML = `<span>Remove the trip <strong>${escape(item.name)}</strong>? It goes with the next save.</span>`
               const yes = document.createElement('button'), no = document.createElement('button')
               yes.type = no.type = 'button'
               yes.className = 'sm-danger'

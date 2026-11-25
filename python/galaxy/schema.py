@@ -322,7 +322,7 @@ PLANET_CLASS_LABELS = {
     "unknown": "Unknown",
 }
 
-# The nine types the SVG renderer knows.  Absent means 'star'.
+# The types the SVG renderer knows.  Absent means 'star'.
 OBJECT_TYPES = (
     "star",
     "black_hole",
@@ -402,7 +402,7 @@ def next_id(bodies: list[dict[str, Any]], prefix: str) -> str:
 def _renumber(bodies: list[dict[str, Any]], prefix: str = "p") -> None:
     """Make `index` follow orbital position, and give each body an `id`.
 
-    Verified derivable: across all 38 systems that have planets, index is
+    Derivable: across every system that has planets, index is
     already position + 1 without exception. Deriving it means inserting or
     removing a planet cannot leave a gap or a duplicate behind. Planets and
     dwarf planets are counted apart, each by orbit among its own kind:

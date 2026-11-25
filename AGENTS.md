@@ -1,107 +1,65 @@
-# Map of the Galaxy
+# Working in this repository
 
-The goal is to create a Python script that creates an SVG image of the galaxy including a sector grid, labels, and star
-systems.
+A guide for agents and people changing the engine. What the engine is and
+how to use it: [README.md](README.md).
 
-In general, the image should be:
+## Layout
 
-- have a configurable size, but use a default of 6000x6000
-- be compatible with Inkscape
-- each layer should have speaking inkscape labels and SVG ids
-- font family for labels should be "Lithos Pro Regular"
+| Path | What |
+|---|---|
+| `viewer/` | The 3D maps, ES modules on three.js: `galaxy/` (galaxy map), `system/` (star-system map), `planet/` (planet look, textures, globe view), `space/` (shared camera, pointer, search, sky, effects, calendar, manifest, icons). Published as the npm package's only files. |
+| `python/` | The `galaxy` package (uv): catalogue and validation, procedural galaxy, orbits, travel, gate networks, territories, the SVG map, the build. CLIs in `galaxy/cli/`, shipped data in `galaxy/data/`, tests in `tests/`. |
+| `examples/minimal/` | A complete small project; the tests and the demo use it. |
+| `demo/` | `index.html` showing the example's maps; `demo/data/` is built, not committed. |
+| `tools/icons.mjs` | Generates `viewer/space/icons.js` from the `remixicon` dev dependency. |
+| `docs/` | Reference documentation (below). |
 
-The following layers should be present
+## Commands
 
-# Background
+| Command | Does |
+|---|---|
+| `make install` | `uv sync` in `python/` and `npm install`. |
+| `make test` | The library's tests (`cd python && uv run pytest -q`). |
+| `cd python && uv run pytest` | The same, verbose; add a path or `-k` to narrow. |
+| `make demo` | Builds `examples/minimal` into `demo/data/` (procedural galaxy within 5 000 ly of Sol) and serves http://localhost:8040/demo/. |
+| `make icons` | Regenerates `viewer/space/icons.js`; add a name to `NAMES` in `tools/icons.mjs` first. Never edit `icons.js` by hand. |
 
-As bottom-most layer, the background is just a rectangle over the whole image size with a dark background color (#262626).
+The viewer has no build step and no test suite; check a viewer change in
+the demo.
 
-# Labels
+## Conventions
 
-Above the background layer, a layer with labels for galactic locations should be present.
-The labels should be taken from an external JSON file that contains:
+- **No repository layout in the library.** Every file is found through a
+  project (`galaxy.project`: `--project`, `GALAXY_PROJECT`, or
+  `project.use`). Files the engine ships are named with `@` (`@real-sky`,
+  `@milky-way`). Tests run against a temporary project
+  (`python/tests/conftest.py`) or the example.
+- **The library is generic.** No story's names, places or rules in code,
+  data or tests; a project's own ways of travel, calendar, medium and names
+  come from its files (`travel.json` `modes`, `calendar.json`,
+  `medium.json`, `namer`).
+- **Neutral comments.** Say what the code does and why. No personal names,
+  no history of decisions, no story lore.
+- **Deterministic output.** The same input writes the same bytes: seeded
+  randomness (by name or id, never the process's hash), stable ordering,
+  JSON as `galaxy.jsonstore.dumps`. Writes are atomic (`galaxy.fs`).
+- **Additive data formats.** Optional fields stay absent until they carry
+  information; derived fields (`planet_count`, `index`, `spectral_class`
+  from `stars`) are recomputed by `galaxy.schema.normalise`, never trusted.
+- **The viewer imports `three` by name** (`three`, `three/addons/…`); the
+  host supplies it. No other runtime dependency, nothing fetched from
+  remote.
+- A data format change touches its reader and writer on both sides
+  (Python export, viewer reader), the example, and `docs/data-formats.md`.
 
-- the Inkscape label (from which the SVG id should be derived)
-- the x and y coordinates of the label
-- (optionally) a rotation value used for a "rotate" transform
+## Documentation
 
-Font size should be 56px, color should be "#4d4d4d".
+| File | Covers |
+|---|---|
+| [README.md](README.md) | Overview, project file, build, viewer quick start, credits. |
+| [docs/data-formats.md](docs/data-formats.md) | Every file a project supplies and the build writes. |
+| [docs/viewer.md](docs/viewer.md) | The three maps' options, endpoints, shared modules, browser state. |
+| [docs/svg-map.md](docs/svg-map.md) | The 2D SVG map and its coordinate conversion. |
 
-# Grid
-
-Above the label layer, the grid should be placed in a layer.
-The grid consists of three parts:
-
-## Center
-
-The center of the image should be marked by a circle with a radius of 150
-
-## Rings
-
-The rings are concentric centered around the center of the image.
-
-- there should be 15 rings
-- each ring has a width of 150
-- the first ring starts immediately outside the central circle
-- the rings should be labeled by numbers, starting with "1" from the innermost ring (the one directly outside the
-  central circle)
-- the label should be placed along an imaginary line going from the center of the image to the top, centered vertically
-  on the ring, to the right of the line.
-
-## Radial Beams
-
-Orientated to the center of the image, there should be radial beams going outwards.
-
-- beams are positioned at an angle of 15 degrees
-- they should start at the edge of the central circle
-- they should end 150 units outside the outermost ring
-- the beams should be labeled by letters, starting with A (until X) going in a counter-clockwise direction from the top
-- the label should be placed in the middle between two beams at a position just inside the outer edge of the central
-  circle (that is, 15 degrees apart, starting at 7.5 degrees counter-clockwise from the beam going from the center to
-  the top of the image)
-
-## Grid Summary
-
-The grid should split the image into 24 * 15 = 360 sectors, plus the central circle.
-
-# Sectors
-
-The topmost layer should contain one layer for each sector as defined by the grid, so a total of 24 * 15 + 1 = 361
-layers. Their Inkscape label should correspond to the letter+number combination as defined by the grid, SVG id should be
-of the format "sector_<letter><number>".
-Each sector should have a hover effect that highlights the sector and shows the sector label.
-
-## Sector Names
-
-Additionally, sectors may be assigned names that should be taken from an external JSON file, which uses a map that
-connects the sector label (e.g. "X7" with a name "Proxima Sector"). If a name is present, it should always be visible,
-not on hover.
-
-## Star Systems
-
-The script should be able to take a list of star systems in JSON format and place them in the sectors.
-The JSON should contain
-
-- the name of the star
-- the x and y coordinates of the star
-- which coordinate system is being used (galactic or graphic)
-
-For each star, a layer within the sector layer it corresponds to should be created.
-This layer should contain:
-
-- a circle with a radius of 1 and a fill color of #ffffff
-- a label with the name of the star, which should be visible on hover, font size 5
-
-# Additional notes
-
-All external information that is expected from a JSON file should come from a single JSON file with different fields for
-the different types of information (i.e. additional labels for the galaxy, sector names, star systems).
-
-As a supporting resource there is a script in this folder called `sector_assignment.py` that should help associate x+y
-coordinates with sectors (it is noteworthy that this file assumes the center to be at 2800 2800, based on an image of
-size 5600x5600). It might be good to include the logic there into the script that generates the SVG.
-
-Additionally, there is another script file called `conversion.js` that intends to convert between fictional coordinates
-and coordinates within the SVG (it is noteworthy that this file assumes the center to be at 2800 2800, based on an image
-of size 5600x5600). It might be good to include the logic there into the script that generates the SVG, and allow the
-JSON information for the star systems to specify which coordinate system they are using.
+Keep them true to the code; a module's own header comment is the most
+detailed account of it.

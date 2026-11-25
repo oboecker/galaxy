@@ -6,11 +6,12 @@ denser toward the core, thinning beyond `inner_radius_ly` toward the rim,
 with a gentle ripple along spiral arms — then regions placed by hand on top,
 each multiplying the density inside it:
 
-- `corridor` (> 1) and `thin` (< 1), a circle or a corridor;
+- `corridor` (> 1) and `thin` (< 1), multiplying by their `factor`;
 - `void` (0), and any kind the file lists in `void_kinds`: no faster-than-
   light travel at all.
 
-A region is a circle (`circle: {x, y, r}`), a corridor (`path: [[x, y], …]`
+A region is a circle (`circle: {x, y, r}`), an ellipse (`ellipse: {x, y, rx,
+ry, angle}`), a corridor (`path: [[x, y], …]`
 with a `width`), a sphere around a system (`system`, `r`), or one derived
 from planets: `around` a planet, out to `reach` × the distance to the
 nearest of its `seals`. Planets are named, their systems derived, so the
