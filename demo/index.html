@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>galaxy — demo</title>
+<!-- The maps import "three" by name; here an import map gives it from the
+     engine's own node_modules (npm install). -->
+<script type="importmap">
+{"imports": {"three": "../node_modules/three/build/three.module.js",
+             "three/addons/": "../node_modules/three/examples/jsm/"}}
+</script>
+<link rel="stylesheet" href="../viewer/space/space.css">
+<link rel="stylesheet" href="../viewer/galaxy/galaxy-map.css">
+<link rel="stylesheet" href="../viewer/system/system-map.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #05060a; color: #ddd; font: 14px system-ui, sans-serif; }
+  #view { position: fixed; inset: 0; }
+</style>
+</head>
+<body>
+<div id="view"></div>
+<script type="module">
+/* The example project (examples/minimal), built by `make demo` into data/:
+ * the galaxy map at #/, a system's map at #/system/<name>. */
+import { loadManifest } from '../viewer/space/manifest.js'
+
+const view = document.getElementById('view')
+const manifest = loadManifest('data/manifest.json')
+let systems = null
+let current = null
+
+async function show() {
+  current?.destroy?.()
+  view.innerHTML = ''
+  const { galaxy, system } = await manifest
+  const route = location.hash.match(/^#\/system\/(.+)$/)
+  if (!route) {
+    const { createGalaxyMap } = await import('../viewer/galaxy/galaxy-map.js')
+    current = createGalaxyMap(view, {
+      title: '<strong>galaxy</strong> — the example',
+      config: { ...galaxy, departPlaceholder: 'AD 2400 — optional' },
+      links: { system: name => (name in (systems || {}) ? `#/system/${encodeURIComponent(name)}` : null) },
+    })
+    systems = systems || await (await fetch(system.systems)).json()
+    return
+  }
+  systems = systems || await (await fetch(system.systems)).json()
+  const name = decodeURIComponent(route[1])
+  const { createSystemMap } = await import('../viewer/system/system-map.js')
+  const nebulae = system.nebulae ? await (await fetch(system.nebulae)).json() : []
+  current = createSystemMap(view, systems[name], {
+    sky: Object.values(systems), nebulae, glow: system.glow, travelSettings: system.travelSettings,
+    links: { galaxy: () => '#/' },
+  })
+}
+
+addEventListener('hashchange', show)
+show()
+</script>
+</body>
+</html>

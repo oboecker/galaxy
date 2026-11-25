@@ -1,0 +1,22 @@
+{
+  "eras": {
+    "BC": {
+      "zero": 0,
+      "direction": -1
+    },
+    "AD": {
+      "zero": 0,
+      "direction": 1
+    }
+  },
+  "written": [
+    {
+      "era": "AD",
+      "from": 1
+    },
+    {
+      "era": "BC"
+    }
+  ],
+  "epoch": "AD 2400"
+}

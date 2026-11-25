@@ -13,7 +13,9 @@ read against the file's folder:
     medium = "medium.json"              the faster-than-light medium's density field
     constellations = "constellations.json"
     procedural = "procedural.json"      the procedural galaxy's measured numbers
-    density = "density.svg"             the image the procedural galaxy's density is read from
+    density = "@milky-way"              the image the procedural galaxy's density is read from: the
+                                        engine's (the Milky Way's arms), or a project's own image or
+                                        a drawing (.svg) with one embedded
     calendar = "calendar.json"
     namer = "package.module:function"   optional: names for the procedural galaxy
     drafts = "…"                        optional: an editor's working state
@@ -32,6 +34,7 @@ environment variable.
 from __future__ import annotations
 
 import importlib
+from importlib import resources
 import os
 import tomllib
 from dataclasses import dataclass
@@ -91,7 +94,7 @@ def load(path: Union[str, Path]) -> Project:
     unknown = set(raw) - {"root", "namer", "layers", *_REQUIRED, *_OPTIONAL}
     if unknown:
         raise ValueError(f"{path}: unknown {', '.join(sorted(unknown))}")
-    paths = {key: _joined(base, raw[key]) for key in (*_REQUIRED, *_OPTIONAL) if key in raw}
+    paths = {key: _file(base, raw[key]) for key in (*_REQUIRED, *_OPTIONAL) if key in raw}
     layers = tuple(_layer(base, name) for name in raw.get("layers", ["@real-sky", raw["catalogue"]]))
     if not layers or layers[-1] != paths["catalogue"]:
         raise ValueError(f"{path}: the last of `layers` is the catalogue, the layer an editor writes")
@@ -103,6 +106,19 @@ def _layer(base: Path, name: str) -> Path:
     if name.startswith("@"):
         from galaxy import catalogue
         return catalogue.built_in(name[1:])
+    return _joined(base, name)
+
+
+# Files the engine ships that a project may name with `@`, beside its layers.
+BUILT_IN = {"milky-way": "milky-way.jpg"}
+
+
+def _file(base: Path, name: str) -> Path:
+    """A project's file, or one the engine ships (`@name`, BUILT_IN)."""
+    if name.startswith("@"):
+        if name[1:] not in BUILT_IN:
+            raise ValueError(f"no file @{name[1:]}; the engine ships {', '.join('@' + n for n in BUILT_IN)}")
+        return Path(str(resources.files("galaxy") / "data" / BUILT_IN[name[1:]]))
     return _joined(base, name)
 
 

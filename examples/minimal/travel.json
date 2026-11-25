@@ -1,0 +1,80 @@
+{
+  "about": "How fast each way of travel is, and how the maps draw it.",
+  "own_drive": {
+    "ly_per_day": 308,
+    "min_density": 0.1,
+    "in_system_efficiency": 1
+  },
+  "gates": {
+    "permanent": {
+      "ly_per_day": 925,
+      "range_ly": 1200
+    },
+    "provisional": {
+      "ly_per_day": 462,
+      "range_ly": 600
+    },
+    "stop_hours": 6,
+    "network": {
+      "pass_by_share": 0.25
+    }
+  },
+  "modes": {
+    "Slingshot": {
+      "kind": "straight",
+      "ly_per_day": 1400,
+      "from_point": "beacon"
+    },
+    "Warp": {
+      "kind": "jump",
+      "minutes": 10,
+      "label": "Warp jump"
+    }
+  },
+  "jumpgates": {
+    "early": {
+      "au_per_hour": 0.5
+    },
+    "mature": {
+      "minutes": 10
+    }
+  },
+  "maps": {
+    "route_colours": {
+      "own drive": "#ffa04a",
+      "gate": "#7fe0ff",
+      "jumpgate": "#7fe0ff",
+      "sublight": "#e8dcb0",
+      "slingshot": "#d07aff",
+      "warp": "#ffffff"
+    },
+    "stream": {
+      "samples": 200,
+      "pulse_share": 0.15,
+      "step_per_frame": 0.008,
+      "line_opacity": 0.3
+    },
+    "route_opacity": {
+      "warp": 0.4
+    },
+    "stop_pixels": 6,
+    "drive_share_min": {
+      "galaxy": 0.001,
+      "system": 1e-06
+    },
+    "gate_overlay": {
+      "colour": "#7fe0ff",
+      "opacity": {
+        "permanent": 0.35,
+        "provisional": 0.18,
+        "mature": 0.5,
+        "early": 0.25
+      }
+    }
+  },
+  "sublight": {
+    "g": 3,
+    "star_clearance_au": 0.1,
+    "planet_clearance_hill": 1
+  }
+}

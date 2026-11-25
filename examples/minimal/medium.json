@@ -1,0 +1,30 @@
+{
+  "about": "The faster-than-light medium's density, 1 = average.",
+  "name": "subspace",
+  "base": {
+    "inner_radius_ly": 28000,
+    "falloff_ly": 2000,
+    "rim_floor": 0.12,
+    "core_boost": 1.0,
+    "core_radius_ly": 12000,
+    "arms": {
+      "count": 4,
+      "pitch_deg": 12,
+      "amplitude": 0.15,
+      "phase_deg": 0
+    }
+  },
+  "grid_ly": 250,
+  "extent_ly": 46000,
+  "regions": [
+    {
+      "kind": "void",
+      "name": "The Hush",
+      "circle": {
+        "x": -1413,
+        "y": 24195,
+        "r": 250
+      }
+    }
+  ]
+}

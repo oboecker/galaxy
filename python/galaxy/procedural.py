@@ -143,9 +143,12 @@ def _image(path: Path) -> tuple[np.ndarray, np.ndarray]:
     """The image's brightness, cell by cell of the drawing (GRID × GRID, row
     0 at the top as drawn), and its mean over SURROUNDING. The image is
     embedded in the drawing, turned half round."""
-    text = path.read_text(encoding="utf-8")
-    start = text.index("base64,", text.index("<image")) + len("base64,")
-    data = base64.b64decode(re.sub(r"\s", "", text[start:text.index('"', start)]))
+    if path.suffix.lower() == ".svg":
+        text = path.read_text(encoding="utf-8")
+        start = text.index("base64,", text.index("<image")) + len("base64,")
+        data = base64.b64decode(re.sub(r"\s", "", text[start:text.index('"', start)]))
+    else:
+        data = path.read_bytes()                 # the image itself, as a drawing embeds it
     image = Image.open(io.BytesIO(data)).rotate(180).convert("L").resize((GRID, GRID), Image.BOX)
     light = np.asarray(image, dtype=float) / 255
     return light, gaussian_filter(light, SURROUNDING * _px_per_ly() * GRID / DRAWING) + 1e-3

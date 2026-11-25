@@ -1,0 +1,126 @@
+{
+  "labels": [
+    {
+      "label": "The Near Reach",
+      "x": -213,
+      "y": 25245,
+      "rotation": 0
+    }
+  ],
+  "sector_names": {},
+  "star_systems": [
+    {
+      "name": "Aster",
+      "x": -93,
+      "y": 25305,
+      "coordinate_system": "galactic",
+      "z": 40,
+      "spectral_class": "G8V",
+      "planets": [
+        {
+          "name": "Aster I",
+          "index": 1,
+          "id": "p1",
+          "class": "terrestrial-barren",
+          "radius": 4100,
+          "orbit": {
+            "au": 0.4,
+            "e": 0.02,
+            "i": 1.0,
+            "node": 10.0,
+            "periapsis": 30.0,
+            "anomaly": 45.0
+          }
+        },
+        {
+          "name": "Haven",
+          "index": 2,
+          "id": "p2",
+          "class": "terrestrial-habitable",
+          "radius": 6600,
+          "orbit": {
+            "au": 0.9,
+            "e": 0.02,
+            "i": 1.0,
+            "node": 20.0,
+            "periapsis": 60.0,
+            "anomaly": 90.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Brannock",
+      "x": -893,
+      "y": 25515,
+      "coordinate_system": "galactic",
+      "z": -25,
+      "spectral_class": "K2V",
+      "planets": [
+        {
+          "name": "Brannock I",
+          "index": 1,
+          "id": "p1",
+          "class": "gas-giant-warm",
+          "radius": 61000,
+          "orbit": {
+            "au": 1.8,
+            "e": 0.02,
+            "i": 1.0,
+            "node": 10.0,
+            "periapsis": 30.0,
+            "anomaly": 45.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Corvel",
+      "x": 247,
+      "y": 24555,
+      "coordinate_system": "galactic",
+      "z": 12,
+      "spectral_class": "M1V",
+      "planets": []
+    },
+    {
+      "name": "Vega",
+      "planets": [
+        {
+          "name": "Vega Prime",
+          "index": 1,
+          "id": "p1",
+          "class": "gas-giant-cold",
+          "radius": 70000,
+          "orbit": {
+            "au": 9.5,
+            "e": 0.02,
+            "i": 1.0,
+            "node": 10.0,
+            "periapsis": 30.0,
+            "anomaly": 45.0
+          }
+        }
+      ]
+    }
+  ],
+  "gate_links": [
+    {
+      "from": "Sol",
+      "to": "Aster"
+    },
+    {
+      "from": "Aster",
+      "to": "Brannock"
+    }
+  ],
+  "trips": [
+    {
+      "name": "First flight",
+      "start": "Sol",
+      "end": "Brannock",
+      "depart": "AD 2400",
+      "by": "AD 2401"
+    }
+  ]
+}

@@ -37,7 +37,7 @@ travel = "travel.json"              # the travel planner's numbers
 medium = "medium.json"              # the faster-than-light medium's density field
 constellations = "constellations.json"
 procedural = "procedural.json"      # the procedural galaxy's measured numbers
-density = "density.svg"             # the image its density is read from
+density = "@milky-way"              # the image its density is read from: the engine's, or your own
 calendar = "calendar.json"          # eras on one axis of years (galaxy.calendar)
 namer = "package.module:function"   # optional: names for the procedural galaxy
 drafts = "…"                        # optional: an editor's working state
@@ -67,7 +67,14 @@ and with `from_point` starts only where a point of interest of that kind is.
 A `jump` mode takes its minutes anywhere outside a void: a shortcut, not a
 flight.
 
-The CLIs take `--project`, or read `GALAXY_PROJECT`:
+One command writes everything the maps read into one folder, with a
+`manifest.json` naming each file:
+
+```sh
+python -m galaxy.cli.build --project my/project.toml --out public/galaxy [--procedural]
+```
+
+The CLIs for single files take `--project` too, or read `GALAXY_PROJECT`:
 
 ```sh
 python -m galaxy.cli.catalogue   --project my/project.toml --out public/galaxy.json --layers public/layers
@@ -90,9 +97,25 @@ The axis is the Gregorian year, so the real sky's positions and the story's
 dates share it. `written` says which era a year is written in. `epoch` is
 the date the orbits' phases are given for.
 
+## Example and demo
+
+`examples/minimal/` is a small story: three systems near Sol, a planet for
+Vega, gate links, one nation over two dates, a trip, and two ways of travel
+of its own. `make demo` builds it and serves the maps at
+http://localhost:8040/demo/.
+
 ## Viewer
 
 The modules import `three` by name: a bundler or an import map supplies it.
+A build's manifest gives the maps their files:
+
+```js
+import { loadManifest } from 'galaxy/viewer/space/manifest.js'
+const { galaxy, system } = await loadManifest('/data/manifest.json')
+createGalaxyMap(root, { config: galaxy })
+```
+
+Or name the files yourself:
 
 ```js
 import 'galaxy/viewer/space/space.css'
@@ -127,9 +150,7 @@ Icons are [Remix Icon](https://remixicon.com) (Apache 2.0, see
 
 Planned next:
 
-- custom 3D objects beside the built-in nebulae, black holes and pulsars;
-- one build command writing everything the viewer reads, with a manifest;
-- an example project and a demo page.
+- custom 3D objects beside the built-in nebulae, black holes and pulsars.
 
 ## Data and credits
 
@@ -139,6 +160,8 @@ Planned next:
 - Constellation figures and boundaries: `python/galaxy/data/`.
 - Real nebulae: positions and distances checked against SIMBAD (CDS,
   Strasbourg), `python/galaxy/data/real-nebulae.csv`.
+- The Milky Way's arms, which the procedural galaxy's density follows:
+  NASA/JPL-Caltech/R. Hurt (SSC-Caltech), `python/galaxy/data/milky-way.jpg`.
 
 The code is under the MIT licence (`LICENSE`); the data keeps the licences
 named above.

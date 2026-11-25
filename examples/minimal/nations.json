@@ -1,0 +1,19 @@
+{
+  "nations": {
+    "league": {
+      "name": "The League",
+      "holdings": [
+        "Sol",
+        {
+          "system": "Aster",
+          "from": "AD 2350"
+        },
+        {
+          "system": "Brannock",
+          "from": "AD 2420",
+          "to": "AD 2500"
+        }
+      ]
+    }
+  }
+}

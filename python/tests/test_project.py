@@ -47,3 +47,13 @@ def test_relative_writes_a_path_inside_the_root_relative_to_it(tmp_path):
     here = project.load(tmp_path / "project.toml")
     assert here.relative(tmp_path / "a" / "b.json") == str(Path("a") / "b.json")
     assert here.relative(Path("/elsewhere/c.json")) == "/elsewhere/c.json"
+
+
+def test_a_file_the_engine_ships_is_named_with_an_at(tmp_path):
+    (tmp_path / "project.toml").write_text(MINIMAL.replace('density = "density.svg"', 'density = "@milky-way"'),
+                                           encoding="utf-8")
+    assert project.load(tmp_path / "project.toml").density.name == "milky-way.jpg"
+    (tmp_path / "project.toml").write_text(MINIMAL.replace('density = "density.svg"', 'density = "@andromeda"'),
+                                           encoding="utf-8")
+    with pytest.raises(ValueError, match="no file @andromeda"):
+        project.load(tmp_path / "project.toml")
