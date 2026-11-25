@@ -9,8 +9,7 @@ has named yet. A story adds its own systems, gate networks, a
 faster-than-light medium, nations holding systems through time, trips with
 dates, and its own calendar.
 
-Early days: the engine was extracted from one story project, its only host so
-far. The data formats will still change (see *Status*).
+Early days: the data formats will still change (see *Status*).
 
 ## Parts
 
@@ -98,13 +97,14 @@ Icons are [Remix Icon](https://remixicon.com) (Apache 2.0, see
 
 ## Status
 
-What the engine still takes from the project it came from, to be made
-general:
+Planned next:
 
-- the catalogue holds the real stars too; they become a base layer the
-  engine ships, with the project's catalogue only an overlay;
-- the travel modes beyond gates and the own drive, which carry that
-  project's names;
+- the catalogue as a list of layer files: the real sky and the procedural
+  galaxy shipped with the engine, each story adding its own, every layer a
+  switch on the map;
+- travel modes as configuration: sublight and faster-than-light by default,
+  more defined by a story;
+- custom 3D objects beside the built-in nebulae, black holes and pulsars;
 - one build command writing everything the viewer reads, with a manifest;
 - an example project and a demo page.
 
@@ -116,4 +116,5 @@ general:
 - Real nebulae: positions and distances checked against SIMBAD (CDS,
   Strasbourg), `python/galaxy/data/real-nebulae.csv`.
 
-No licence has been chosen for the code yet.
+The code is under the MIT licence (`LICENSE`); the data keeps the licences
+named above.
