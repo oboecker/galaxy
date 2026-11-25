@@ -541,19 +541,31 @@ export function createGalaxyMap(root, options = {}) {
             });
         }
 
-        // The catalogue's layers, each shown or hidden by its button,
+        // The catalogue's layers, each shown or hidden in the Layers panel,
         // remembered for every galaxy map. A real layer's stars are much
         // smaller than the others, without glow or stem, named only when
-        // hovered or chosen.
+        // hovered or chosen. `layers` is a list, or the URL of one (a
+        // layers/index.json the library writes: galaxy.catalogue.layer_index),
+        // its files beside it.
         const REAL_SIZE = 0.25;
         const REAL_KEY = 'galaxy-real-stars';
-        const LAYERS = (CONFIG.layers || [{ id: 'catalogue', url: CONFIG.galaxy, toggle: false }])
-            .filter(layer => layer.url);
+        let LAYERS = [];
         const layerKey = layer => layer.key || (layer.real ? REAL_KEY : `galaxy-layer-${layer.id}`);
-        const layerShown = Object.fromEntries(LAYERS.map(layer => [layer.id, (() => {
-            try { const v = localStorage.getItem(layerKey(layer)); return v ? v !== 'hidden' : layer.shown !== false; }
-            catch { return layer.shown !== false; }
-        })()]));
+        const layerShown = {};
+        const layersReady = (typeof CONFIG.layers === 'string'
+            ? fetch(CONFIG.layers).then(r => (r.ok ? r.json() : [])).catch(() => [])
+                .then(list => list.map(layer => ({ ...layer, url: new URL(layer.url, new URL(CONFIG.layers, location.href)).href })))
+            : Promise.resolve(CONFIG.layers || [{ id: 'catalogue', url: CONFIG.galaxy, toggle: false }]))
+            .then(list => {
+                LAYERS = list.filter(layer => layer.url);
+                LAYERS.forEach(layer => {
+                    layerShown[layer.id] = (() => {
+                        try { const v = localStorage.getItem(layerKey(layer)); return v ? v !== 'hidden' : layer.shown !== false; }
+                        catch { return layer.shown !== false; }
+                    })();
+                });
+                return LAYERS;
+            });
         const layerListeners = [];              // the choices made on another map of the page
         // The procedural galaxy: the systems the catalogue does not
         // name, as many as round Sol, laid out by the arms — a layer like the
@@ -1682,6 +1694,7 @@ export function createGalaxyMap(root, options = {}) {
         // system belongs to every layer that names it (Sol in a story's layer
         // as well as the real sky's). Gate links joined, nebulae by name.
         async function loadLayers() {
+            await layersReady;
             const docs = await Promise.all(LAYERS.map(layer => fetch(layer.url)
                 .then(r => (r.ok ? r.json() : {})).catch(() => ({}))));
             const systems = new Map(), nebulae = new Map(), links = [];
@@ -1787,23 +1800,63 @@ export function createGalaxyMap(root, options = {}) {
             holder.appendChild(button);
         })();
 
-        // A button for each layer that has one: hide or show its stars.
-        LAYERS.filter(layer => layer.toggle !== false && LAYERS.length > 1).forEach(layer => {
+        // The Layers panel: a switch for each layer, and the procedural
+        // galaxy's; a system shows while a layer naming it is switched on.
+        const layersPanel = (function () {
             const holder = byId('search-container');
-            if (!holder) return;
+            if (!holder) return null;
+            const wrap = document.createElement('div');
+            wrap.className = 'galaxy-layers';
+            wrap.hidden = true;
             const button = document.createElement('button');
+            button.type = 'button';
             button.className = 'space-tool icon-button';
-            button.id = `toggle-layer-${layer.id}-btn`;
-            toggleIcon(button, layer.icon || 'star');
-            const name = layer.label || layer.id;
-            const show = () => {
-                button.setAttribute('aria-pressed', String(layerShown[layer.id]));
-                button.title = layerShown[layer.id] ? `Hide ${name}` : `Show ${name}`;
+            button.id = 'toggle-layers-btn';
+            button.title = 'Layers';
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-haspopup', 'true');
+            button.innerHTML = icon('stack');
+            const panel = document.createElement('div');
+            panel.className = 'galaxy-layers-panel';
+            panel.hidden = true;
+            // The catalogue's layers first (known once their list is), then the procedural galaxy.
+            const groups = { layers: document.createElement('div'), more: document.createElement('div') };
+            panel.append(groups.layers, groups.more);
+            const open = shown => {
+                panel.hidden = !shown;
+                button.setAttribute('aria-expanded', String(shown));
             };
-            show();
+            button.addEventListener('click', () => open(panel.hidden));
+            const onOutside = event => { if (!wrap.contains(event.target)) open(false); };
+            const onKey = event => { if (event.key === 'Escape' && !panel.hidden) { open(false); button.focus(); } };
+            document.addEventListener('pointerdown', onOutside);
+            document.addEventListener('keydown', onKey);
+            layerListeners.push(['pointerdown', onOutside, document], ['keydown', onKey, document]);
+            wrap.append(button, panel);
+            holder.appendChild(wrap);
+            // A row: its checkbox, icon and label; `set(shown)` is called on a change.
+            const row = (name, iconName, shown, set, id, group = 'layers') => {
+                const label = document.createElement('label');
+                label.className = 'galaxy-layers-row';
+                const box = document.createElement('input');
+                box.type = 'checkbox';
+                box.checked = shown;
+                if (id) box.id = id;
+                box.addEventListener('change', () => set(box.checked));
+                label.append(box);
+                label.insertAdjacentHTML('beforeend', `${icon(iconName)}<span>${escapeHtml(name)}</span>`);
+                groups[group].appendChild(label);
+                wrap.hidden = false;
+                return box;
+            };
+            return { row };
+        })();
+
+        layersReady.then(() => LAYERS.filter(layer => layer.toggle !== false && LAYERS.length > 1).forEach(layer => {
+            if (!layersPanel) return;
             const setShown = shown => {
                 layerShown[layer.id] = shown;
-                show();
+                box.checked = shown;
                 const gone = obj => obj && obj.isStarRecord && !isShown(obj);
                 if (gone(selectedStar)) deselectStar();
                 if (gone(hoveredStar)) { resetStarHoverState(hoveredStar); hoveredStar = null; }
@@ -1812,18 +1865,16 @@ export function createGalaxyMap(root, options = {}) {
                 labelsFrame = 0;
                 hoverStale = true;
             };
-            button.addEventListener('click', () => {
-                const shown = !layerShown[layer.id];
+            const box = layersPanel.row(layer.label || layer.id, layer.icon || 'star', layerShown[layer.id], shown => {
                 try { localStorage.setItem(layerKey(layer), shown ? 'shown' : 'hidden'); } catch { /* this page only */ }
                 setShown(shown);
                 globalThis.dispatchEvent(new CustomEvent(layerKey(layer), { detail: shown }));
-            });
+            }, `toggle-layer-${layer.id}`);
             // Chosen on another map of the page (a 2D map, say): followed.
             const listener = event => { if (event.detail !== layerShown[layer.id]) setShown(event.detail); };
             globalThis.addEventListener(layerKey(layer), listener);
             layerListeners.push([layerKey(layer), listener]);
-            holder.appendChild(button);
-        });
+        }));
 
         // The procedural galaxy's dots and network, fetched once.
         function loadProcedural() {
@@ -1843,17 +1894,10 @@ export function createGalaxyMap(root, options = {}) {
             return procLoading;
         }
 
-        (function proceduralButton() {
-            const holder = byId('search-container');
-            if (!holder || !CONFIG.procedural) return;
-            const button = document.createElement('button');
-            button.className = 'space-tool icon-button';
-            button.id = 'toggle-procedural-btn';
-            toggleIcon(button, 'sparkling');
-            const show = () => {
-                button.setAttribute('aria-pressed', String(procShown));
-                button.title = procShown ? 'Hide the uncharted systems' : 'Show the uncharted systems (the procedural galaxy)';
-            };
+        (function proceduralRow() {
+            if (!layersPanel || !CONFIG.procedural) return;
+            let box = null;
+            const show = () => { box.checked = procShown; };
             const setShown = async shown => {
                 procShown = shown;
                 show();
@@ -1867,13 +1911,11 @@ export function createGalaxyMap(root, options = {}) {
                 hoverStale = true;
                 drawGateNetwork();
             };
-            show();
+            box = layersPanel.row('the uncharted systems (procedural)', 'sparkling', procShown, shown => {
+                try { localStorage.setItem(PROC_KEY, shown ? 'shown' : 'hidden'); } catch { /* this page only */ }
+                setShown(shown);
+            }, 'toggle-procedural', 'more');
             showProcedural = () => setShown(true);
-            button.addEventListener('click', () => {
-                try { localStorage.setItem(PROC_KEY, procShown ? 'hidden' : 'shown'); } catch { /* this page only */ }
-                setShown(!procShown);
-            });
-            holder.appendChild(button);
             if (procShown) setShown(true);
         })();
 
@@ -2693,7 +2735,7 @@ export function createGalaxyMap(root, options = {}) {
                 fx.dispose();
                 PLANET_LOOK.releaseTextures();
                 globalThis.removeEventListener('resize', onResize);
-                layerListeners.forEach(([key, listener]) => globalThis.removeEventListener(key, listener));
+                layerListeners.forEach(([key, listener, target = globalThis]) => target.removeEventListener(key, listener));
                 if (onNebulaeChosen) globalThis.removeEventListener(NEBULAE_KEY, onNebulaeChosen);
                 renderer.dispose();
                 renderer.forceContextLoss();   // or the context outlives the page: browsers cap them at about 16

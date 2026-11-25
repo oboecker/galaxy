@@ -13,7 +13,7 @@ const NAMES = [
   'arrow-left-s', 'arrow-right-double', 'arrow-right-s', 'check', 'close', 'cloudy', 'contrast',
   'dice-5', 'error-warning', 'flag', 'focus-3', 'global', 'hexagon', 'layout-grid', 'moon',
   'palette', 'pause', 'pencil', 'planet', 'play', 'refresh', 'route', 'sparkling', 'star', 'sun',
-  'font-size', 'share', 'haze',
+  'font-size', 'share', 'haze', 'stack',
 ]
 
 const PACKAGE = 'node_modules/remixicon'

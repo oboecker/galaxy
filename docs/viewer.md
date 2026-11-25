@@ -84,14 +84,14 @@ const map = createGalaxyMap(root, { title, config, links, focus, uncharted })
 
 | Key | Meaning |
 |---|---|
-| `layers` | The catalogue's layers, `[{ id, url, label?, icon?, real?, shown?, toggle?, key? }]`, merged in order by system name as the library merges them. Each gets a show/hide button when there is more than one (`toggle: false` for none); a system named in several layers shows while any of them is shown. `real` draws its stars as the real sky's (a system some other layer names too is drawn as a story's): small, no glow, no stem to the plane, named on hover. `shown: false` hides it at first. `icon` is an icon name (default `star`). `key` overrides the localStorage key. |
+| `layers` | The catalogue's layers, `[{ id, url, label?, icon?, real?, shown?, toggle?, key? }]`, or the URL of such a list (the `layers/index.json` the library writes, its `url`s read against it), merged in order by system name as the library merges them. Each is a checkbox in the Layers panel (one toolbar button, with the procedural galaxy's checkbox below the layers) when there is more than one (`toggle: false` for none); a system named in several layers shows while any of them is shown. `real` draws its stars as the real sky's (a system some other layer names too is drawn as a story's): small, no glow, no stem to the plane, named on hover. `shown: false` hides it at first. `icon` is an icon name (default `star`). `key` overrides the localStorage key. |
 | `galaxy` | One catalogue file instead of `layers`. A star with a Hipparcos number is drawn as real. |
 | `textures`, `heights` | URLs of JSON maps of planet name → texture URL and → height-map URL. |
 | `textureBase` | Prefix for the URLs in those maps. Default `''`. |
 | `territories` | Folder URL with a trailing slash, holding `index.json` and the snapshot files. Adds the territory button, a branch selector and a time slider. |
 | `trips` | `trips.json`: stored trips, listed and drawn read-only. |
 | `travelSettings` | `travel-settings.json`. Without it no route, gate overlay or trip is drawn. |
-| `procedural`, `proceduralGates` | The procedural galaxy's files. Adds a button; the files are fetched when first shown, and its gate network replaces the stored one while shown. |
+| `procedural`, `proceduralGates` | The procedural galaxy's files. Adds a checkbox to the Layers panel; the files are fetched when first shown, and its gate network replaces the stored one while shown. |
 | `departPlaceholder` | Placeholder of the planner's date field. Default `'a date — optional'`. |
 | `travel` | URL of a planner endpoint (below). Adds the travel panel. |
 | `tripSave` | URL to keep and remove trips (below). |
@@ -233,8 +233,8 @@ announced on `window`, so that several maps on one page follow each other:
 
 | Key | Values | Set by | Event on `window` |
 |---|---|---|---|
-| `galaxy-layer-<id>` | `shown`, `hidden` | A layer's button | Same name, `detail`: boolean |
-| `galaxy-real-stars` | `shown`, `hidden` | The button of a `real` layer (instead of the key above) | Same name |
+| `galaxy-layer-<id>` | `shown`, `hidden` | A layer's checkbox | Same name, `detail`: boolean |
+| `galaxy-real-stars` | `shown`, `hidden` | The checkbox of a `real` layer (instead of the key above) | Same name |
 | `galaxy-nebulae` | `shown`, `hidden` | Galaxy map | Same name |
 | `galaxy-procedural` | `shown`, `hidden` | Galaxy map; read by the system map for its sky | — |
 | `galaxy-stems` | `shown`, `hidden` | Galaxy map | — |

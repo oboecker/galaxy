@@ -209,15 +209,48 @@ def layer_name(path: Path) -> str:
     return path.stem
 
 
-def write_layers(out: Path, here: Optional[project.Project] = None) -> list[Path]:
-    """Each layer as its own file in `out`, `<name>.json` (layer_name): what
-    the galaxy map loads, a switch each. The files written."""
+# How the map lists a layer the engine ships, unless the project says otherwise.
+LOOKS = {"real-sky": {"label": "the real sky's stars", "icon": "star"}}
+INDEX = "index.json"
+
+
+def layer_index(here: Optional[project.Project] = None,
+                url: Callable[[str], str] = lambda name: f"{name}.json") -> list[dict[str, Any]]:
+    """The layers as the galaxy map lists them, a switch each: `{id, label,
+    icon, url}`, and `real: true` for one the engine ships (its stars drawn
+    as the real sky's). `url(name)` is where a layer's file is served; by
+    default beside the index, as write_layers writes them."""
+    here = here or project.current()
+    looks = here.layer_looks or ({},) * len(here.layers)
+    out = []
+    for path, look in zip(here.layers, looks):
+        name = layer_name(path)
+        shipped = path == built_in(name) if name in BUILT_IN else False
+        entry = {"id": name, "label": name, "icon": "planet", **(LOOKS.get(name, {}) if shipped else {}),
+                 **look, "url": url(name)}
+        if shipped:
+            entry["real"] = True
+        out.append(entry)
+    return out
+
+
+def write_layers(out: Path, here: Optional[project.Project] = None,
+                 transform: Callable[[dict[str, Any]], dict[str, Any]] = lambda doc: doc,
+                 last: Optional[Path] = None) -> list[Path]:
+    """Each layer as its own file in `out`, `<name>.json` (layer_name), and
+    `index.json` listing them (layer_index): what the galaxy map loads, a
+    switch each. `transform` changes each layer before it is written (a
+    public site's allowed fields); `last` stands in for the project's own
+    layer, as in `read`. The files written."""
     here = here or project.current()
     written = []
-    for path, doc in zip(here.layers, _layers(here)):
+    for path, doc in zip(here.layers, _layers(here, last)):
         target = Path(out) / f"{layer_name(path)}.json"
-        write_atomic(target, dumps(doc))
+        write_atomic(target, dumps(transform(copy.deepcopy(doc))))
         written.append(target)
+    target = Path(out) / INDEX
+    write_atomic(target, dumps(layer_index(here)))
+    written.append(target)
     return written
 
 

@@ -55,7 +55,7 @@ calendar = "calendar.json"
 | Key | Required | Meaning |
 |---|---|---|
 | `catalogue` | yes | The project's own catalogue layer, the one an editor writes. |
-| `layers` | no | The catalogue's layers in merge order. Default `["@real-sky", <catalogue>]`. The last entry must be the catalogue. `@real-sky` is the only built-in layer. |
+| `layers` | no | The catalogue's layers in merge order. Default `["@real-sky", <catalogue>]`. The last entry must be the catalogue. `@real-sky` is the only built-in layer. An entry is a file, or a table naming how the map's Layers panel lists it: `{file = "galaxy.json", label = "My story", icon = "planet"}` (label default: the file's stem, `the real sky's stars` for `@real-sky`; icon: a Remix Icon name in `viewer/space/icons.js`). |
 | `nations` | yes | [nations.json](#nationsjson). May be absent on disk: no nations. |
 | `travel` | yes | [travel.json](#traveljson). Needed by the travel planner, and by the build when the catalogue has trips. |
 | `medium` | yes | [The medium](#the-medium). Needed by the travel planner. |
@@ -521,6 +521,7 @@ python -m galaxy.cli.build --project my/project.toml --out public/galaxy [--proc
 |---|---|
 | `galaxy.json` | The merged catalogue. |
 | `layers/<name>.json` | Each layer as its file holds it (`real-sky`, then the project's layers by file stem). |
+| `layers/index.json` | The layers as the map lists them, `[{id, label, icon, url, real?}]` (`galaxy.catalogue.layer_index`); a map's `layers` option may be its URL. |
 | `systems.json` | Every system as the system map draws it, by name (`galaxy.systemmap`). |
 | `nebulae.json` | The nebulae as the skies draw them: `[{name, kind, colour, at: [x, y, z], size}]`. |
 | `glow.json` | The galaxy's light for the band in the skies (only with `procedural.json`). |

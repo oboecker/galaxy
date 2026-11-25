@@ -188,3 +188,35 @@
     overflow-y: auto; font-size: 12px; padding: 6px 8px; }
   .galaxy-map-wrapper #controls { left: 8px; right: 8px; max-width: none; }
 }
+
+/* The Layers button and its panel: a switch for each catalogue layer and the
+   procedural galaxy, opened under the button. */
+.galaxy-map-wrapper .galaxy-layers { position: relative; }
+.galaxy-map-wrapper .galaxy-layers[hidden] { display: none; }
+.galaxy-map-wrapper .space-tool[aria-expanded="true"] { border-color: #ffd24a; color: #ffd24a; }
+.galaxy-map-wrapper .galaxy-layers-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+  min-width: 15rem;
+  max-width: min(22rem, calc(100vw - 2rem));
+  padding: 4px 0;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  z-index: 101;
+}
+.galaxy-map-wrapper .galaxy-layers-panel[hidden] { display: none; }
+.galaxy-map-wrapper .galaxy-layers-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.galaxy-map-wrapper .galaxy-layers-row:hover { background: rgba(100, 149, 237, 0.3); }
+.galaxy-map-wrapper .galaxy-layers-row input { margin: 0; accent-color: #ffd24a; }
+.galaxy-map-wrapper .galaxy-layers-row .ic { width: 16px; height: 16px; }

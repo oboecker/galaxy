@@ -1,7 +1,7 @@
 # A small story on the galaxy engine: three systems near Sol, a planet for
 # Vega, a gate link or two, one nation, one trip, two ways of travel of its own.
 catalogue = "galaxy.json"
-layers = ["@real-sky", "galaxy.json"]
+layers = ["@real-sky", {file = "galaxy.json", label = "the example's systems"}]
 nations = "nations.json"
 travel = "travel.json"
 medium = "medium.json"

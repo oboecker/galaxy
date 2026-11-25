@@ -47,7 +47,8 @@ the file's folder (`galaxy.project`):
 
 ```toml
 catalogue = "galaxy.json"           # the story's own systems, labels, gate links, trips, nebulae
-layers = ["@real-sky", "galaxy.json"]   # optional, the default: the catalogue's layers in order
+layers = ["@real-sky", "galaxy.json"]   # optional, the default: the catalogue's layers in order;
+                                    # an entry may be {file = "…", label = "…", icon = "…"}
 nations = "nations.json"            # who held which system, when, in which timeline branch
 travel = "travel.json"              # the travel planner's numbers
 medium = "medium.json"              # the faster-than-light medium's density field
@@ -152,7 +153,8 @@ import { createGalaxyMap } from 'galaxy/viewer/galaxy/galaxy-map.js'
 const map = createGalaxyMap(document.getElementById('map'), {
   title: '<strong>My galaxy</strong>',
   config: {                          // each file the build wrote; a layer without one is not drawn
-    layers: [                        // the catalogue's layers, a switch each on the map
+    layers: [                        // the catalogue's layers, a checkbox each in the Layers panel
+                                     // (or the URL of the layers/index.json the build writes)
       { id: 'real-sky', label: "the real sky's stars", url: '/data/layers/real-sky.json', real: true, icon: 'star' },
       { id: 'story', label: "the story's systems", url: '/data/layers/galaxy.json', icon: 'planet' },
     ],

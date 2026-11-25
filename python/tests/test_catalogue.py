@@ -66,3 +66,26 @@ def test_the_project_names_its_layers_the_engines_with_an_at(tmp_path):
     assert catalogue.own(doc, here) == STORY
     with pytest.raises(ValueError, match="no layer @moon"):
         catalogue.built_in("moon")
+
+
+def test_the_layers_listed_for_the_map_with_their_looks(tmp_path):
+    (tmp_path / "story.json").write_text(dumps(STORY), encoding="utf-8")
+    (tmp_path / "extra.json").write_text(dumps({"star_systems": [{"name": "Corvel", "x": 1, "y": 2}]}), encoding="utf-8")
+    base = project.current()
+    keys = {k: getattr(base, k) for k in ("nations", "travel", "medium", "constellations", "procedural",
+                                          "density", "calendar")}
+    lines = [f'{k} = "{v}"' for k, v in keys.items()] + [
+        'catalogue = "story.json"',
+        'layers = ["@real-sky", {file = "extra.json", icon = "flag"}, {file = "story.json", label = "My story"}]']
+    (tmp_path / "project.toml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    here = project.load(tmp_path / "project.toml")
+    assert catalogue.layer_index(here) == [
+        {"id": "real-sky", "label": "the real sky's stars", "icon": "star", "url": "real-sky.json", "real": True},
+        {"id": "extra", "label": "extra", "icon": "flag", "url": "extra.json"},
+        {"id": "story", "label": "My story", "icon": "planet", "url": "story.json"}]
+    written = catalogue.write_layers(tmp_path / "out", here)
+    assert [p.name for p in written] == ["real-sky.json", "extra.json", "story.json", "index.json"]
+    (tmp_path / "project.toml").write_text("\n".join(lines[:-1] + ['layers = [{label = "no file"}, "story.json"]']) + "\n",
+                                           encoding="utf-8")
+    with pytest.raises(ValueError, match="a layer is a file"):
+        project.load(tmp_path / "project.toml")

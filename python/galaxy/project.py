@@ -7,7 +7,9 @@ read against the file's folder:
     root = "../.."                      paths in messages are written relative to it
     catalogue = "galaxy.json"           the layer an editor writes
     layers = ["@real-sky", "galaxy.json"]   optional: the catalogue's layers in order, the default
-                                        shown; `@name` for one the engine ships (galaxy.catalogue)
+                                        shown; `@name` for one the engine ships (galaxy.catalogue);
+                                        a layer may be a table naming how the map lists it:
+                                        {file = "galaxy.json", label = "My story", icon = "planet"}
     nations = "nations.json"
     travel = "travel.json"              the travel planner's numbers
     medium = "medium.json"              the faster-than-light medium's density field
@@ -67,6 +69,8 @@ class Project:
     svg: Optional[Path] = None
     objects: Optional[Path] = None
     layers: tuple[Path, ...] = ()
+    # How the map lists each layer, in the order of `layers`: {label?, icon?}.
+    layer_looks: tuple[dict, ...] = ()
 
     def relative(self, path: Path) -> str:
         """`path` as written relative to the project's root, or absolute if
@@ -97,10 +101,17 @@ def load(path: Union[str, Path]) -> Project:
     if unknown:
         raise ValueError(f"{path}: unknown {', '.join(sorted(unknown))}")
     paths = {key: _file(base, raw[key]) for key in (*_REQUIRED, *_OPTIONAL) if key in raw}
-    layers = tuple(_layer(base, name) for name in raw.get("layers", ["@real-sky", raw["catalogue"]]))
+    entries = [entry if isinstance(entry, dict) else {"file": entry}
+               for entry in raw.get("layers", ["@real-sky", raw["catalogue"]])]
+    for entry in entries:
+        if not isinstance(entry.get("file"), str) or set(entry) - {"file", "label", "icon"}:
+            raise ValueError(f"{path}: a layer is a file, or a table of file, label and icon")
+    layers = tuple(_layer(base, entry["file"]) for entry in entries)
     if not layers or layers[-1] != paths["catalogue"]:
         raise ValueError(f"{path}: the last of `layers` is the catalogue, the layer an editor writes")
-    return Project(root=_joined(base, raw.get("root", ".")), namer=raw.get("namer"), layers=layers, **paths)
+    looks = tuple({k: entry[k] for k in ("label", "icon") if k in entry} for entry in entries)
+    return Project(root=_joined(base, raw.get("root", ".")), namer=raw.get("namer"), layers=layers,
+                   layer_looks=looks, **paths)
 
 
 def _layer(base: Path, name: str) -> Path:

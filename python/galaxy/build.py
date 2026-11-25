@@ -33,13 +33,6 @@ def _compact(data: Any) -> str:
     return json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n"
 
 
-def _layer(name: str) -> dict[str, Any]:
-    """A layer as the galaxy map takes it: the real sky's stars drawn as such."""
-    if name == "real-sky":
-        return {"id": name, "label": "the real sky's stars", "url": f"layers/{name}.json", "real": True, "icon": "star"}
-    return {"id": name, "label": name, "url": f"layers/{name}.json", "icon": "planet"}
-
-
 def write(out: Path, *, here: Optional[project.Project] = None, procedural_galaxy: bool = False,
           within: Optional[float] = None) -> list[Path]:
     """Write the maps' files for `here` (the current project) into `out`; the
@@ -90,10 +83,9 @@ def write(out: Path, *, here: Optional[project.Project] = None, procedural_galax
         gates = "procedural-gates.json"
         written += [out / "procedural.json", out / gates, out / "procedural"]
 
-    names = [catalogue.layer_name(path) for path in here.layers]
     manifest = {
         "galaxy": {
-            "layers": [_layer(name) for name in names],
+            "layers": catalogue.layer_index(here, lambda name: f"layers/{name}.json"),
             "trips": "trips.json",
             "travelSettings": "travel-settings.json",
             "territories": territories,
