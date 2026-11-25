@@ -41,6 +41,15 @@ def test_a_field_taken_away_and_a_layer_that_cannot_remove():
         catalogue.split(doc, [SKY])
 
 
+def test_a_layer_naming_an_earlier_system_keeps_it_by_its_name():
+    story = {**STORY, "star_systems": [*STORY["star_systems"], {"name": "Sirius"}]}
+    doc = catalogue.merge([SKY, story])
+    sirius = next(s for s in doc["star_systems"] if s["name"] == "Sirius")
+    assert sirius == SKY["star_systems"][0], "the earlier layer's fields"
+    assert catalogue.split(doc, [SKY]) == STORY, "without the layer, nothing says it is the story's"
+    assert {"name": "Sirius"} in catalogue.split(doc, [SKY], story)["star_systems"]
+
+
 def test_the_project_names_its_layers_the_engines_with_an_at(tmp_path):
     (tmp_path / "story.json").write_text(dumps(STORY), encoding="utf-8")
     base = project.current()

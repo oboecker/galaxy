@@ -525,7 +525,7 @@ export function createGalaxyMap(root, options = {}) {
                 userData: {
                     name: star.name,
                     real: star.real,
-                    layer: star.layer,
+                    layers: star.layers,
                     // Its id in the procedural galaxy (galaxy.procedural): one
                     // of the layer's, not the catalogue's.
                     procedural: star.procedural || null,
@@ -568,7 +568,9 @@ export function createGalaxyMap(root, options = {}) {
         // shown or hidden by ⊥, remembered for every galaxy map.
         const STEMS_KEY = 'galaxy-stems';
         let stemsShown = (() => { try { return localStorage.getItem(STEMS_KEY) !== 'hidden'; } catch { return true; } })();
-        const isShown = st => layerShown[st.userData.layer] !== false && (procShown || !st.userData.procedural);
+        // A system is in every layer that names it, and shown while one of them is.
+        const inShownLayer = st => !st.userData.layers || st.userData.layers.some(id => layerShown[id] !== false);
+        const isShown = st => inShownLayer(st) && (procShown || !st.userData.procedural);
         // The stars the field draws, in its order: star.fieldIndex.
         let fieldStars = [];
 
@@ -1677,8 +1679,8 @@ export function createGalaxyMap(root, options = {}) {
 
         // The layers merged as galaxy.catalogue merges them: by name, a later
         // layer's fields over an earlier one's, its `_removed` taken away; a
-        // system belongs to the first layer that has it. Gate links joined,
-        // nebulae by name.
+        // system belongs to every layer that names it (Sol in a story's layer
+        // as well as the real sky's). Gate links joined, nebulae by name.
         async function loadLayers() {
             const docs = await Promise.all(LAYERS.map(layer => fetch(layer.url)
                 .then(r => (r.ok ? r.json() : {})).catch(() => ({}))));
@@ -1686,7 +1688,7 @@ export function createGalaxyMap(root, options = {}) {
             docs.forEach((doc, k) => {
                 (doc.star_systems || []).forEach(obj => {
                     const earlier = systems.get(obj.name);
-                    const merged = earlier ? { ...earlier, ...obj, _layer: earlier._layer } : { ...obj, _layer: LAYERS[k] };
+                    const merged = { ...earlier, ...obj, _layers: [...(earlier ? earlier._layers : []), LAYERS[k]] };
                     // The fields a later layer takes away (`_removed`).
                     (obj._removed || []).forEach(key => { delete merged[key]; });
                     delete merged._removed;
@@ -1714,10 +1716,11 @@ export function createGalaxyMap(root, options = {}) {
                                 z: -obj.y,
                                 spectralType: obj.spectral_class || 'Unknown',
                                 objectType: obj.object_type,
-                                // Drawn as the real sky's: a real layer's, or (one file, no
-                                // layers) a star with a catalogue number.
-                                real: obj._layer.real ?? (!CONFIG.layers && (obj.stars || []).some(s => s.hip)),
-                                layer: obj._layer.id,
+                                // Drawn as the real sky's: only real layers name it, or (one
+                                // file, no layers) a star with a catalogue number.
+                                real: CONFIG.layers ? obj._layers.every(layer => layer.real)
+                                    : (obj.stars || []).some(s => s.hip),
+                                layers: obj._layers.map(layer => layer.id),
                                 // The planets only: no dwarf planets (`dwarf: true`) on the
                                 // galaxy map (Sol's eight).
                                 planets: (obj.planets || []).filter(p => !p.dwarf).map(p =>
@@ -1801,9 +1804,9 @@ export function createGalaxyMap(root, options = {}) {
             const setShown = shown => {
                 layerShown[layer.id] = shown;
                 show();
-                const ours = obj => obj && obj.userData && obj.userData.layer === layer.id;
-                if (!shown && ours(selectedStar)) deselectStar();
-                if (!shown && ours(hoveredStar)) { resetStarHoverState(hoveredStar); hoveredStar = null; }
+                const gone = obj => obj && obj.isStarRecord && !isShown(obj);
+                if (gone(selectedStar)) deselectStar();
+                if (gone(hoveredStar)) { resetStarHoverState(hoveredStar); hoveredStar = null; }
                 rebuildField();
                 drawGateNetwork();
                 labelsFrame = 0;

@@ -64,7 +64,9 @@ public = "…"                        # optional: where the maps' data is writte
 The catalogue is a list of layers (`galaxy.catalogue`), merged in order by
 name: the engine ships `@real-sky` (Sol and its bodies, the bright stars, the
 real nebulae), and a story adds its own file, which may also extend a real
-star (planets for Vega, say). An editor works on the merged catalogue and
+star (planets for Vega, say) or name one to make it the story's
+(`{"name": "Sol"}`): a system is in every layer that names it, and the map
+shows it while any of them is switched on. An editor works on the merged catalogue and
 writes only the story's layer back. A map is extended by adding a layer,
 never by rewriting one.
 

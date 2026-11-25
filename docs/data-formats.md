@@ -90,13 +90,18 @@ Merging, layer by layer:
   a name already present overrides it field by field; its `_removed` list
   names fields it takes away. A new name is added. Systems from earlier
   layers are inserted in name order, `Unnamed …` placeholders last.
+- A system is in **every layer that names it**. `{"name": "Sol"}` alone puts
+  the real Sol into a story's layer, with the real sky's position, stars and
+  planets; the galaxy map shows it while either layer is switched on, and
+  draws it as a story's star, since not only real layers name it.
 - Other lists (`labels`, `gate_links`, `trips`) are concatenated.
 - Objects (`sector_names`) are merged, the later layer's keys winning.
 - Anything else: the later layer wins.
 
 `galaxy.catalogue.write(doc)` saves an edited merged document by writing
-back only what the earlier layers do not already say. A project's layer
-cannot remove a system or nebula an earlier layer holds.
+back only what the earlier layers do not already say, and the entries the
+project's layer already names, if only by name. A project's layer cannot
+remove a system or nebula an earlier layer holds.
 
 The example gives Vega, a real star, a planet. It names only the system and
 the planet; position, spectral class and Hipparcos number come from

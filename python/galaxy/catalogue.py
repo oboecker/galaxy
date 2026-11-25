@@ -13,7 +13,9 @@ Merging, layer by layer (`merge`):
 
 - systems and nebulae by name: a later layer's entry with a name already
   there extends or overrides it field by field (its `_removed` lists fields
-  it takes away); a new one joins. The project's own order is kept, and an
+  it takes away); a new one joins. An entry is in every layer that names it,
+  so `{"name": "Sol"}` alone puts the real Sol into a story's layer as well:
+  the galaxy map shows it while either layer is switched on. The project's own order is kept, and an
   earlier layer's systems take their place in system_order;
 - lists (labels, gate links, trips) are joined; mappings (sector names) are
   merged, the later layer's keys winning; anything else, the later wins.
@@ -120,36 +122,41 @@ def _merge_named(lists: list[list[dict[str, Any]]], sort: bool) -> list[dict[str
     return merged
 
 
-def split(doc: dict[str, Any], earlier: Sequence[dict[str, Any]]) -> dict[str, Any]:
+def split(doc: dict[str, Any], earlier: Sequence[dict[str, Any]],
+          own: Optional[dict[str, Any]] = None) -> dict[str, Any]:
     """What of the merged `doc` the earlier layers do not already say: the
-    last layer, which merged over them gives `doc` again. Refused
-    (ValueError) for an earlier layer's system or nebula `doc` lacks — a layer
-    cannot remove what another holds."""
+    last layer, which merged over them gives `doc` again. An entry the last
+    layer as it stands (`own`) names is kept, if only by its name: it is in
+    that layer too. Refused (ValueError) for an earlier layer's system or
+    nebula `doc` lacks — a layer cannot remove what another holds."""
     base = merge(earlier) if earlier else {}
     out: dict[str, Any] = {}
     for key, value in doc.items():
         if key not in base:
             out[key] = copy.deepcopy(value)
         elif key in BY_NAME:
-            own = _split_named(key, value, base[key])
-            if own or key not in base:
-                out[key] = own
+            named = {e.get("name") for e in (own or {}).get(key) or []}
+            entries = _split_named(key, value, base[key], named)
+            if entries:
+                out[key] = entries
         elif isinstance(value, list) and isinstance(base[key], list):
-            own = [copy.deepcopy(item) for item in value if item not in base[key]]
-            if own:
-                out[key] = own
+            items = [copy.deepcopy(item) for item in value if item not in base[key]]
+            if items:
+                out[key] = items
         elif isinstance(value, dict) and isinstance(base[key], dict):
-            own = {k: copy.deepcopy(v) for k, v in value.items() if base[key].get(k) != v}
-            if own:
-                out[key] = own
+            items = {k: copy.deepcopy(v) for k, v in value.items() if base[key].get(k) != v}
+            if items:
+                out[key] = items
         elif value != base[key]:
             out[key] = copy.deepcopy(value)
     return out
 
 
-def _split_named(key: str, entries: list[dict[str, Any]], base: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """The entries of `entries` that are new or changed against `base`; a
-    changed one holds only its name and what differs."""
+def _split_named(key: str, entries: list[dict[str, Any]], base: list[dict[str, Any]],
+                 named: frozenset[str] | set[str] = frozenset()) -> list[dict[str, Any]]:
+    """The entries of `entries` that are new or changed against `base`, or
+    that the layer names already (`named`); a changed one holds only its name
+    and what differs."""
     known = {e.get("name"): e for e in base}
     names = {e.get("name") for e in entries}
     gone = [name for name in known if name not in names]
@@ -166,7 +173,7 @@ def _split_named(key: str, entries: list[dict[str, Any]], base: list[dict[str, A
         removed = [k for k in earlier if k not in entry]
         if removed:
             changed[REMOVED] = removed
-        if len(changed) > 1:
+        if len(changed) > 1 or entry.get("name") in named:
             out.append(changed)
     return out
 
@@ -220,4 +227,5 @@ def write(doc: dict[str, Any], validator: Optional[Callable[[Any], None]] = None
     here = here or project.current()
     if validator is not None:
         validator(doc)
-    return store.write(here.catalogue, split(doc, _layers(here)[:-1]))
+    layers = _layers(here)
+    return store.write(here.catalogue, split(doc, layers[:-1], layers[-1]))

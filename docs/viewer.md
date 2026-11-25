@@ -84,7 +84,7 @@ const map = createGalaxyMap(root, { title, config, links, focus, uncharted })
 
 | Key | Meaning |
 |---|---|
-| `layers` | The catalogue's layers, `[{ id, url, label?, icon?, real?, shown?, toggle?, key? }]`, merged in order by system name as the library merges them. Each gets a show/hide button when there is more than one (`toggle: false` for none). `real` draws its stars as the real sky's: small, no glow, no stem to the plane, named on hover. `shown: false` hides it at first. `icon` is an icon name (default `star`). `key` overrides the localStorage key. |
+| `layers` | The catalogue's layers, `[{ id, url, label?, icon?, real?, shown?, toggle?, key? }]`, merged in order by system name as the library merges them. Each gets a show/hide button when there is more than one (`toggle: false` for none); a system named in several layers shows while any of them is shown. `real` draws its stars as the real sky's (a system some other layer names too is drawn as a story's): small, no glow, no stem to the plane, named on hover. `shown: false` hides it at first. `icon` is an icon name (default `star`). `key` overrides the localStorage key. |
 | `galaxy` | One catalogue file instead of `layers`. A star with a Hipparcos number is drawn as real. |
 | `textures`, `heights` | URLs of JSON maps of planet name → texture URL and → height-map URL. |
 | `textureBase` | Prefix for the URLs in those maps. Default `''`. |
