@@ -1,0 +1,190 @@
+/* The 3D galaxy map's styles, shared by every page that shows the map:
+   everything under .galaxy-map-wrapper, the elements galaxy.js injects too. */
+
+/* The bar, the search and the round buttons are every 3D map's: ../space/space.css. */
+.galaxy-map-wrapper {
+  width: 100%;
+  height: calc(100vh - var(--vp-nav-height));
+  position: relative;
+  background-color: #000000;
+  overflow: hidden;
+  /* Its controls as the star-system map's (system-map.css). */
+  font: 13px/1.4 system-ui, sans-serif;
+}
+
+.galaxy-map-wrapper #canvas-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.galaxy-map-wrapper #info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px 10px;
+  border-radius: 6px;
+  max-width: 340px;
+  z-index: 10;
+}
+
+/* How to steer, one quiet line at the bottom right, as on the star-system map. */
+.galaxy-map-wrapper #controls {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  max-width: 320px;
+  text-align: right;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.galaxy-map-wrapper #labels-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.galaxy-map-wrapper #territory-controls {
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+}
+
+.galaxy-map-wrapper #territory-controls[hidden],
+.galaxy-map-wrapper #territory-controls [hidden] {
+  display: none;
+}
+
+.galaxy-map-wrapper #territory-world {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 2px 6px;
+}
+
+.galaxy-map-wrapper #territory-world option {
+  background-color: #000000;
+}
+
+.galaxy-map-wrapper #territory-time {
+  width: 220px;
+}
+
+.galaxy-map-wrapper #territory-date {
+  min-width: 150px;
+  white-space: nowrap;
+}
+
+/* Elements galaxy.js injects. */
+.galaxy-map-wrapper .star-label {
+  position: absolute;
+  color: #ffffff;
+  font-size: 11px;
+  font-family: 'Lithos Pro Regular', Arial, sans-serif;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2px 6px;
+  border-radius: 3px;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+/* The Travel panel: only where a
+   page names a planner — an editor; the Trips panel, the stored trips, on
+   every map that has them. */
+.galaxy-map-wrapper .travel-panel {
+  position: absolute;
+  top: 62px;
+  right: 15px;
+  z-index: 100;
+  width: 300px;
+  max-height: calc(100% - 90px);
+  overflow-y: auto;
+  padding: 10px 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font: 13px system-ui, sans-serif;
+}
+.galaxy-map-wrapper .travel-panel[hidden] { display: none; }
+.galaxy-map-wrapper .travel-panel [hidden] { display: none; }
+.galaxy-map-wrapper .travel-panel .travel-row { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 6px; }
+.galaxy-map-wrapper .travel-panel, .galaxy-map-wrapper .travel-panel * { box-sizing: border-box; }
+.galaxy-map-wrapper .travel-panel label { display: flex; flex-direction: column; gap: 2px; flex: 1 1 0; min-width: 0; font-size: 11px; color: #bbb; }
+.galaxy-map-wrapper .travel-panel input { width: 100%; }
+.galaxy-map-wrapper .travel-panel input {
+  background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px;
+  color: #fff; padding: 4px 6px; font-size: 13px; min-width: 0;
+}
+.galaxy-map-wrapper .travel-panel #travel-go {
+  background: #ffd24a; color: #000; border: 0; border-radius: 4px; padding: 5px 12px; cursor: pointer; font-weight: 600;
+}
+.galaxy-map-wrapper #travel-hint { color: #bbb; font-size: 12px; margin: 4px 0 6px; }
+.galaxy-map-wrapper .travel-option {
+  display: block; width: 100%; text-align: left; margin-top: 4px; padding: 6px 8px; cursor: pointer;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 4px;
+  color: #fff; font-size: 13px;
+}
+.galaxy-map-wrapper .travel-option.is-chosen { border-color: #ffd24a; background: rgba(255, 210, 74, 0.12); }
+.galaxy-map-wrapper .travel-option.is-blocked { cursor: default; opacity: 0.6; }
+.galaxy-map-wrapper .travel-via { color: #bbb; font-size: 12px; }
+.galaxy-map-wrapper #toggle-travel-btn[aria-pressed="true"] { border-color: #ffd24a; color: #ffd24a; }
+.galaxy-map-wrapper .travel-panel h4 { margin: 10px 0 2px; font-size: 12px; color: #bbb; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.galaxy-map-wrapper .trip-row { display: flex; gap: 4px; align-items: stretch; }
+.galaxy-map-wrapper .trip-row .travel-option { flex: 1; }
+.galaxy-map-wrapper .trip-delete {
+  margin-top: 4px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 4px;
+  color: #e07a7a; cursor: pointer; padding: 0 8px;
+}
+.galaxy-map-wrapper .trip-late { color: #ff8a7a; }
+.galaxy-map-wrapper .trip-in-time { color: #9be29b; }
+.galaxy-map-wrapper .trip-note { color: #bbb; font-size: 12px; font-style: italic; }
+.galaxy-map-wrapper #trip-keep-go {
+  background: transparent; color: #ffd24a; border: 1px solid #ffd24a; border-radius: 4px; padding: 5px 10px; cursor: pointer;
+}
+.galaxy-map-wrapper #toggle-trips-btn[aria-pressed="true"] { border-color: #ffd24a; color: #ffd24a; }
+/* Buttons and fields do not inherit a font by themselves. */
+.galaxy-map-wrapper button,
+.galaxy-map-wrapper input,
+.galaxy-map-wrapper select { font-family: inherit; }
+.galaxy-map-wrapper .travel-panel input[type="range"] { padding: 0; margin: 4px 0 0; border: none; background: none; accent-color: #ffd24a; }
+.galaxy-map-wrapper #toggle-gates-btn[aria-pressed="true"] { border-color: #7fe0ff; color: #7fe0ff; }
+/* A stored trip's removal, asked in its row. */
+.galaxy-map-wrapper .trip-confirm {
+  margin-top: 4px; padding: 6px 8px; border: 1px solid #e07a7a; border-radius: 4px;
+  background: rgba(224, 122, 122, 0.1); font-size: 12px;
+}
+.galaxy-map-wrapper .trip-confirm-buttons { display: flex; justify-content: flex-end; gap: 6px; margin-top: 6px; }
+.galaxy-map-wrapper .trip-confirm button {
+  background: transparent; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px; color: #fff; padding: 3px 10px; cursor: pointer;
+}
+.galaxy-map-wrapper .trip-confirm .trip-confirm-yes { border-color: #e07a7a; color: #e07a7a; }
+
+/* On a phone: the star's details under the bar, small, scrolled when long. */
+@media (max-width: 600px) {
+  .galaxy-map-wrapper #info { top: 56px; left: 8px; right: 8px; max-width: none; max-height: 32vh;
+    overflow-y: auto; font-size: 12px; padding: 6px 8px; }
+  .galaxy-map-wrapper #controls { left: 8px; right: 8px; max-width: none; }
+}

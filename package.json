@@ -1,0 +1,18 @@
+{
+  "name": "galaxy",
+  "version": "0.1.0",
+  "description": "A fictional galaxy for telling stories in: three linked 3D maps (the galaxy, a star system, a planet's globe) on three.js",
+  "type": "module",
+  "files": [
+    "viewer/"
+  ],
+  "scripts": {
+    "icons": "node tools/icons.mjs"
+  },
+  "peerDependencies": {
+    "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "remixicon": "4.5.0"
+  }
+}

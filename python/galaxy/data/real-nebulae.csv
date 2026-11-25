@@ -1,0 +1,27 @@
+# The real sky's nebulae (galaxy.nebulae.real; docs/plans/2026-11-24-nebulae.md, phase 2).
+# Position and angular size: OpenNGC (github.com/mattiaverga/OpenNGC, CC BY-SA 4.0) where it has them, else
+# SIMBAD or the literature (coords_source); distance: the literature (distance_source). Checked against SIMBAD
+# (its Harvard mirror, mesDistance) 2026-11-25: Carina, the Dumbbell and the Cat's Eye moved to their Gaia
+# distances, the Pipe and Vela to SIMBAD's positions; Orion kept at its VLBA parallax (SIMBAD: 1,412 ly, Gaia dust).
+real,name,kind,ra,dec,ly,major_arcmin,minor_arcmin,coords_source,distance_source
+M42,Orion Nebula,emission,83.81867,-5.38967,1344,90.0,60.0,OpenNGC NGC1976,"Menten et al. 2007, VLBA parallax 414 pc"
+NGC 2024,Flame Nebula,emission,85.42737,-1.85628,1350,30.0,30.0,OpenNGC NGC2024,"Orion B, ~415 pc (Kounkel et al. 2017)"
+B33,Horsehead Nebula,dark,85.24583,-2.45833,1375,6.0,4.0,OpenNGC B033,"Orion B, ~420 pc (literature)"
+NGC 2237,Rosette Nebula,emission,97.72754,5.04917,5200,80.0,50.0,OpenNGC NGC2237,~1.6 kpc (literature)
+M16,Eagle Nebula,emission,274.70071,-13.80722,5700,120.0,25.0,OpenNGC NGC6611,~1.74 kpc (Hillenbrand et al. 1993); confirmed by SIMBAD (2019ApJ...870...32K)
+M8,Lagoon Nebula,emission,270.92196,-24.38017,4100,45.0,30.0,OpenNGC NGC6523,~1.25 kpc (literature); confirmed by SIMBAD (2020A&A...633A..51Z)
+M20,Trifid Nebula,emission,270.67546,-22.97189,4100,28.0,28.0,OpenNGC NGC6514,"~1.25 kpc, Gaia (literature); confirmed by SIMBAD (2019ApJ...870...32K)"
+M17,Omega Nebula,emission,275.19629,-16.17153,5500,12.6,12.6,OpenNGC NGC6618,~1.7 kpc (literature); confirmed by SIMBAD (2019ApJ...870...32K)
+NGC 3372,Carina Nebula,emission,161.28554,-59.86669,8545,120.0,120.0,OpenNGC NGC3372,"~2.6 kpc, Gaia cluster parallaxes (Kuhn et al. 2019, 2019ApJ...870...32K)"
+NGC 7000,North America Nebula,emission,314.82142,44.52878,2590,120.0,30.0,OpenNGC NGC7000,"~795 pc, Gaia (Kuhn et al. 2020); confirmed by SIMBAD (2020A&A...633A..51Z)"
+NGC 1499,California Nebula,emission,60.81008,36.36747,1000,160.0,40.0,OpenNGC NGC1499,~300 pc (literature)
+NGC 1435,Merope Nebula,reflection,56.54204,23.76497,444,30.0,30.0,OpenNGC NGC1435,"Pleiades, 136 pc (Gaia, literature)"
+C99,Coalsack Nebula,dark,187.82917,-63.74333,600,420,300,"OpenNGC C099, extent from the literature",~180 pc (literature); confirmed by SIMBAD (2020A&A...633A..51Z)
+M1,Crab Nebula,remnant,83.63321,22.01447,6500,8.0,4.0,OpenNGC NGC1952,~2.0 kpc (Trimble 1973); confirmed by SIMBAD (1973PASP...85..579T)
+NGC 6960,Veil Nebula,remnant,311.49242,30.59514,2400,210.0,160.0,OpenNGC NGC6960,"Cygnus Loop, ~735 pc, Gaia (Fesen et al. 2018)"
+M57,Ring Nebula,planetary,283.39587,33.02858,2570,1.27,1.27,OpenNGC NGC6720,"~787 pc, Gaia DR2 (literature); confirmed by SIMBAD (2020yCat.1350....0G)"
+NGC 7293,Helix Nebula,planetary,337.41071,-20.83733,655,16.33,16.33,OpenNGC NGC7293,"~200 pc, Gaia (literature); confirmed by SIMBAD (2020yCat.1350....0G)"
+M27,Dumbbell Nebula,planetary,299.90158,22.72103,1269,6.7,6.7,OpenNGC NGC6853,"~389 pc, Gaia EDR3 parallax of the central star (2020yCat.1350....0G)"
+NGC 6543,Cat's Eye Nebula,planetary,269.63912,66.63319,4455,0.9,0.9,OpenNGC NGC6543,"~1.37 kpc, Gaia EDR3 parallax of the central star (2020yCat.1350....0G)"
+B59/B78,Pipe Nebula,dark,262.5,-25.0,450,420,60,SIMBAD (NAME the Pipe Nebula); extent from the literature,~140 pc (Alves et al. 2007)
+Gum 16,Vela Supernova Remnant,remnant,128.5,-45.83333,815,480,480,SIMBAD (NAME Vela); extent from the literature,~250 pc (Cha et al. 1999)

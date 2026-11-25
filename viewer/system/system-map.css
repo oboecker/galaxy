@@ -1,0 +1,289 @@
+/* The star-system map's styles (system-map.js), shared by every page that
+   shows the map: a site's and an editor's. */
+
+.system-map {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  font: 13px/1.4 system-ui, sans-serif;
+  user-select: none;
+}
+.system-map .sm-canvas,
+.system-map .sm-labels { position: absolute; inset: 0; }
+/* Its own stacking context: the label renderer numbers each label's
+   z-index by depth, up to the count of labels, which put names over the
+   trip panel and the toolbar. */
+.system-map .sm-labels { z-index: 1; }
+.system-map .sm-canvas canvas { display: block; }
+.system-map .sm-label,
+.system-map .sm-zone-label,
+.system-map .sm-poi-label,
+.system-map .sm-lagrange-label {
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+/* A body's name selects it, as its dot does. */
+.system-map .sm-label,
+.system-map .sm-poi-label { pointer-events: auto; cursor: pointer; }
+.system-map .sm-label { color: #fff; text-shadow: 0 0 3px #000; }
+.system-map .sm-label.is-selected { color: #ffd24a; font-weight: 600; }
+.system-map .sm-zone-label { color: rgba(160, 220, 255, 0.55); font-size: 10px; }
+.system-map .sm-poi-label { color: #ffd24a; font-size: 10px; }
+.system-map .sm-lagrange-label { color: #8fe3ff; font-size: 10px; }
+.system-map .sm-info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  max-width: 340px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  pointer-events: none;     /* nothing to click in it: clicks reach the map under it */
+}
+.system-map .sm-muted { color: rgba(255, 255, 255, 0.5); font-size: 11px; }
+.system-map .sm-time {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 2;
+}
+.system-map .sm-time button,
+.system-map .sm-time select,
+.system-map .sm-time input {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font: inherit;
+}
+.system-map .sm-time select option { background: #000; }
+/* The clock's speed, said to be time's and not a drive's. */
+.system-map .sm-speed-label { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #bbb; white-space: nowrap; }
+.system-map .sm-time button { white-space: nowrap; }
+.system-map .sm-time input { width: 13em; }
+.system-map .sm-time input.is-invalid { border-color: #e05a5a; }
+/* Why a date was not taken, over the time bar. */
+.system-map .sm-time-why {
+  position: absolute;
+  left: 50%;
+  bottom: 54px;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ff8a7a;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 2;
+}
+.system-map .sm-hint {
+  position: absolute;
+  right: 10px;
+  bottom: 56px;
+  max-width: 320px;
+  text-align: right;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* The toolbar and the trip panels,
+   as the galaxy map's (galaxy-map.css: .icon-button, .travel-panel): round
+   buttons at the top right, the panel under them; gold marks what is
+   chosen; the routes keep their own colours. */
+.system-map .sm-tools {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+.system-map .sm-tool {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.system-map .sm-tool[hidden] { display: none; }
+/* Icons (space/icons.js): 18px on a round tool, as on .space-tool. */
+.system-map .sm-tool .ic { width: 18px; height: 18px; }
+.system-map .sm-play { display: inline-flex; align-items: center; justify-content: center; }
+.system-map .sm-tool:hover { background: rgba(0, 0, 0, 0.85); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 0 10px rgba(100, 149, 237, 0.5); }
+.system-map .sm-tool:active { transform: scale(0.95); }
+.system-map .sm-tool[aria-pressed="true"] { border-color: #ffd24a; color: #ffd24a; }
+.system-map .sm-gates-toggle[aria-pressed="true"] { border-color: #7fe0ff; color: #7fe0ff; }
+.system-map .sm-trip {
+  position: absolute;
+  top: 62px;
+  right: 15px;
+  width: 340px;
+  max-height: calc(100% - 140px);
+  overflow-y: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 3;
+}
+.system-map .sm-trip, .system-map .sm-trip * { box-sizing: border-box; }
+.system-map .sm-trip[hidden], .system-map .sm-trip [hidden] { display: none; }
+.system-map .sm-trip h4 {
+  margin: 10px 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.system-map .sm-trip h4:first-child { margin-top: 0; }
+/* One grid for the panel's fields (columns, fields and
+   buttons aligned): two equal columns, a label over its field; a button in
+   the second column, as wide as the field above it, level with the field
+   beside it. */
+.system-map .sm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 10px;
+  align-items: end;
+  margin-bottom: 6px;
+}
+.system-map .sm-grid .sm-wide { grid-column: 1 / -1; }
+.system-map .sm-grid .sm-col2 { grid-column: 2; }
+.system-map .sm-action { display: flex; }
+.system-map .sm-action > button { flex: 1; }
+.system-map .sm-trip label {
+  display: flex; flex-direction: column; gap: 3px; min-width: 0;
+  font-size: 11px; color: #bbb;
+}
+.system-map .sm-field-note { color: #bbb; font-size: 12px; }
+.system-map .sm-field-why { color: #ff8a7a; font-size: 12px; }
+.system-map .sm-trip select,
+.system-map .sm-trip input[type="text"] {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font: 13px system-ui, sans-serif;
+}
+.system-map .sm-trip select option { background: #000; }
+.system-map .sm-trip input[type="range"] { width: 100%; margin: 4px 0 0; accent-color: #ffd24a; }
+.system-map .sm-primary {
+  background: #ffd24a; color: #000; border: 0; border-radius: 4px; padding: 5px 12px;
+  cursor: pointer; font: 600 13px system-ui, sans-serif;
+}
+.system-map .sm-secondary {
+  background: transparent; color: #ffd24a; border: 1px solid #ffd24a; border-radius: 4px; padding: 5px 10px;
+  cursor: pointer; font: 13px system-ui, sans-serif;
+}
+.system-map .sm-note { color: #bbb; font-size: 12px; margin: 4px 0 6px; }
+.system-map .sm-trip-slow { color: #ffd24a; }
+.system-map .sm-trip .sm-muted { color: #bbb; font-size: 12px; }
+.system-map .sm-trip-option {
+  display: block; width: 100%; margin-top: 4px; padding: 6px 8px; text-align: left; cursor: pointer;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 4px;
+  color: #fff; font: 13px system-ui, sans-serif;
+}
+/* A way in three columns — name, how long, arrival — under a head naming
+   them; the stops and distance on a line of their own. */
+.system-map .sm-way-head,
+.system-map .sm-trip-results .sm-trip-option {
+  display: grid;
+  grid-template-columns: 1fr 4.5em 8.5em;
+  column-gap: 8px;
+}
+.system-map .sm-way-head { padding: 6px 9px 0; font-size: 11px; color: #bbb; }
+.system-map .sm-way-head[hidden] { display: none; }
+.system-map .sm-way-head span:not(:first-child),
+.system-map .sm-way-days,
+.system-map .sm-way-arrival { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.system-map .sm-way-name { font-weight: 600; }
+.system-map .sm-way-how { grid-column: 1 / -1; color: #bbb; font-size: 12px; }
+.system-map .sm-danger {
+  background: #c0392b; color: #fff; border: 0; border-radius: 4px; padding: 5px 10px;
+  cursor: pointer; font: 600 13px system-ui, sans-serif;
+}
+/* Removing a stored trip asks first, in its row. */
+.system-map .sm-confirm {
+  margin-top: 4px; padding: 6px 8px; border: 1px solid #e07a7a; border-radius: 4px;
+  background: rgba(224, 122, 122, 0.1); font-size: 12px;
+}
+.system-map .sm-confirm-buttons { display: flex; justify-content: flex-end; gap: 6px; margin-top: 6px; }
+.system-map .sm-trip-option.is-chosen { border-color: #ffd24a; background: rgba(255, 210, 74, 0.12); }
+/* A press and release always land on the row itself, whatever its text
+   becomes in between. */
+.system-map .sm-trip-option * { pointer-events: none; }
+.system-map .sm-stored-row { display: flex; gap: 4px; align-items: stretch; }
+.system-map .sm-stored-row .sm-trip-option { flex: 1; }
+.system-map .sm-trip-delete {
+  margin-top: 4px; width: 32px; padding: 0; cursor: pointer;
+  background: transparent; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 4px; color: #e07a7a;
+}
+.system-map .sm-in-time { color: #9be29b; }
+.system-map .sm-late { color: #ff8a7a; }
+
+.system-map .sm-meeting { position: relative; pointer-events: none; }
+.system-map .sm-meeting-ring {
+  display: block;
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border: 2px solid var(--colour);
+  border-radius: 50%;
+}
+.system-map .sm-meeting-label {
+  position: absolute;
+  left: 14px;
+  top: -2px;
+  font-size: 10px;
+  white-space: nowrap;
+  color: var(--colour);
+  text-shadow: 0 0 3px #000;
+}
+.system-map .sm-ship { pointer-events: none; }
+.system-map .sm-ship .sm-meeting-ring {
+  width: 8px;
+  height: 8px;
+  border: none;
+  background: var(--colour);
+  box-shadow: 0 0 6px var(--colour);
+}
+.system-map .sm-trip input.is-invalid { border-color: #e05a5a; }
+
+/* On a phone: the body's details under the bar, small, scrolled when long
+   (so it takes touches); the round tools under the bar at the right; the
+   time bar across the bottom. */
+@media (max-width: 600px) {
+  .system-map .sm-info { top: 56px; left: 8px; right: 56px; max-width: none; max-height: 32vh;
+    overflow-y: auto; font-size: 12px; padding: 6px 8px; pointer-events: auto; }
+  .system-map .sm-tools { top: 56px; right: 8px; flex-direction: column; }
+  .system-map .sm-time { left: 8px; right: 8px; bottom: 8px; transform: none; gap: 6px; padding: 5px 8px; }
+  .system-map .sm-speed-word { display: none; }
+  .system-map .sm-time input { width: auto; flex: 1 1 auto; min-width: 0; }
+  .system-map .sm-time-why { bottom: 50px; white-space: normal; max-width: calc(100% - 16px); }
+  .system-map .sm-hint { left: 8px; right: 8px; bottom: 50px; max-width: none; }
+}

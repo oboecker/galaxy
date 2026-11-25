@@ -1,0 +1,131 @@
+/* What every 3D map shares:
+   the bar at the top in the middle — the search, its results under it, the
+   map's round buttons beside it. Within the map's own box: each map's
+   container is position: relative. */
+
+.space-bar {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  font: 13px/1.4 system-ui, sans-serif;
+}
+.space-search-wrap { position: relative; }
+/* Two classes: over a host page's own input styles. */
+.space-bar .space-search-box {
+  box-sizing: border-box;
+  width: 280px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  user-select: text;
+  transition: all 0.3s ease;
+}
+.space-bar .space-search-box:focus {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
+}
+.space-bar .space-search-box::placeholder { color: rgba(255, 255, 255, 0.5); }
+.space-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 101;
+}
+.space-search-results[hidden] { display: none; }
+.space-search-item {
+  padding: 8px 16px;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+.space-search-item:last-child { border-bottom: none; }
+.space-search-item:hover { background: rgba(100, 149, 237, 0.3); }
+.space-search-name { font-weight: 600; margin-bottom: 2px; }
+.space-search-details { font-size: 11px; color: rgba(255, 255, 255, 0.7); }
+
+/* A round button on a map: in the bar, or in a map's own toolbar. */
+.space-tool {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.space-tool[hidden] { display: none; }
+.space-tool:hover { background: rgba(0, 0, 0, 0.85); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 0 10px rgba(100, 149, 237, 0.5); }
+.space-tool:active { transform: scale(0.95); }
+.space-tool[aria-pressed="true"] { border-color: #ffd24a; color: #ffd24a; }
+/* Icons (Remix Icon, space/icons.js):
+   18px on a map tool, in its colour; 1em elsewhere. */
+.space-tool .ic { width: 18px; height: 18px; }
+.ic { width: 1em; height: 1em; flex: none; vertical-align: -0.15em; fill: currentColor; }
+
+/* Between the maps: out of a map, at the left of its bar; on
+   into the next, a link in a map's info box. Two classes: over a page's own
+   link style (a site theme's, say). */
+.space-bar .space-back {
+  padding: 7px 14px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.space-bar .space-back:hover { background: rgba(0, 0, 0, 0.85); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 0 10px rgba(100, 149, 237, 0.5); }
+:is(.system-map, .galaxy-map-wrapper) .space-link {
+  display: inline-block;
+  margin: 4px 0 2px;
+  color: #ffd24a;
+  font-weight: 600;
+  text-decoration: none;
+  pointer-events: auto;                 /* in an info box that lets clicks through to the map */
+}
+:is(.system-map, .galaxy-map-wrapper) .space-link:hover { text-decoration: underline; }
+
+/* On a phone: the bar across the
+   top, the search taking what the buttons leave. */
+@media (max-width: 600px) {
+  /* An info box folded to its first two lines, ▾ to unfold it (pointer.js,
+     foldable). */
+  .space-fold { pointer-events: auto; cursor: pointer; padding-right: 22px !important; line-height: 1.3; }
+  .space-fold:not(.is-open) { max-height: 2.6em !important; padding-bottom: 0 !important; overflow: hidden !important; }
+  .space-fold::after { content: '▾'; position: absolute; top: 5px; right: 8px; opacity: 0.7; }
+  .space-fold.is-open::after { content: '▴'; }
+  .space-bar { top: 8px; left: 8px; right: 8px; transform: none; gap: 4px; }
+  /* Smaller round tools: up to seven share the bar with the search. */
+  .space-bar .space-tool { width: 32px; height: 32px; }
+  .space-search-wrap { flex: 1 1 auto; min-width: 0; }
+  .space-bar .space-search-box { width: 100%; }
+  .space-bar .space-tool, .space-bar .space-back { flex: none; }
+  .space-bar .space-back { padding: 7px 10px; }
+}

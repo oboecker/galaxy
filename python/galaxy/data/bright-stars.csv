@@ -1,0 +1,292 @@
+# The bright stars (galaxy.brightstars): HYG catalogue v1, astronexus.com, CC BY-SA.
+system,star,designation,hip,ra,dec,ly,mag,spectral_class
+Sirius,Sirius,Alpha Canis Majoris,32349,101.28854,-16.71314,8.6,-1.44,A0
+Canopus,Canopus,Alpha Carinae,30438,95.98788,-52.69572,312.71,-0.62,F0Ib
+Arcturus,Arcturus,Alpha Boötis,69673,213.91811,19.18727,36.71,-0.05,K2III
+Alpha Centauri,Rigil Kentaurus,Alpha¹ Centauri,71683,219.92041,-60.83515,4.39,-0.01,G2V
+Vega,Vega,Alpha Lyrae,91262,279.23411,38.78299,25.3,0.03,A0V
+Capella,Capella,Alpha Aurigae,24608,79.17207,45.99903,42.2,0.08,G8III
+Rigel,Rigel,Beta Orionis,24436,78.63446,-8.20164,772.88,0.18,B8Ia
+Procyon,Procyon,Alpha Canis Minoris,37279,114.82724,5.22751,11.41,0.4,F5IV
+Achernar,Achernar,Alpha Eridani,7588,24.42813,-57.23666,143.81,0.45,B3V
+Betelgeuse,Betelgeuse,Alpha Orionis,27989,88.79287,7.40704,427.47,0.45,M2Ib
+Hadar,Hadar,Beta Centauri,68702,210.95602,-60.37298,525.21,0.61,B1III
+Altair,Altair,Alpha Aquilae,97649,297.69451,8.86738,16.77,0.76,A7IV
+Acrux,Acrux,Alpha¹ Crucis,60718,186.64976,-63.09906,320.7,0.77,B0.5IV
+Aldebaran,Aldebaran,Alpha Tauri,21421,68.98,16.50976,65.11,0.87,K5III
+Capella,Capella B,,,79.16777,46.00671,42.2,0.96,G0
+Spica,Spica,Alpha Virginis,65474,201.29835,-11.16124,262.18,0.98,B1V
+Antares,Antares,Alpha Scorpii,80763,247.35195,-26.43195,603.99,1.06,M1Ib
+Pollux,Pollux,Beta Geminorum,37826,116.33068,28.02631,33.71,1.16,K0III
+Fomalhaut,Fomalhaut,Alpha Piscis Austrini,113368,344.41177,-29.62184,25.07,1.17,A3V
+Beta Crucis,Beta Crucis,Beta Crucis,62434,191.9305,-59.68873,352.6,1.25,B0.5III
+Deneb,Deneb,Alpha Cygni,102098,310.35797,45.28033,3229.27,1.25,A2Ia
+Alpha Centauri,Toliman,Alpha² Centauri,71681,219.91413,-60.83947,4.39,1.35,K1V
+Regulus,Regulus,Alpha Leonis,49669,152.09358,11.9672,77.49,1.36,B7V
+Adhara,Adhara,Epsilon Canis Majoris,33579,104.65644,-28.97209,430.85,1.5,B2II
+Castor,Castor,Alpha Geminorum,36850,113.65002,31.88864,51.55,1.58,A2V
+Gamma Crucis,Gamma Crucis,Gamma Crucis,61084,187.79137,-57.11257,87.94,1.59,M4III
+Shaula,Shaula,Lambda Scorpii,85927,263.40219,-37.10375,702.92,1.62,B1.5IV
+Bellatrix,Bellatrix,Gamma Orionis,25336,81.28278,6.34973,243.04,1.64,B2III
+Alnath,Alnath,Beta Tauri,25428,81.57291,28.60787,131.04,1.65,B7III
+Beta Carinae,Beta Carinae,Beta Carinae,45238,138.301,-69.71747,111.16,1.67,A2IV
+Alnilam,Alnilam,Epsilon Orionis,26311,84.05339,-1.20192,1342.21,1.69,B0Ia
+Alnair,Alnair,Alpha Gruis,109268,332.05782,-46.96062,101.42,1.73,B7IV
+Alnitak,Alnitak,Zeta Orionis,26727,85.18969,-1.94258,817.43,1.74,O9.5Ib
+Gamma² Velorum,Gamma² Velorum,Gamma² Velorum,39953,122.38315,-47.33661,840.61,1.75,O9I
+Alioth,Alioth,Epsilon Ursae Majoris,62956,193.5068,55.95984,80.93,1.76,A0
+Mirphak,Mirphak,Alpha Persei,15863,51.08062,49.86124,591.93,1.79,F5Ib
+Kaus Australis,Kaus Australis,Epsilon Sagittarii,90185,276.04311,-34.38431,144.64,1.79,B9.5III
+Dubhe,Dubhe,Alpha Ursae Majoris,54061,165.93265,61.75112,123.64,1.81,F7V
+Delta Canis Majoris,Delta Canis Majoris,Delta Canis Majoris,34444,107.09786,-26.39321,1792.07,1.83,F8Ia
+Alkaid,Alkaid,Eta Ursae Majoris,67301,206.88561,49.3133,100.7,1.85,B3V
+Epsilon Carinae,Epsilon Carinae,Epsilon Carinae,41037,125.6286,-59.50954,632.09,1.86,K3III
+Theta Scorpii,Theta Scorpii,Theta Scorpii,86228,264.32969,-42.99782,272.02,1.86,F1II
+Beta Aurigae,Beta Aurigae,Beta Aurigae,28360,89.88237,44.94743,82.11,1.9,A2V
+Alpha Trianguli Australis,Alpha Trianguli Australis,Alpha Trianguli Australis,82273,252.16611,-69.02764,415.49,1.91,K2II
+Alhena,Alhena,Gamma Geminorum,31681,99.42793,16.39941,104.81,1.93,A0IV
+Delta Velorum,Delta Velorum,Delta Velorum,42913,131.17582,-54.70857,79.74,1.93,A1V
+Alpha Pavonis,Alpha Pavonis,Alpha Pavonis,100751,306.41187,-56.73488,183.23,1.94,B2IV
+Polaris,Polaris,Alpha Ursae Minoris,11767,37.94615,89.26414,431.42,1.97,F7Ib
+Beta Canis Majoris,Beta Canis Majoris,Beta Canis Majoris,30324,95.67495,-17.95592,499.47,1.98,B1II
+Alphard,Alphard,Alpha Hydrae,46390,141.89688,-8.65868,177.26,1.99,K3III
+Hamal,Hamal,Alpha Arietis,9884,31.79286,23.46278,65.92,2.01,K2III
+Algieba,Algieba,Gamma¹ Leonis,50583,154.99234,19.84186,125.64,2.01,K0III
+Diphda,Diphda,Beta Ceti,3419,10.89678,-17.98668,95.82,2.04,K0III
+Nunki,Nunki,Sigma Sagittarii,92855,283.81632,-26.29659,224.32,2.05,B2.5V
+Theta Centauri,Theta Centauri,Theta Centauri,68933,211.67219,-36.3687,60.94,2.06,K0III
+Alpheratz,Alpheratz,Alpha Andromedae,677,2.09653,29.09083,97.07,2.07,B9
+Mirach,Mirach,Beta Andromedae,5447,17.43249,35.62083,199.36,2.07,M0III
+Saiph,Saiph,Kappa Orionis,27366,86.93912,-9.6696,721.58,2.07,B0.5Ia
+Kochab,Kochab,Beta Ursae Minoris,72607,222.67665,74.15548,126.47,2.07,K4III
+Beta Gruis,Beta Gruis,Beta Gruis,112122,340.6664,-46.88457,170.14,2.07,M5III
+Rasalhague,Rasalhague,Alpha Ophiuchi,86032,263.73335,12.56058,46.7,2.08,A5III
+Algol,Algol,Beta Persei,14576,47.04221,40.95565,92.82,2.09,B8V
+Gamma¹ Andromedae,Gamma¹ Andromedae,Gamma¹ Andromedae,9640,30.97466,42.32985,354.9,2.1,B8V
+Denebola,Denebola,Beta Leonis,57632,177.26616,14.57234,36.18,2.14,A3V
+Gamma Cassiopeiae,Gamma Cassiopeiae,Gamma Cassiopeiae,4427,14.17709,60.71675,613.08,2.15,B0IV
+Gamma Centauri,Gamma Centauri,Gamma Centauri,61932,190.38002,-48.95989,130.41,2.2,A1IV
+Zeta Puppis,Zeta Puppis,Zeta Puppis,39429,120.89613,-40.00319,1399.81,2.21,O5I
+Iota Carinae,Iota Carinae,Iota Carinae,45556,139.27262,-59.27526,692.48,2.21,A8Ib
+Alphekka,Alphekka,Alpha Coronae Borealis,76267,233.67162,26.71491,74.72,2.22,A0V
+Lambda Velorum,Lambda Velorum,Lambda Velorum,44816,136.99907,-43.43262,573.21,2.23,K4Ib
+Mizar,Mizar,Zeta Ursae Majoris,65378,200.98092,54.92542,78.16,2.23,A2V
+Gamma Cygni,Gamma Cygni,Gamma Cygni,100453,305.55708,40.25668,1524.09,2.23,F8Ib
+Shedir,Shedir,Alpha Cassiopeiae,3179,10.12661,56.53741,228.56,2.24,K0II
+Etamin,Etamin,Gamma Draconis,87833,269.15157,51.48895,147.58,2.24,K5III
+Delta Orionis,Delta Orionis,Delta Orionis,25930,83.00167,-0.29909,916.17,2.25,O9.5II
+Caph,Caph,Beta Cassiopeiae,746,2.29204,59.15022,54.46,2.28,F2III
+Epsilon Centauri,Epsilon Centauri,Epsilon Centauri,66657,204.97197,-53.46636,375.76,2.29,B1III
+Delta Scorpii,Delta Scorpii,Delta Scorpii,78401,240.08338,-22.62162,401.67,2.29,B0.2IV
+Epsilon Scorpii,Epsilon Scorpii,Epsilon Scorpii,82396,252.54269,-34.29261,65.43,2.29,K2III
+Alpha Lupi,Alpha Lupi,Alpha Lupi,71860,220.48239,-47.38814,548.16,2.3,B1.5III
+Eta Centauri,Eta Centauri,Eta Centauri,71352,218.87688,-42.15775,308.57,2.33,B1V
+Merak,Merak,Beta Ursae Majoris,53910,165.45996,56.38234,79.41,2.34,A1V
+Izar,Izar,Epsilon Boötis,72105,221.24688,27.07417,209.75,2.35,A0
+Enif,Enif,Epsilon Pegasi,107315,326.04642,9.87501,672.49,2.38,K2Ib
+Kappa Scorpii,Kappa Scorpii,Kappa Scorpii,86670,265.622,-39.02992,463.95,2.39,B1.5III
+Ankaa,Ankaa,Alpha Phoenicis,2081,6.57028,-42.30512,77.4,2.4,K0III
+Phad,Phad,Gamma Ursae Majoris,58001,178.45726,53.69473,83.65,2.41,A0V
+Eta Ophiuchi,Eta Ophiuchi,Eta Ophiuchi,84012,257.59443,-15.72515,84.13,2.43,A2.5V
+Scheat,Scheat,Beta Pegasi,113881,345.94306,28.08245,199.24,2.44,M2II
+Eta Canis Majoris,Eta Canis Majoris,Eta Canis Majoris,35904,111.02377,-29.30312,3197.61,2.45,B5Ia
+Alderamin,Alderamin,Alpha Cephei,105199,319.64409,62.58546,48.8,2.45,A7IV
+Kappa Velorum,Kappa Velorum,Kappa Velorum,45941,140.52846,-55.0107,539.1,2.47,B2IV
+Epsilon Cygni,Epsilon Cygni,Epsilon Cygni,102488,311.5518,33.96945,72.06,2.48,K0III
+Markab,Markab,Alpha Pegasi,113963,346.19007,15.20537,139.62,2.49,B9.5III
+Menkar,Menkar,Alpha Ceti,14135,45.56991,4.08993,220.08,2.54,M2III
+Zeta Ophiuchi,Zeta Ophiuchi,Zeta Ophiuchi,81377,249.28971,-10.56715,458.08,2.54,O9.5V
+Zeta Centauri,Zeta Centauri,Zeta Centauri,68002,208.88515,-47.28827,384.62,2.55,B2.5IV
+Delta Leonis,Delta Leonis,Delta Leonis,54872,168.52672,20.52403,57.71,2.56,A4V
+Beta¹ Scorpii,Beta¹ Scorpii,Beta¹ Scorpii,78820,241.35931,-19.80539,530.33,2.56,B0.5V
+Arneb,Arneb,Alpha Leporis,25985,83.18256,-17.82229,1284.08,2.58,F0Ib
+Delta Centauri,Delta Centauri,Delta Centauri,59196,182.08977,-50.72241,395.34,2.58,B2IV
+Gamma Corvi,Gamma Corvi,Gamma Corvi,59803,183.95195,-17.54198,164.89,2.58,B8III
+Zeta Sagittarii,Zeta Sagittarii,Zeta Sagittarii,93506,285.65301,-29.88011,89.09,2.6,A3IV
+Beta Librae,Beta Librae,Beta Librae,74785,229.25197,-9.38287,160.04,2.61,B8V
+Unukalhai,Unukalhai,Alpha Serpentis,77070,236.06665,6.42552,73.23,2.63,K2III
+Beta Arietis,Beta Arietis,Beta Arietis,8903,28.65979,20.8083,59.58,2.64,A5V
+Alpha Columbae,Alpha Columbae,Alpha Columbae,26634,84.91225,-34.07405,268.22,2.65,B7IV
+Theta Aurigae,Theta Aurigae,Theta Aurigae,28380,89.93016,37.21276,173.21,2.65,A0
+Beta Corvi,Beta Corvi,Beta Corvi,61359,188.59681,-23.39662,139.74,2.65,G5II
+Delta Cassiopeiae,Delta Cassiopeiae,Delta Cassiopeiae,6686,21.45251,60.2354,99.41,2.66,A5V
+Eta Boötis,Eta Boötis,Eta Boötis,67927,208.67132,18.39859,36.99,2.68,G0IV
+Beta Lupi,Beta Lupi,Beta Lupi,73273,224.63314,-43.13387,523.52,2.68,B2III
+Iota Aurigae,Iota Aurigae,Iota Aurigae,23015,74.2484,33.16614,512.02,2.69,K3II
+Mu Velorum,Mu Velorum,Mu Velorum,52727,161.69218,-49.42013,115.74,2.69,G5III
+Alpha Muscae,Alpha Muscae,Alpha Muscae,61585,189.29618,-69.13553,305.68,2.69,B2IV
+Upsilon Scorpii,Upsilon Scorpii,Upsilon Scorpii,85696,262.69099,-37.29574,518.53,2.7,B2IV
+Pi Puppis,Pi Puppis,Pi Puppis,35264,109.28568,-37.09749,1094.48,2.71,K3Ib
+Delta Sagittarii,Delta Sagittarii,Delta Sagittarii,89931,275.24842,-29.82804,305.68,2.72,K3III
+Tarazed,Tarazed,Gamma Aquilae,97278,296.56488,10.61327,460.67,2.72,K3II
+Delta Ophiuchi,Delta Ophiuchi,Delta Ophiuchi,79593,243.58653,-3.69398,170.23,2.73,M1III
+Eta Draconis,Eta Draconis,Eta Draconis,80331,245.99795,61.51408,87.72,2.73,G8III
+Theta Carinae,Theta Carinae,Theta Carinae,52419,160.73928,-64.39448,438.97,2.74,B0V
+Gamma Virginis,Gamma Virginis,Gamma Virginis,61941,190.41668,-1.44952,38.58,2.74,F0V
+Iota Orionis,Iota Orionis,Iota Orionis,26241,83.85825,-5.9099,1325.84,2.75,O9III
+Iota Centauri,Iota Centauri,Iota Centauri,65109,200.15027,-36.71208,58.62,2.75,A2V
+Alpha² Librae,Alpha² Librae,Alpha² Librae,72622,222.71991,-16.04161,77.2,2.75,A3IV
+Beta Ophiuchi,Beta Ophiuchi,Beta Ophiuchi,86742,265.86824,4.56692,81.99,2.76,K2III
+Beta Eridani,Beta Eridani,Beta Eridani,23875,76.96264,-5.08626,88.85,2.78,A3III
+Beta Herculis,Beta Herculis,Beta Herculis,80816,247.55526,21.48965,147.78,2.78,G8III
+Rasalgethi,Rasalgethi,Alpha¹ Herculis,84345,258.66193,14.39025,382.36,2.78,M5II
+Delta Crucis,Delta Crucis,Delta Crucis,59747,183.78649,-58.7489,364.01,2.79,B2IV
+Beta Draconis,Beta Draconis,Beta Draconis,85670,262.60824,52.30136,361.59,2.79,G2II
+Gamma Lupi,Gamma Lupi,Gamma Lupi,76297,233.78525,-41.16669,567.23,2.8,B2IV
+Nihal,Nihal,Beta Leporis,25606,82.06136,-20.75923,159.18,2.81,G5II
+Zeta Herculis,Zeta Herculis,Zeta Herculis,81693,250.32282,31.60189,35.21,2.81,F9IV
+Beta Hydri,Beta Hydri,Beta Hydri,2021,6.41334,-77.25504,24.38,2.82,G2IV
+Tau Scorpii,Tau Scorpii,Tau Scorpii,81266,248.97066,-28.21596,429.72,2.82,B0V
+Lambda Sagittarii,Lambda Sagittarii,Lambda Sagittarii,90496,276.99279,-25.42125,77.29,2.82,K1III
+Algenib,Algenib,Gamma Pegasi,1067,3.30896,15.18362,333.15,2.83,B2IV
+Rho Puppis,Rho Puppis,Rho Puppis,39757,121.88626,-24.30444,62.73,2.83,F2
+Beta Trianguli Australis,Beta Trianguli Australis,Beta Trianguli Australis,77952,238.7867,-63.42975,40.15,2.83,F2III
+Zeta Persei,Zeta Persei,Zeta Persei,18246,58.53299,31.88366,982.4,2.84,B1Ib
+Beta Arae,Beta Arae,Beta Arae,85258,261.32499,-55.52982,602.88,2.84,K3Ib
+Alpha Arae,Alpha Arae,Alpha Arae,85792,262.96051,-49.87598,242.32,2.84,B2V
+Alcyone,Alcyone,Eta Tauri,17702,56.8711,24.10524,367.71,2.85,B7III
+Vindemiatrix,Vindemiatrix,Epsilon Virginis,63608,195.54484,10.9591,102.24,2.85,G8III
+Delta Capricorni,Delta Capricorni,Delta Capricorni,107556,326.75952,-16.12657,38.56,2.85,A5
+Alpha Hydri,Alpha Hydri,Alpha Hydri,9236,29.69113,-61.56992,71.31,2.86,F0V
+Delta Cygni,Delta Cygni,Delta Cygni,97165,296.24351,45.13069,171.03,2.86,B9.5III
+Mu Geminorum,Mu Geminorum,Mu Geminorum,30343,95.73996,22.51385,231.81,2.87,M3III
+Gamma Trianguli Australis,Gamma Trianguli Australis,Gamma Trianguli Australis,74946,229.72787,-68.67947,182.72,2.87,A1V
+Alpha Tucanae,Alpha Tucanae,Alpha Tucanae,110130,334.62574,-60.25949,198.63,2.87,K3III
+Theta¹ Eridani,Theta¹ Eridani,Theta¹ Eridani,13847,44.56548,-40.30473,161.3,2.88,A4III
+Pi Sagittarii,Pi Sagittarii,Pi Sagittarii,94141,287.44097,-21.02353,440.16,2.88,F2II
+Beta Canis Minoris,Beta Canis Minoris,Beta Canis Minoris,36188,111.7878,8.28941,170.23,2.89,B8V
+Alpha² Canum Venaticorum,Alpha² Canum Venaticorum,Alpha² Canum Venaticorum,63125,194.00767,38.31825,110.19,2.89,A0
+Pi Scorpii,Pi Scorpii,Pi Scorpii,78265,239.713,-26.11404,459.37,2.89,B1V
+Epsilon Persei,Epsilon Persei,Epsilon Persei,18532,59.46342,40.01027,538.21,2.9,B0.5V
+Sigma Scorpii,Sigma Scorpii,Sigma Scorpii,80112,245.29718,-25.59275,734.59,2.9,B1III
+Beta Aquarii,Beta Aquarii,Beta Aquarii,106278,322.88967,-5.57116,611.92,2.9,G0Ib
+Gamma Persei,Gamma Persei,Gamma Persei,14328,46.19913,53.50645,256.41,2.91,G8III
+Upsilon Carinae,Upsilon Carinae,Upsilon Carinae,48002,146.77557,-65.07202,1622.67,2.92,A9
+Eta Pegasi,Eta Pegasi,Eta Pegasi,112158,340.75054,30.22131,214.86,2.93,G2II
+Tau Puppis,Tau Puppis,Tau Puppis,32768,102.4839,-50.6144,182.72,2.94,K0III
+Delta Corvi,Delta Corvi,Delta Corvi,60965,187.4666,-16.51509,87.89,2.94,B9.5V
+Alpha Aquarii,Alpha Aquarii,Alpha Aquarii,109074,331.44594,-0.31983,758.5,2.95,G2Ib
+Gamma Eridani,Gamma Eridani,Gamma Eridani,18543,59.50721,-13.50824,221.12,2.97,M1III
+Zeta Tauri,Zeta Tauri,Zeta Tauri,26451,84.41118,21.14259,417.08,2.97,B4III
+Epsilon Leonis,Epsilon Leonis,Epsilon Leonis,47908,146.46293,23.77428,250.7,2.97,G0II
+Gamma² Sagittarii,Gamma² Sagittarii,Gamma² Sagittarii,88635,271.45219,-30.42365,96.1,2.98,K0III
+Gamma Hydrae,Gamma Hydrae,Gamma Hydrae,64962,199.73022,-23.17141,132.1,2.99,G8III
+Iota¹ Scorpii,Iota¹ Scorpii,Iota¹ Scorpii,87073,266.89617,-40.12698,1792.07,2.99,F3Ia
+Zeta Aquilae,Zeta Aquilae,Zeta Aquilae,93747,286.35255,13.86371,83.25,2.99,A0V
+Beta Trianguli,Beta Trianguli,Beta Trianguli,10064,32.3855,34.98739,124.3,3.0,A5III
+Psi Ursae Majoris,Psi Ursae Majoris,Psi Ursae Majoris,54539,167.41608,44.49855,146.85,3.0,K1III
+Gamma Ursae Minoris,Gamma Ursae Minoris,Gamma Ursae Minoris,75097,230.18229,71.83397,480.35,3.0,A3II
+HIP 82514,HIP 82514,,82514,252.96766,-38.04733,821.55,3.0,B1.5IV
+Gamma Gruis,Gamma Gruis,Gamma Gruis,108085,328.48189,-37.36482,202.96,3.0,B8III
+Delta Persei,Delta Persei,Delta Persei,17358,55.73118,47.78765,527.76,3.01,B5III
+Zeta Canis Majoris,Zeta Canis Majoris,Zeta Canis Majoris,30122,95.07828,-30.06338,336.24,3.02,B2.5V
+Omicron² Canis Majoris,Omicron² Canis Majoris,Omicron² Canis Majoris,33977,105.75614,-23.8333,2568.16,3.02,B3Ia
+Epsilon Corvi,Epsilon Corvi,Epsilon Corvi,59316,182.53136,-22.61979,303.4,3.02,K2III
+Epsilon Aurigae,Epsilon Aurigae,Epsilon Aurigae,23416,75.49223,43.82331,2038.47,3.03,F0Ia
+Beta Muscae,Beta Muscae,Beta Muscae,62322,191.57029,-68.10809,311.22,3.04,B2V
+Gamma Boötis,Gamma Boötis,Gamma Boötis,71075,218.01982,38.30788,85.18,3.04,A7III
+Beta¹ Cygni,Beta¹ Cygni,Beta¹ Cygni,95947,292.68036,27.95969,385.53,3.05,K3II
+Beta Capricorni,Beta Capricorni,Beta Capricorni,100345,305.25269,-14.7814,344.05,3.05,A5
+Epsilon Geminorum,Epsilon Geminorum,Epsilon Geminorum,32246,100.98304,25.13116,903.48,3.06,A3
+Mu Ursae Majoris,Mu Ursae Majoris,Mu Ursae Majoris,50801,155.58251,41.49943,248.78,3.06,M0III
+Delta Draconis,Delta Draconis,Delta Draconis,94376,288.13815,67.66132,100.23,3.07,G9III
+Eta Sagittarii,Eta Sagittarii,Eta Sagittarii,89642,274.4072,-36.76128,149.13,3.1,M2III
+Zeta Hydrae,Zeta Hydrae,Zeta Hydrae,43813,133.84869,5.94553,150.72,3.11,G8III
+Nu Hydrae,Nu Hydrae,Nu Hydrae,52943,162.40597,-16.19413,138.55,3.11,K0
+Lambda Centauri,Lambda Centauri,Lambda Centauri,56561,173.94553,-63.01982,409.74,3.11,B9II
+Alpha Indi,Alpha Indi,Alpha Indi,101772,309.39162,-47.29166,101.26,3.11,K0III
+Beta Columbae,Beta Columbae,Beta Columbae,27628,87.7398,-35.76929,85.97,3.12,K1.5III
+Iota Ursae Majoris,Iota Ursae Majoris,Iota Ursae Majoris,44127,134.80349,48.04235,47.74,3.12,A7IV
+Zeta Arae,Zeta Arae,Zeta Arae,83081,254.65513,-55.99006,574.22,3.12,K5III
+Delta Herculis,Delta Herculis,Delta Herculis,84379,258.75802,24.83959,78.5,3.12,A3IV
+Kappa Centauri,Kappa Centauri,Kappa Centauri,73334,224.79041,-42.10414,539.1,3.13,B2IV
+Alpha Lyncis,Alpha Lyncis,Alpha Lyncis,45860,140.26441,34.39253,222.03,3.14,M0III
+HIP 46701,HIP 46701,,46701,142.80564,-57.03439,237.72,3.16,K5III
+Pi Herculis,Pi Herculis,Pi Herculis,84380,258.76189,36.80916,366.88,3.16,K3II
+Nu Puppis,Nu Puppis,Nu Puppis,31685,99.4403,-43.19592,423.03,3.17,B8III
+Theta Ursae Majoris,Theta Ursae Majoris,Theta Ursae Majoris,46853,143.21802,51.6786,43.99,3.17,F6IV
+Zeta Draconis,Zeta Draconis,Zeta Draconis,83895,257.19677,65.71464,339.75,3.17,B6III
+Phi Sagittarii,Phi Sagittarii,Phi Sagittarii,92041,281.41397,-26.99078,230.66,3.17,B8.5III
+Eta Aurigae,Eta Aurigae,Eta Aurigae,23767,76.62862,41.23464,219.34,3.18,B3V
+Alpha Circini,Alpha Circini,Alpha Circini,71908,220.62785,-64.97457,53.49,3.18,F1V
+HIP 22449,HIP 22449,,22449,72.45891,6.96125,26.18,3.19,F6V
+Epsilon Leporis,Epsilon Leporis,Epsilon Leporis,23685,76.36522,-22.37086,226.65,3.19,K4III
+Kappa Ophiuchi,Kappa Ophiuchi,Kappa Ophiuchi,83000,254.41779,9.37506,85.85,3.19,K2III
+HIP 87261,HIP 87261,,87261,267.46438,-37.04337,126.86,3.19,K0
+Zeta Cygni,Zeta Cygni,Zeta Cygni,104732,318.23409,30.22708,150.86,3.21,G8II
+Gamma Cephei,Gamma Cephei,Gamma Cephei,116727,354.83743,77.63197,44.99,3.21,K1IV
+Delta Lupi,Delta Lupi,Delta Lupi,75141,230.34307,-40.64746,510.42,3.22,B1.5IV
+Epsilon Ophiuchi,Epsilon Ophiuchi,Epsilon Ophiuchi,79882,244.58017,-4.69261,107.5,3.23,G8III
+Eta Serpentis,Eta Serpentis,Eta Serpentis,89962,275.32884,-2.89712,61.76,3.23,K0III
+Beta Cephei,Beta Cephei,Beta Cephei,106032,322.1649,70.56069,595.18,3.23,B2III
+Alpha Pictoris,Alpha Pictoris,Alpha Pictoris,32607,102.04807,-61.94198,98.96,3.24,A7IV
+Theta Aquilae,Theta Aquilae,Theta Aquilae,99473,302.8261,-0.82148,287.11,3.24,B9.5III
+Sigma Puppis,Sigma Puppis,Sigma Puppis,36377,112.30783,-43.30189,183.85,3.25,K5III
+Pi Hydrae,Pi Hydrae,Pi Hydrae,68895,211.59279,-26.68202,101.39,3.25,K2III
+Sigma Librae,Sigma Librae,Sigma Librae,73714,226.01776,-25.28186,291.99,3.25,M3
+Gamma Lyrae,Gamma Lyrae,Gamma Lyrae,93194,284.73594,32.68955,634.54,3.25,B9III
+Gamma Hydri,Gamma Hydri,Gamma Hydri,17678,56.8093,-74.23924,214.15,3.26,M2III
+Delta Andromedae,Delta Andromedae,Delta Andromedae,3092,9.83166,30.86123,101.32,3.27,K3III
+Theta Ophiuchi,Theta Ophiuchi,Theta Ophiuchi,84970,260.50243,-24.99949,563.31,3.27,B2IV
+Delta Aquarii,Delta Aquarii,Delta Aquarii,113136,343.66266,-15.82076,159.57,3.27,A3V
+Mu Leporis,Mu Leporis,Mu Leporis,24305,78.2328,-16.20543,184.37,3.29,B9IV
+Omega Carinae,Omega Carinae,Omega Carinae,50099,153.4345,-70.03792,370.21,3.29,B8III
+Iota Draconis,Iota Draconis,Iota Draconis,75458,231.23243,58.96602,102.18,3.29,K2III
+Alpha Doradus,Alpha Doradus,Alpha Doradus,21281,68.49883,-55.04501,175.73,3.3,A0V
+HIP 51576,HIP 51576,,51576,158.00618,-61.68536,497.19,3.3,B4V
+Eta Geminorum,Eta Geminorum,Eta Geminorum,29655,93.71957,22.50682,349.2,3.31,M3III
+Gamma Arae,Gamma Arae,Gamma Arae,85267,261.34858,-56.37769,1136.43,3.31,B1Ib
+Beta Phoenicis,Beta Phoenicis,Beta Phoenicis,5165,16.52128,-46.71849,198.15,3.32,G8III
+Rho Persei,Rho Persei,Rho Persei,14354,46.29374,38.84053,325.18,3.32,M3III
+Delta Ursae Majoris,Delta Ursae Majoris,Delta Ursae Majoris,59774,183.85604,57.0326,81.44,3.32,A3V
+Eta Scorpii,Eta Scorpii,Eta Scorpii,84143,258.03823,-43.23849,71.59,3.32,F3
+Nu Ophiuchi,Nu Ophiuchi,Nu Ophiuchi,88048,269.75666,-9.77335,152.77,3.32,K0III
+Tau Sagittarii,Tau Sagittarii,Tau Sagittarii,93864,286.73518,-27.66981,120.4,3.32,K1
+Alpha Reticuli,Alpha Reticuli,Alpha Reticuli,19780,63.60596,-62.47398,163.24,3.33,G7III
+Theta Leonis,Theta Leonis,Theta Leonis,54879,168.56017,15.42976,177.64,3.33,A2V
+Xi Puppis,Xi Puppis,Xi Puppis,38170,117.32358,-24.85978,1347.75,3.34,G6Ia
+Epsilon Cassiopeiae,Epsilon Cassiopeiae,Epsilon Cassiopeiae,8886,28.59868,63.67015,441.95,3.35,B2
+Eta Orionis,Eta Orionis,Eta Orionis,25281,81.11924,-2.39714,900.98,3.35,B1V
+Xi Geminorum,Xi Geminorum,Xi Geminorum,32362,101.32264,12.89606,57.2,3.35,F5IV
+Omicron Ursae Majoris,Omicron Ursae Majoris,Omicron Ursae Majoris,41704,127.56679,60.71843,183.65,3.35,G4II
+Delta Aquilae,Delta Aquilae,Delta Aquilae,95501,291.37397,3.11458,50.14,3.36,F0IV
+Epsilon Lupi,Epsilon Lupi,Epsilon Lupi,75264,230.67036,-44.68957,504.11,3.37,B2IV
+Epsilon Hydrae,Epsilon Hydrae,Epsilon Hydrae,43109,131.69436,6.41891,135.17,3.38,G0III
+Zeta Virginis,Zeta Virginis,Zeta Virginis,66249,203.67398,-0.59594,73.21,3.38,A3V
+HIP 50371,HIP 50371,,50371,154.27086,-61.33232,736.24,3.39,K3II
+Delta Virginis,Delta Virginis,Delta Virginis,63090,193.90201,3.3976,202.46,3.39,M3III
+Zeta Cephei,Zeta Cephei,Zeta Cephei,109492,332.71359,58.20125,726.41,3.39,K1Ib
+Theta² Tauri,Theta² Tauri,Theta² Tauri,20894,67.16531,15.87095,149.0,3.4,A7III
+Eta Ophiuchi,Eta Ophiuchi B,,,257.59123,-15.72821,84.13,3.4,A3
+Gamma Phoenicis,Gamma Phoenicis,Gamma Phoenicis,6867,22.09142,-43.31773,233.97,3.41,K5II
+Lambda Tauri,Lambda Tauri,Lambda Tauri,18724,60.17009,12.49038,370.21,3.41,B3V
+Nu Centauri,Nu Centauri,Nu Centauri,67464,207.37624,-41.68766,474.75,3.41,B2IV
+Zeta Lupi,Zeta Lupi,Zeta Lupi,74395,228.07168,-52.09907,116.24,3.41,G8III
+Eta Cephei,Eta Cephei,Eta Cephei,102422,311.32195,61.83679,46.77,3.41,K0IV
+Zeta Pegasi,Zeta Pegasi,Zeta Pegasi,112029,340.36531,10.83139,208.54,3.41,B8.5V
+Alpha Trianguli,Alpha Trianguli,Alpha Trianguli,8796,28.27042,29.5794,64.12,3.42,F6IV
+Eta Lupi,Eta Lupi,Eta Lupi,78384,240.03059,-38.39664,493.43,3.42,B2.5IV
+Mu Herculis,Mu Herculis,Mu Herculis,86974,266.6155,27.7225,27.4,3.42,G5IV
+Beta Pavonis,Beta Pavonis,Beta Pavonis,102395,311.23982,-66.20324,137.56,3.42,A5IV
+HIP 45080,HIP 45080,,45080,137.74211,-58.96693,418.69,3.43,B2IV
+Zeta Leonis,Zeta Leonis,Zeta Leonis,50335,154.17252,23.41733,259.68,3.43,F0III
+Lambda Aquilae,Lambda Aquilae,Lambda Aquilae,93805,286.56229,-4.88233,125.2,3.43,B9V
+Lambda Ursae Majoris,Lambda Ursae Majoris,Lambda Ursae Majoris,50372,154.2747,42.91447,134.39,3.45,A2IV
+Eta Cassiopeiae,Eta Cassiopeiae,Eta Cassiopeiae,3821,12.27125,57.81655,19.42,3.46,G0V
+Eta Ceti,Eta Ceti,Eta Ceti,5364,17.14693,-10.18193,117.62,3.46,K2III
+Chi Carinae,Chi Carinae,Chi Carinae,38827,119.19476,-52.9824,386.9,3.46,B3IV
+Delta Boötis,Delta Boötis,Delta Boötis,74666,228.87543,33.3151,116.73,3.46,G8III
+Gamma Ceti,Gamma Ceti,Gamma Ceti,12706,40.82552,3.23617,81.99,3.47,A3V
+Mu Centauri,Mu Centauri,Mu Centauri,67472,207.4042,-42.47369,526.91,3.47,B2IV
+Eta Leonis,Eta Leonis,Eta Leonis,49583,151.83314,16.76267,2131.74,3.48,A0Ib
+Eta Herculis,Eta Herculis,Eta Herculis,81833,250.72391,38.92246,112.04,3.48,G8III
+Tau Ceti,Tau Ceti,Tau Ceti,8102,26.02136,-15.93956,11.9,3.49,G8V
+Sigma Canis Majoris,Sigma Canis Majoris,Sigma Canis Majoris,33856,105.4298,-27.93484,1217.0,3.49,K4III
+Nu Ursae Majoris,Nu Ursae Majoris,Nu Ursae Majoris,55219,169.61981,33.09424,421.39,3.49,K3III
+Beta Boötis,Beta Boötis,Beta Boötis,73555,225.48664,40.39064,218.75,3.49,G8III
+Alpha Telescopii,Alpha Telescopii,Alpha Telescopii,90422,276.74346,-45.96833,249.35,3.49,B3IV
+Epsilon Gruis,Epsilon Gruis,Epsilon Gruis,112623,342.13832,-51.3167,129.63,3.49,A3V
+Kappa Canis Majoris,Kappa Canis Majoris,Kappa Canis Majoris,32759,102.46027,-32.50849,789.72,3.5,B1.5IV
+Delta Geminorum,Delta Geminorum,Delta Geminorum,35550,110.03079,21.98234,58.82,3.5,F0IV
+Iota Cephei,Iota Cephei,Iota Cephei,112724,342.42047,66.20071,115.37,3.5,K0III
+Alpha Centauri,Proxima Centauri,,70890,217.44895,-62.68135,4.22,11.01,M5V
