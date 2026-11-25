@@ -33,6 +33,7 @@ import { createBlackHole, horizonMaterial, HORIZON } from '../space/black-hole.j
 import { createPulsarBeams } from '../space/pulsar.js'
 import { icon, toggleIcon } from '../space/icons.js'
 import { createCalendar } from '../space/calendar.js'
+import { pointObject } from '../space/objects.js'
 import { CSS2DObject, CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js'
 // One look for a planet in every view: lit, tilted, ringed, textured (its map
 // or its class's), with its atmosphere — shared with the galaxy map.
@@ -64,17 +65,6 @@ const GAP_SHARE = 0.3           // a planet's radius may take this share of the 
 const RAD = Math.PI / 180
 const UP = new THREE.Vector3(0, 1, 0)
 
-// A point of interest's shape and colour, by its kind (galaxy.schema.POI_KINDS).
-const POI_SHAPES = {
-  point: [() => new THREE.OctahedronGeometry(1), 0xffd24a],
-  station: [() => new THREE.OctahedronGeometry(1), 0xffd24a],
-  jumpgate: [() => new THREE.TorusGeometry(1, 0.3, 8, 24), 0x7fe0ff],
-  outpost: [() => new THREE.BoxGeometry(1.3, 1.3, 1.3), 0xb8e07a],
-  shipyard: [() => new THREE.BoxGeometry(2, 0.8, 0.8), 0xffa04a],
-  wreck: [() => new THREE.TetrahedronGeometry(1.1), 0x9a8f86],
-  beacon: [() => new THREE.SphereGeometry(0.8, 12, 8), 0xff5a5a],
-  catapult: [() => new THREE.ConeGeometry(0.9, 2, 12), 0xd07aff],
-}
 const SPEEDS = [
   ['10 minutes/s', 1 / 365.25 / 24 / 6], ['1 hour/s', 1 / 365.25 / 24], ['6 hours/s', 1 / 365.25 / 4], ['1 day/s', 1 / 365.25], ['1 week/s', 7 / 365.25], ['1 month/s', 1 / 12], ['1 year/s', 1], ['10 years/s', 10],
 ]
@@ -802,8 +792,8 @@ export function createSystemMap(container, system, options = {}) {
         return host.place(years).add(toScene(position(poi.orbit, years, poi.period), view.kmScale).applyQuaternion(equator))
       }
     }
-    const [geometry, colour] = POI_SHAPES[poi.kind] || POI_SHAPES.point
-    const mesh = new THREE.Mesh(geometry(), new THREE.MeshBasicMaterial({ color: colour }))
+    // Its kind's look: the host's, the project's (the record's), the engine's (../space/objects.js).
+    const mesh = pointObject(poi.kind, system.objects, options.objects)
     view.scene.add(mesh)
     return { kind: 'poi', data: poi, mesh, label: tag(view, mesh, poi.name, null, 'sm-poi-label'), radius: 0, place }
   }

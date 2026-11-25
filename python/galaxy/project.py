@@ -18,6 +18,7 @@ read against the file's folder:
                                         a drawing (.svg) with one embedded
     calendar = "calendar.json"
     namer = "package.module:function"   optional: names for the procedural galaxy
+    objects = "objects.json"            optional: kinds of point of interest of its own (galaxy.objects)
     drafts = "…"                        optional: an editor's working state
     planet_maps = "…"                   optional: one folder per planet map
     public = "…"                        optional: the folder the maps read their data from
@@ -44,7 +45,7 @@ from typing import Callable, Optional, Union
 ENV = "GALAXY_PROJECT"
 
 _REQUIRED = ("catalogue", "nations", "travel", "medium", "constellations", "procedural", "density", "calendar")
-_OPTIONAL = ("drafts", "planet_maps", "public", "public_planets", "svg")
+_OPTIONAL = ("drafts", "planet_maps", "public", "public_planets", "svg", "objects")
 
 
 @dataclass(frozen=True)
@@ -64,6 +65,7 @@ class Project:
     public: Optional[Path] = None
     public_planets: Optional[Path] = None
     svg: Optional[Path] = None
+    objects: Optional[Path] = None
     layers: tuple[Path, ...] = ()
 
     def relative(self, path: Path) -> str:

@@ -1,0 +1,10 @@
+{
+  "points": {
+    "relay": {
+      "label": "Relay",
+      "shape": "cone",
+      "colour": "#5fd0a0",
+      "size": 1.2
+    }
+  }
+}

@@ -153,6 +153,7 @@ in the sky. Options, all optional:
 | `trip` | URL of an in-system planner endpoint (below). Adds the trip panel. |
 | `tripSave` | URL to keep and remove trips. |
 | `onChange` | Called after a trip was kept or removed. |
+| `objects` | Kinds of point of interest drawn the host's way: `{kind: {create: THREE => Object3D}}`, or a look `{shape, colour, size}` as in [objects.json](data-formats.md#objectsjson). Over the record's own `objects` and the engine's kinds (`space/objects.js`). |
 
 Orbits are true to each other in AU; planets and their moons' orbits are
 enlarged by one common factor so that each stays clear of its neighbours,
@@ -207,6 +208,7 @@ at the top.
 | Module | Exports | Purpose |
 |---|---|---|
 | `manifest.js` | `loadManifest` | A build's manifest as URLs. |
+| `objects.js` | `pointObject`, `POINTS`, `SHAPES` | A point of interest's 3D object by kind: the host's, the project's, the engine's. |
 | `calendar.js` | `createCalendar`, `GREGORIAN` | Read and write dates with a project's calendar: `read(text)` → `{absolute}` or `{error}`, `text(absolute)`, `param(absolute)`. |
 | `camera.js` | `createNavigator` | Drag to turn, right-drag to pan, wheel to zoom (Shift faster), eased flights, following a moving body. |
 | `pointer.js` | `attachPointer`, `foldable`, `steeringHint`, `TOUCH` | Clicks and taps that pick, Esc to let go. |

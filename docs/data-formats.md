@@ -70,6 +70,7 @@ calendar = "calendar.json"
 | `public` | no | Default output folder of `galaxy.cli.system_maps` and `galaxy.cli.trips`. |
 | `public_planets` | no | Planet textures and height maps for `galaxy.cli.public_maps` (see [Planet textures](#planet-textures)). |
 | `svg` | no | Where an editor writes the 2D map. |
+| `objects` | no | [objects.json](#objectsjson): kinds of point of interest of the project's own. |
 
 Any other key is an error. Without `--project`, the CLIs and
 `galaxy.project.current()` read the file named by the `GALAXY_PROJECT`
@@ -202,7 +203,7 @@ derived, never stored.
 |---|---|
 | `name` | Required. |
 | `anchor` | Required. `body` is `"star"`, a planet's id, or a moon's as `"<planet id>/<moon id>"`. Around the star: `{"body": "star", "au": …}` with an optional `host`. Around a planet or moon: an orbit `km` above its surface, or a Lagrange point `"point": "L1"`…`"L5"`. |
-| `kind` | `station`, `jumpgate`, `catapult`, `outpost`, `shipyard`, `wreck`, `beacon`; absent is a plain point. A travel mode's `from_point` refers to a kind. |
+| `kind` | The engine's `station`, `jumpgate`, `outpost`, `shipyard`, `wreck`, `beacon`, or one the project declares in [objects.json](#objectsjson); absent is a plain point. A travel mode's `from_point` refers to a kind. |
 | `id` | Needed by jumpgates (their `pair` refers to it). |
 | `pair` | Jumpgates only: the id of the partner jumpgate in the same system, which must point back. |
 | `grade` | Jumpgates only: `early` (hop time by distance) or `mature` (flat hop time, the default). See [`jumpgates`](#traveljson). |
@@ -280,6 +281,23 @@ itself (as the example does).
 reader: missing or out-of-range fields as listed above, duplicate names,
 unknown classes, kinds or sector ids, gate links or trips naming unknown
 systems.
+
+## objects.json
+
+The project's own kinds of point of interest (`galaxy.objects`), beside the
+engine's. Each has a label and a look: one of the shapes `octahedron`,
+`torus`, `box`, `bar`, `tetrahedron`, `sphere`, `cone`, a colour `#rrggbb`,
+and optionally `size`, times its usual size.
+
+```json
+{"points": {"relay": {"label": "Relay", "shape": "cone", "colour": "#5fd0a0", "size": 1.2}}}
+```
+
+A kind may not take an engine kind's name. Each record of `systems.json`
+carries the looks of the project's kinds its points use (`objects`), so any
+map draws them; a host can draw a kind with code of its own instead (the
+system map's [`objects`](viewer.md#system-map) option). Stars, black holes,
+pulsars and nebulae are the engine's own.
 
 ## calendar.json
 

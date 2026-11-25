@@ -15,7 +15,7 @@ import math
 from pathlib import Path
 from typing import Any, Optional
 
-from galaxy import bodies, brightstars, calendar, celestial, constellations, hierarchy, nebulae, orbits
+from galaxy import bodies, brightstars, calendar, celestial, constellations, hierarchy, nebulae, objects, orbits
 from galaxy.stars import primary
 from galaxy.stars import star as star_of
 
@@ -194,6 +194,12 @@ def system(doc_system: dict[str, Any]) -> dict[str, Any]:
             row["moons"].append(m)
         out["planets"].append(row)
     out["points_of_interest"] = [_above(p, doc_system) for p in out["points_of_interest"]]
+    # The looks of the project's own kinds of point here (galaxy.objects), so
+    # any map draws them; the engine's own it knows.
+    own = objects.project_points()
+    used = {p.get("kind") for p in out["points_of_interest"]} & set(own)
+    if used:
+        out["objects"] = {kind: own[kind] for kind in sorted(used)}
     return out
 
 

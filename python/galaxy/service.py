@@ -25,7 +25,7 @@ from typing import Any, Optional
 
 from galaxy.fs import write_atomic
 from galaxy.slugs import slugify
-from galaxy import bodies, brightstars, catalogue, hierarchy, medium, nebulae, orbits, project, travel
+from galaxy import bodies, brightstars, catalogue, hierarchy, medium, nebulae, objects, orbits, project, travel
 from galaxy import trips as galaxy_trips
 from galaxy import stars as star_data
 from galaxy import schema as galaxy_schema
@@ -2171,8 +2171,8 @@ class SystemDetail:
                     raise ValueError("A point of interest needs a name")
                 point["name"] = value
             elif field == "kind":
-                if value and value not in galaxy_schema.POI_KINDS:
-                    raise ValueError("A point of interest is one of " + ", ".join(galaxy_schema.POI_KINDS))
+                if value and value not in (kinds := objects.point_kinds()):
+                    raise ValueError("A point of interest is one of " + ", ".join(kinds))
                 if value != "jumpgate":
                     note = _alone([_unpair(system, point)])
                     point.pop("grade", None)

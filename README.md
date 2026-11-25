@@ -157,9 +157,9 @@ Icons are [Remix Icon](https://remixicon.com) (Apache 2.0, see
 
 ## Status
 
-Planned next:
-
-- custom 3D objects beside the built-in nebulae, black holes and pulsars.
+Planned next: custom kinds of galaxy-level object beside the built-in stars,
+black holes, pulsars and nebulae (points of interest inside a system are
+already a project's to add, see `docs/data-formats.md`).
 
 ## Data and credits
 

@@ -16,7 +16,7 @@ import re
 from typing import Any
 
 from galaxy.slugs import slugify
-from galaxy import nebulae
+from galaxy import nebulae, objects
 from galaxy.bodies import RADIUS_LIMITS, RING_DENSITY_LIMITS
 from galaxy.jsonstore import ValidationError
 
@@ -195,9 +195,10 @@ def anchor_error(anchor: Any, system: dict[str, Any]) -> str | None:
     return None
 
 
-# What a point of interest is; absent is just a point of interest. Jumpgates
-# are the travel planner's nodes in a system.
-POI_KINDS = ("station", "jumpgate", "catapult", "outpost", "shipyard", "wreck", "beacon")
+# What a point of interest is; absent is just a point of interest. The
+# engine's own kinds — a project adds its own (galaxy.objects). Jumpgates are
+# the travel planner's nodes in a system.
+POI_KINDS = tuple(objects.POINTS)
 # A jumpgate's `pair` is its partner's id, both ways; its `grade` how fast a
 # hop is (travel.json `jumpgates`): early gates took hours between planets,
 # mature ones minutes.
@@ -268,9 +269,9 @@ def _check_pois(system: dict[str, Any], where: str) -> None:
             raise ValidationError(f"{where}, point of interest {k + 1} needs a name")
         if error := anchor_error(point.get("anchor"), system):
             raise ValidationError(f"{where}, point of interest {point['name']}: {error}")
-        if "kind" in point and point["kind"] not in POI_KINDS:
+        if "kind" in point and point["kind"] not in (kinds := objects.point_kinds()):
             raise ValidationError(f"{where}, point of interest {point['name']}: its kind is one of "
-                                  + ", ".join(POI_KINDS))
+                                  + ", ".join(kinds))
         if error := _jumpgate_error(point, points):
             raise ValidationError(f"{where}, point of interest {point['name']}: {error}")
 

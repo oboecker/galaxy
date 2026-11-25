@@ -72,6 +72,26 @@
             "anomaly": 45.0
           }
         }
+      ],
+      "points_of_interest": [
+        {
+          "name": "Brannock Relay",
+          "id": "i1",
+          "kind": "relay",
+          "anchor": {
+            "body": "p1",
+            "point": "L4"
+          }
+        },
+        {
+          "name": "Brannock Yard",
+          "id": "i2",
+          "kind": "shipyard",
+          "anchor": {
+            "body": "star",
+            "au": 3.2
+          }
+        }
       ]
     },
     {

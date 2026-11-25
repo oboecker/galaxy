@@ -1,6 +1,6 @@
 [project]
 name = "galaxy"
-version = "0.3.0"
+version = "0.4.0"
 description = "A fictional galaxy for telling stories in: the catalogue, the procedural galaxy, orbits, travel, gate networks and territories through time, and the data the 3D maps draw"
 license = "MIT"
 requires-python = ">=3.11,<3.15"
