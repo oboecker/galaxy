@@ -1619,6 +1619,7 @@ export function createGalaxyMap(root, options = {}) {
             const shown = [];
             for (const star of stars) {
                 if (star.userData.real || star.userData.procedural) continue;   // named when hovered or chosen only
+                if (!isShown(star)) continue;                                    // its layer switched off
                 const d = camera.position.distanceTo(star.position);
                 if (d < LABEL_REACH) shown.push([d, star]);
             }
@@ -1798,6 +1799,7 @@ export function createGalaxyMap(root, options = {}) {
                 if (!shown && ours(selectedStar)) deselectStar();
                 if (!shown && ours(hoveredStar)) { resetStarHoverState(hoveredStar); hoveredStar = null; }
                 rebuildField();
+                drawGateNetwork();
                 labelsFrame = 0;
                 hoverStale = true;
             };
@@ -1943,7 +1945,8 @@ export function createGalaxyMap(root, options = {}) {
                 line.geometry.dispose();
                 line.material.dispose();
             });
-            const at = new Map(stars.map(st => [st.userData.name, st.position]));
+            // Only between stars shown: a layer switched off takes its links along.
+            const at = new Map(stars.filter(isShown).map(st => [st.userData.name, st.position]));
             const shownLinks = procShown && procLinks ? procLinks : gateLinks;
             for (const grade of ['permanent', 'provisional']) {
                 const points = [];
