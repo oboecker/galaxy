@@ -1825,6 +1825,12 @@ export function createGalaxyMap(root, options = {}) {
             const open = shown => {
                 panel.hidden = !shown;
                 button.setAttribute('aria-expanded', String(shown));
+                if (!shown) return;
+                // Under the button, its left edge at the button's, unless the
+                // map ends before the panel does: then its right edge.
+                panel.style.left = ''; panel.style.right = '';
+                const bounds = root.getBoundingClientRect();
+                if (panel.getBoundingClientRect().right > bounds.right - 8) { panel.style.left = 'auto'; panel.style.right = '0'; }
             };
             button.addEventListener('click', () => open(panel.hidden));
             const onOutside = event => { if (!wrap.contains(event.target)) open(false); };
