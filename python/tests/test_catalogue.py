@@ -83,8 +83,11 @@ def test_the_layers_listed_for_the_map_with_their_looks(tmp_path):
         {"id": "real-sky", "label": "the real sky's stars", "icon": "star", "url": "real-sky.json", "real": True},
         {"id": "extra", "label": "extra", "icon": "flag", "url": "extra.json"},
         {"id": "story", "label": "My story", "icon": "planet", "url": "story.json"}]
-    written = catalogue.write_layers(tmp_path / "out", here)
-    assert [p.name for p in written] == ["real-sky.json", "extra.json", "story.json", "index.json"]
+    written = catalogue.write_layers(tmp_path / "layers", here)
+    assert [str(p.relative_to(tmp_path)) for p in written] == [
+        "layers/real-sky.json", "layers/extra.json", "layers/story.json", "layers.json"]
+    import json
+    assert json.loads(written[-1].read_text())[2]["url"] == "layers/story.json", "read against the list"
     (tmp_path / "project.toml").write_text("\n".join(lines[:-1] + ['layers = [{label = "no file"}, "story.json"]']) + "\n",
                                            encoding="utf-8")
     with pytest.raises(ValueError, match="a layer is a file"):

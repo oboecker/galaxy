@@ -544,9 +544,9 @@ export function createGalaxyMap(root, options = {}) {
         // The catalogue's layers, each shown or hidden in the Layers panel,
         // remembered for every galaxy map. A real layer's stars are much
         // smaller than the others, without glow or stem, named only when
-        // hovered or chosen. `layers` is a list, or the URL of one (a
-        // layers/index.json the library writes: galaxy.catalogue.layer_index),
-        // its files beside it.
+        // hovered or chosen. `layers` is a list, or the URL of one (the
+        // layers.json the library writes: galaxy.catalogue.layer_index), its
+        // URLs read against it.
         const REAL_SIZE = 0.25;
         const REAL_KEY = 'galaxy-real-stars';
         let LAYERS = [];

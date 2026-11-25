@@ -12,7 +12,7 @@ trips, nation territories, anything only an editor uses.
 
     galaxy.json            the allowed fields of the whole catalogue, the layers merged
     layers/<name>.json     each layer (real-sky, then the project's), the same fields: a switch each on the map,
-    layers/index.json      listed (galaxy.catalogue.layer_index)
+    layers.json            the layers listed (galaxy.catalogue.layer_index)
     systems.json           what the system maps draw (systemmap.export of it)
     glow.json              the galaxy's light, for the band in their skies
                            (galaxy.procedural.glow: no systems in it)

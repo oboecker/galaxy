@@ -521,7 +521,7 @@ python -m galaxy.cli.build --project my/project.toml --out public/galaxy [--proc
 |---|---|
 | `galaxy.json` | The merged catalogue. |
 | `layers/<name>.json` | Each layer as its file holds it (`real-sky`, then the project's layers by file stem). |
-| `layers/index.json` | The layers as the map lists them, `[{id, label, icon, url, real?}]` (`galaxy.catalogue.layer_index`); a map's `layers` option may be its URL. |
+| `layers.json` | The layers as the map lists them, `[{id, label, icon, url, real?}]` with `url`s `layers/<name>.json` (`galaxy.catalogue.layer_index`); a map's `layers` option may be its URL. |
 | `systems.json` | Every system as the system map draws it, by name (`galaxy.systemmap`). |
 | `nebulae.json` | The nebulae as the skies draw them: `[{name, kind, colour, at: [x, y, z], size}]`. |
 | `glow.json` | The galaxy's light for the band in the skies (only with `procedural.json`). |

@@ -154,7 +154,7 @@ const map = createGalaxyMap(document.getElementById('map'), {
   title: '<strong>My galaxy</strong>',
   config: {                          // each file the build wrote; a layer without one is not drawn
     layers: [                        // the catalogue's layers, a checkbox each in the Layers panel
-                                     // (or the URL of the layers/index.json the build writes)
+                                     // (or the URL of the layers.json the build writes)
       { id: 'real-sky', label: "the real sky's stars", url: '/data/layers/real-sky.json', real: true, icon: 'star' },
       { id: 'story', label: "the story's systems", url: '/data/layers/galaxy.json', icon: 'planet' },
     ],
