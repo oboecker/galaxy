@@ -11,7 +11,7 @@ trips, nation territories, anything only an editor uses.
 `bundle(out)` writes it all into a fresh directory:
 
     galaxy.json            the allowed fields of the whole catalogue, the layers merged
-    layers/<name>.json     the engine's layers (real-sky), the same fields: a switch each on the map
+    layers/<name>.json     each layer (real-sky, then the project's), the same fields: a switch each on the map
     systems.json           what the system maps draw (systemmap.export of it)
     glow.json              the galaxy's light, for the band in their skies
                            (galaxy.procedural.glow: no systems in it)
@@ -144,10 +144,11 @@ def bundle(out: Path, *, galaxy_json: Optional[Path] = None, travel_json: Option
         written.append(path)
 
     dump("galaxy.json", doc)
-    # The engine's own layers beside it, each a switch on the galaxy map; the
-    # project's systems are the rest of galaxy.json.
+    # Each layer beside it, a switch each on the galaxy map: a system is in
+    # every layer that names it (Sol in the project's as well as the real sky's).
     (out / "layers").mkdir()
-    for path, layer in zip(here.layers[:-1], catalogue._layers(here)[:-1]):
+    paths = [*here.layers[:-1], galaxy_json or here.layers[-1]]
+    for path, layer in zip(paths, catalogue._layers(here, galaxy_json)):
         dump(f"layers/{catalogue.layer_name(path)}.json", galaxy(copy.deepcopy(layer)))
     dump("systems.json", systemmap.export(doc))
     # The skies' nebulae, beside systems.json as a site has them.
