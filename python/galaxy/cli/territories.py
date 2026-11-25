@@ -15,7 +15,7 @@ import json
 import sys
 from pathlib import Path
 
-from galaxy import calendar, nations, project
+from galaxy import calendar, catalogue, nations, project
 from galaxy.renderer import GalaxyMapGenerator
 from galaxy.territories import attach, compute, snapshots, territories, worlds
 from galaxy.fs import write_atomic
@@ -62,7 +62,7 @@ def main():
 
     here = project.from_args(args)
     args.nations = args.nations or here.nations
-    data = json.loads((args.galaxy or here.catalogue).read_text(encoding="utf-8"))
+    data = catalogue.read(here, args.galaxy)
     doc, error = nations.read(args.nations)
     if error:
         sys.exit(f"Error: {args.nations}: {error}")

@@ -6,10 +6,9 @@ build: public/galaxy/systems.json, and nebulae.json beside it
 """
 
 import argparse
-import json
 from pathlib import Path
 
-from galaxy import project, systemmap
+from galaxy import catalogue, project, systemmap
 
 
 def main() -> None:
@@ -20,7 +19,7 @@ def main() -> None:
     args = parser.parse_args()
     here = project.from_args(args)
     args.out = args.out or here.public / "systems.json"
-    doc = json.loads((args.galaxy or here.catalogue).read_text(encoding="utf-8"))
+    doc = catalogue.read(here, args.galaxy)
     systemmap.write(doc, args.out)
     # The skies' nebulae, beside it.
     systemmap.write_nebulae(doc, args.out.with_name("nebulae.json"))

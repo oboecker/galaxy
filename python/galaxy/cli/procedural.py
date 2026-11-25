@@ -12,7 +12,7 @@ import argparse
 import json
 from pathlib import Path
 
-from galaxy import jsonstore, procedural, project
+from galaxy import catalogue, jsonstore, procedural, project
 
 
 def main() -> None:
@@ -34,7 +34,7 @@ def main() -> None:
                              encoding="utf-8")
         print(f"  → {args.glow}")
         return
-    doc = json.loads((args.galaxy or here.catalogue).read_text(encoding="utf-8"))
+    doc = catalogue.read(here, args.galaxy)
     if args.measure:
         model = procedural.measure(doc, args.seed)
         here.procedural.write_text(jsonstore.dumps(model), encoding="utf-8")

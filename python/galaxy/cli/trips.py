@@ -7,10 +7,9 @@ one against its date to arrive by.
 """
 
 import argparse
-import json
 from pathlib import Path
 
-from galaxy import project, trips
+from galaxy import catalogue, project, trips
 
 
 def main() -> None:
@@ -21,7 +20,7 @@ def main() -> None:
     parser.add_argument("--check", action="store_true", help="print each trip and whether it arrives in time")
     args = parser.parse_args()
     here = project.from_args(args)
-    doc = json.loads((args.galaxy or here.catalogue).read_text(encoding="utf-8"))
+    doc = catalogue.read(here, args.galaxy)
     if not args.check:
         args.out = args.out or here.public / "trips.json"
         trips.write(doc, args.out)

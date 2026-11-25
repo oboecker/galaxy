@@ -11,9 +11,16 @@ of travel, compared:
   grade's speed, a link no longer than its grade's `range_ly` (a longer
   one is not used), with `stop_hours` at each system passed through — mixed
   with own-drive stretches to the first gate and from the last, always;
-- **catapult**: straight, one way, from a system with one
-  (a point of interest of kind catapult);
-- **AEGIS**: minutes, anywhere outside a void.
+- and the modes the project's travel.json declares under `modes`, each by
+  its name, of one of two kinds:
+  - `straight`: straight, at `ly_per_day`, blocked by a void in between;
+    with `from_point`, only from a system with a point of interest of that
+    kind (one way, from there);
+  - `jump`: `minutes`, anywhere outside a void at either end — a shortcut,
+    not a flight through the space between.
+
+  Each mode's legs are of kind `leg` (its name in lower case by default),
+  which the maps colour by; `label` is what they call it.
 
 The numbers come from the project's travel.json, which a trip can override;
 the date is optional — with one, a trip has an arrival date and the dated
@@ -38,6 +45,8 @@ from galaxy import calendar, medium, project
 from galaxy.travel_config import TravelConfig
 
 DAY_HOURS, YEAR_DAYS = TravelConfig.DAY_HOURS, TravelConfig.YEAR_DAYS
+# The kinds of mode a project can declare (`modes`, see above).
+MODE_KINDS = ("straight", "jump")
 
 
 def load(path: Optional[Path] = None) -> dict[str, Any]:
@@ -61,7 +70,7 @@ def merged(settings: dict[str, Any], overrides: Optional[dict[str, Any]]) -> dic
 class Leg:
     """One stretch of a way: its kind, its ends, how far (`ly`; within a
     system, AU), how long in days, and the path the maps draw."""
-    kind: str                       # own drive, gate, catapult, aegis
+    kind: str                       # own drive, gate, or a mode's leg kind
     start: str
     end: str
     ly: float
@@ -76,20 +85,21 @@ class Leg:
 class Option:
     """One way to make a trip: its legs and days door to door, or why it
     cannot be made."""
-    name: str                       # own drive, gates, catapult, AEGIS
+    name: str                       # own drive, gates, or a mode's name
     legs: list[Leg]
     days: float                     # door to door, stops included
     reachable: bool = True
     why: str = ""
     arrival: Optional[float] = None  # on the calendar's axis, with a departure
     rate: Optional[float] = None     # the drive's own speed where it is constant: ly a day, in a system AU a day
+    shortcut: bool = False           # a jump: no flight through the space between
 
     @property
     def average(self) -> Optional[float]:
         """Distance over time while moving — a wait for a launch window is
         not travel — in the legs' unit a day; None where it cannot be flown,
-        and for AEGIS: a shortcut, not a flight through the space between."""
-        if any(leg.kind == "aegis" for leg in self.legs):
+        and for a jump: a shortcut, not a flight through the space between."""
+        if self.shortcut:
             return None
         moving = [leg for leg in self.legs if leg.kind != "wait"]
         days = sum(leg.days for leg in moving)
@@ -108,10 +118,21 @@ def systems(doc: dict[str, Any]) -> dict[str, tuple[float, float, float]]:
     return {s["name"]: (float(s["x"]), float(s["y"]), float(s.get("z", 0))) for s in doc.get("star_systems") or []}
 
 
-def catapults(doc: dict[str, Any]) -> set[str]:
-    """Systems with a catapult: a point of interest of that kind."""
+def with_point(doc: dict[str, Any], kind: str) -> set[str]:
+    """Systems with a point of interest of `kind`."""
     return {s["name"] for s in doc.get("star_systems") or []
-            if any(p.get("kind") == "catapult" for p in s.get("points_of_interest") or [])}
+            if any(p.get("kind") == kind for p in s.get("points_of_interest") or [])}
+
+
+def modes(settings: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """The modes travel.json declares (`modes`), by name, each with its leg
+    kind and label filled in. Refused (ValueError) for an unknown kind."""
+    out = {}
+    for name, mode in (settings.get("modes") or {}).items():
+        if mode.get("kind") not in MODE_KINDS:
+            raise ValueError(f"travel mode {name}: its kind is one of {', '.join(MODE_KINDS)}")
+        out[name] = {"leg": name.lower(), "label": name, **mode}
+    return out
 
 
 def gate_links(doc: dict[str, Any]) -> list[dict[str, Any]]:
@@ -312,19 +333,24 @@ def plan(doc: dict[str, Any], start: str, end: str, depart: Optional[float] = No
     if gates is not None and gates.days < out[0].days:
         out.append(gates)
 
-    # A catapult at the start.
-    if start in catapults(doc):
-        ly = _distance(a, b)
-        blocked = _void_between(grid, a, b)
-        out.append(Option("catapult", [], math.inf, False, "a void lies in the way") if blocked else
-                   Option("catapult", [Leg("catapult", start, end, ly, ly / settings["catapult"]["ly_per_day"],
-                                           [a[:2], b[:2]])], ly / settings["catapult"]["ly_per_day"],
-                          rate=settings["catapult"]["ly_per_day"]))
-
-    # AEGIS: a shortcut, not a flight — only a void at either end stops it.
-    minutes = settings["aegis"]["minutes"] / 60 / DAY_HOURS
-    out.append(Option("AEGIS", [], math.inf, False, f"{', '.join(void)} lies in a void") if void else
-               Option("AEGIS", [Leg("aegis", start, end, _distance(a, b), minutes, [a[:2], b[:2]])], minutes))
+    # The project's own modes, in the order travel.json gives them.
+    for name, mode in modes(settings).items():
+        if mode["kind"] == "straight":
+            # Straight at its speed, from a system with its point of interest
+            # if it names one; a void in between stops it.
+            if mode.get("from_point") and start not in with_point(doc, mode["from_point"]):
+                continue
+            ly, rate = _distance(a, b), mode["ly_per_day"]
+            out.append(Option(name, [], math.inf, False, "a void lies in the way") if _void_between(grid, a, b)
+                       else Option(name, [Leg(mode["leg"], start, end, ly, ly / rate, [a[:2], b[:2]])], ly / rate,
+                                   rate=rate))
+        else:
+            # A jump: a shortcut, not a flight — only a void at either end stops it.
+            minutes = mode["minutes"] / 60 / DAY_HOURS
+            out.append(Option(name, [], math.inf, False, f"{', '.join(void)} lies in a void", shortcut=True)
+                       if void else
+                       Option(name, [Leg(mode["leg"], start, end, _distance(a, b), minutes, [a[:2], b[:2]])],
+                              minutes, shortcut=True))
 
     for option in out:
         if depart is not None and option.reachable:

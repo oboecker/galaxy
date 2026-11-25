@@ -80,7 +80,7 @@ const SPEEDS = [
 ]
 const DEFAULT_SPEED = 3         // 1 day/s
 // The drives of a trip within a system, slowest first: galaxy.insystem's way names and their labels.
-// No AEGIS within a system.
+// A project's own modes (travel.json `modes`) go between the stars only.
 const DRIVES = [['sublight', 'Sublight'], ['jumpgates', 'Jump gate'], ['own drive', 'Own drive']]
 // The sublight thrust's stops, in g: 0 coasts (a Hohmann transfer); from
 // 0.1 g (galaxy.travel_config MIN_THRUST_G) up to travel.json's sublight.g.

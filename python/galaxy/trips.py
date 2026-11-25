@@ -113,7 +113,7 @@ def route(doc: dict[str, Any], trip: dict[str, Any], settings: Optional[dict[str
     if chosen is None and trip.get("way"):
         out["error"] = f"no way {trip['way']!r} from {trip['start']} to {trip['end']}"
         return out
-    chosen = chosen or next(((o, s) for o, s in reachable if o.name != "AEGIS"), None) or (reachable or [None])[0]
+    chosen = chosen or next(((o, s) for o, s in reachable if not getattr(o, "shortcut", False)), None) or (reachable or [None])[0]
     if chosen is None:
         out["error"] = f"no way from {trip['start']} to {trip['end']}"
         return out

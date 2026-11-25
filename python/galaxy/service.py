@@ -25,13 +25,13 @@ from typing import Any, Optional
 
 from galaxy.fs import write_atomic
 from galaxy.slugs import slugify
-from galaxy import bodies, brightstars, hierarchy, medium, nebulae, orbits, project, travel
+from galaxy import bodies, brightstars, catalogue, hierarchy, medium, nebulae, orbits, project, travel
 from galaxy import trips as galaxy_trips
 from galaxy import stars as star_data
 from galaxy import schema as galaxy_schema
 from galaxy.schema import coordinate_error
 from galaxy.coords import CoordinateConverter
-from galaxy.jsonstore import ValidationError, store
+from galaxy.jsonstore import ValidationError
 
 
 # The canvas the CLI renders at, and therefore the coordinate space the preview
@@ -120,16 +120,7 @@ def _differences(theirs: Any, mine: Any) -> list[str]:
     return out
 
 
-def system_order(name: str) -> tuple[bool, str]:
-    """The order galaxy.json keeps its systems in.
-
-    Not a plain alphabetical sort: the ``Unnamed NNN`` placeholders are held
-    together at the end of the array, after every named system.
-
-    Insertions and renames are placed with it so the convention survives editing;
-    the array is never re-sorted wholesale, which would only churn the diff.
-    """
-    return (name.startswith("Unnamed "), name.lower())
+system_order = catalogue.system_order      # the order the catalogue keeps its systems in
 
 
 class GalaxySession:
@@ -246,15 +237,15 @@ class GalaxySession:
         with self._lock:
             if self._draft is not None:
                 return copy.deepcopy(self._draft)
-            # Copied so the store's cached document is never mutated by an edit.
-            return store.read_copy(project.current().catalogue)
+            # The layers merged: a private copy, so an edit never touches the store's cache.
+            return catalogue.read()
 
     def edit(self) -> dict[str, Any]:
         """Return the draft, promoting the on-disk document into one if needed."""
         with self._lock:
             if self._draft is None:
-                self._draft = store.read_copy(project.current().catalogue)
-                self._baseline = _normalised_text(project.current().catalogue.read_text(encoding="utf-8"))
+                self._draft = catalogue.read()
+                self._baseline = _normalised_text(catalogue.text())
             return self._draft
 
     @property
@@ -366,7 +357,7 @@ class GalaxySession:
     def _three(self) -> tuple[dict, dict, dict]:
         """The last commit, the file now, the draft — as records."""
         base = _records(json.loads(self._baseline))
-        now = _records(json.loads(_normalised_text(project.current().catalogue.read_text(encoding="utf-8"))))
+        now = _records(json.loads(_normalised_text(catalogue.text())))
         mine = _records(galaxy_schema.normalise(copy.deepcopy(self._draft)))
         return base, now, mine
 
@@ -1058,7 +1049,7 @@ class GalaxySession:
 
             galaxy_schema.normalise(draft)
             try:
-                wrote = store.write(project.current().catalogue, draft, validator=_validate)
+                wrote = catalogue.write(draft, validator=_validate)
             except ValidationError as e:
                 self.refusal = {"system": _system_named_in(str(e), draft), "message": str(e)}
                 raise
@@ -1081,21 +1072,23 @@ class GalaxySession:
     @staticmethod
     def _svg_stale() -> bool:
         """Whether the published SVG is missing or older than galaxy.json."""
-        svg, catalogue = project.current().svg, project.current().catalogue
-        return (svg is not None and svg.parent.exists() and catalogue.exists()
-                and (not svg.exists() or svg.stat().st_mtime < catalogue.stat().st_mtime))
+        svg, own = project.current().svg, project.current().catalogue
+        return (svg is not None and svg.parent.exists() and own.exists()
+                and (not svg.exists() or svg.stat().st_mtime < own.stat().st_mtime))
 
     @staticmethod
     def publish_copy() -> None:
         """Copy galaxy.json to where the 3D map fetches it, so the dev site
         shows a save without a rebuild — as committing a map publishes it.
         The build does the same."""
-        public, catalogue = project.current().public, project.current().catalogue
+        public = project.current().public
         if public is not None and public.exists():
-            write_atomic(public / "galaxy.json", catalogue.read_bytes())
+            # The layers merged: the maps read the whole catalogue.
+            text = catalogue.text()
+            write_atomic(public / "galaxy.json", text)
             # And what the star-system map draws from it (galaxy.systemmap).
             from galaxy import systemmap
-            doc = json.loads(catalogue.read_text(encoding="utf-8"))
+            doc = json.loads(text)
             systemmap.write(doc, public / "systems.json")
             # And the stored trips' routes (galaxy.trips).
             galaxy_trips.write(doc, public / "trips.json")
@@ -1110,12 +1103,15 @@ class GalaxySession:
         svg = project.current().svg
         if svg is None or not svg.parent.exists():
             return False
-        result = subprocess.run(
-            [sys.executable, "-m", "galaxy.cli.galaxy_generate",
-             "-i", str(project.current().catalogue), "-o", str(svg)],
-            capture_output=True,
-            text=True,
-        )
+        # The layers merged, in a file the renderer reads.
+        with tempfile.TemporaryDirectory() as tmp:
+            merged = Path(tmp) / "galaxy.json"
+            merged.write_text(catalogue.text(), encoding="utf-8")
+            result = subprocess.run(
+                [sys.executable, "-m", "galaxy.cli.galaxy_generate", "-i", str(merged), "-o", str(svg)],
+                capture_output=True,
+                text=True,
+            )
         if result.returncode != 0:
             raise RuntimeError(f"galaxy SVG generation failed: {result.stderr.strip()}")
         return True
@@ -1199,17 +1195,7 @@ def _sector_order(sector_id: str) -> tuple[int, int]:
     return (ord(sector_id[0]), int(sector_id[1:] or 0))
 
 
-def _insert_at(systems: list[dict[str, Any]], name: str) -> int:
-    """Index at which `name` belongs, keeping the array in system_order.
-
-    A linear scan rather than bisect: 166 entries, and it stays correct even if
-    the array is not perfectly ordered to begin with, where bisect would not.
-    """
-    key = system_order(name)
-    for i, s in enumerate(systems):
-        if system_order(s.get("name", "")) > key:
-            return i
-    return len(systems)
+_insert_at = catalogue.insert_at
 
 
 # ── star system detail ────────────────────────────────────────────────────────

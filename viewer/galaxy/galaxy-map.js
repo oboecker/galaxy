@@ -54,6 +54,11 @@ export function createGalaxyMap(root, options = {}) {
         // an editor's draft, the maps site's). Without one, that
         // layer is not drawn: no territories, trips, procedural galaxy.
         const CONFIG = Object.assign({
+            // The catalogue's layers, merged in order by name (galaxy.catalogue):
+            // [{ id, label, url, real?, icon?, shown? }] — each a switch on the
+            // map; `real` draws its stars as the real sky's (small, no glow, no
+            // stem, named when hovered). Without layers, `galaxy` is the one file.
+            layers: null,
             galaxy: null,
             textures: null,
             // Their height maps, for the globes' relief.
@@ -520,6 +525,7 @@ export function createGalaxyMap(root, options = {}) {
                 userData: {
                     name: star.name,
                     real: star.real,
+                    layer: star.layer,
                     // Its id in the procedural galaxy (galaxy.procedural): one
                     // of the layer's, not the catalogue's.
                     procedural: star.procedural || null,
@@ -535,13 +541,20 @@ export function createGalaxyMap(root, options = {}) {
             });
         }
 
-        // The real sky's stars:
-        // much smaller than the catalogue's own, no glow, no stem, named only when
-        // hovered or chosen; shown or hidden by their button (☆).
+        // The catalogue's layers, each shown or hidden by its button,
+        // remembered for every galaxy map. A real layer's stars are much
+        // smaller than the others, without glow or stem, named only when
+        // hovered or chosen.
         const REAL_SIZE = 0.25;
         const REAL_KEY = 'galaxy-real-stars';
-        let realShown = (() => { try { return localStorage.getItem(REAL_KEY) !== 'hidden'; } catch { return true; } })();
-        let onRealChosen = null;                // the choice made on another map of the page
+        const LAYERS = (CONFIG.layers || [{ id: 'catalogue', url: CONFIG.galaxy, toggle: false }])
+            .filter(layer => layer.url);
+        const layerKey = layer => layer.key || (layer.real ? REAL_KEY : `galaxy-layer-${layer.id}`);
+        const layerShown = Object.fromEntries(LAYERS.map(layer => [layer.id, (() => {
+            try { const v = localStorage.getItem(layerKey(layer)); return v ? v !== 'hidden' : layer.shown !== false; }
+            catch { return layer.shown !== false; }
+        })()]));
+        const layerListeners = [];              // the choices made on another map of the page
         // The procedural galaxy: the systems the catalogue does not
         // name, as many as round Sol, laid out by the arms — a layer like the
         // real stars, hidden at first (its file is fetched when first shown),
@@ -555,7 +568,7 @@ export function createGalaxyMap(root, options = {}) {
         // shown or hidden by ⊥, remembered for every galaxy map.
         const STEMS_KEY = 'galaxy-stems';
         let stemsShown = (() => { try { return localStorage.getItem(STEMS_KEY) !== 'hidden'; } catch { return true; } })();
-        const isShown = st => (realShown || !st.userData.real) && (procShown || !st.userData.procedural);
+        const isShown = st => layerShown[st.userData.layer] !== false && (procShown || !st.userData.procedural);
         // The stars the field draws, in its order: star.fieldIndex.
         let fieldStars = [];
 
@@ -1655,10 +1668,27 @@ export function createGalaxyMap(root, options = {}) {
         const loadTextureManifest = () => Promise.all([loadManifest(CONFIG.textures), loadManifest(CONFIG.heights)])
             .then(([textures, heights]) => ({ textures, heights }));
 
-        async function loadStarData(url) {
+        // The layers merged as galaxy.catalogue merges them: by name, a later
+        // layer's fields over an earlier one's; a system belongs to the first
+        // layer that has it. Gate links joined, nebulae by name.
+        async function loadLayers() {
+            const docs = await Promise.all(LAYERS.map(layer => fetch(layer.url)
+                .then(r => (r.ok ? r.json() : {})).catch(() => ({}))));
+            const systems = new Map(), nebulae = new Map(), links = [];
+            docs.forEach((doc, k) => {
+                (doc.star_systems || []).forEach(obj => {
+                    const earlier = systems.get(obj.name);
+                    systems.set(obj.name, earlier ? { ...earlier, ...obj, _layer: earlier._layer } : { ...obj, _layer: LAYERS[k] });
+                });
+                (doc.nebulae || []).forEach(n => nebulae.set(n.name, { ...(nebulae.get(n.name) || {}), ...n }));
+                links.push(...(doc.gate_links || []));
+            });
+            return { star_systems: [...systems.values()], nebulae: [...nebulae.values()], gate_links: links };
+        }
+
+        async function loadStarData() {
             try {
-                const [response, { textures, heights }] = await Promise.all([fetch(url), loadTextureManifest()]);
-                const data = await response.json();
+                const [data, { textures, heights }] = await Promise.all([loadLayers(), loadTextureManifest()]);
 
                 stars.length = 0;
 
@@ -1672,7 +1702,10 @@ export function createGalaxyMap(root, options = {}) {
                                 z: -obj.y,
                                 spectralType: obj.spectral_class || 'Unknown',
                                 objectType: obj.object_type,
-                                real: (obj.stars || []).some(s => s.hip),
+                                // Drawn as the real sky's: a real layer's, or (one file, no
+                                // layers) a star with a catalogue number.
+                                real: obj._layer.real ?? (!CONFIG.layers && (obj.stars || []).some(s => s.hip)),
+                                layer: obj._layer.id,
                                 // The planets only: no dwarf planets (`dwarf: true`) on the
                                 // galaxy map (Sol's eight).
                                 planets: (obj.planets || []).filter(p => !p.dwarf).map(p =>
@@ -1708,10 +1741,16 @@ export function createGalaxyMap(root, options = {}) {
         // How travel looks — route colours, the streaming glow, the drive
         // slider, the gate overlay — from travel.json's `maps`, the one place
         // both maps read it from. Without it, no travel is drawn.
-        var travelLook = null;
+        // Its `modes` are the project's ways of travel beyond the own drive
+        // and the gates, each with its label.
+        var travelLook = null, travelModes = {};
         const travelLookReady = (CONFIG.travelSettings ? fetch(CONFIG.travelSettings) : Promise.resolve(null))
             .then(response => (response && response.ok ? response.json() : null))
-            .then(settings => { travelLook = settings && settings.maps; return travelLook; })
+            .then(settings => {
+                travelLook = settings && settings.maps;
+                travelModes = (settings && settings.modes) || {};
+                return travelLook;
+            })
             .catch(() => null);
         const gateGroup = new THREE.Group();
         gateGroup.visible = false;
@@ -1733,37 +1772,42 @@ export function createGalaxyMap(root, options = {}) {
             holder.appendChild(button);
         })();
 
-        (function realStarsButton() {
+        // A button for each layer that has one: hide or show its stars.
+        LAYERS.filter(layer => layer.toggle !== false && LAYERS.length > 1).forEach(layer => {
             const holder = byId('search-container');
             if (!holder) return;
             const button = document.createElement('button');
             button.className = 'space-tool icon-button';
-            button.id = 'toggle-real-stars-btn';
-            toggleIcon(button, 'star');
+            button.id = `toggle-layer-${layer.id}-btn`;
+            toggleIcon(button, layer.icon || 'star');
+            const name = layer.label || layer.id;
             const show = () => {
-                button.setAttribute('aria-pressed', String(realShown));
-                button.title = realShown ? 'Hide the real sky\'s stars' : 'Show the real sky\'s stars';
+                button.setAttribute('aria-pressed', String(layerShown[layer.id]));
+                button.title = layerShown[layer.id] ? `Hide ${name}` : `Show ${name}`;
             };
             show();
-            const setReal = shown => {
-                realShown = shown;
+            const setShown = shown => {
+                layerShown[layer.id] = shown;
                 show();
-                if (!realShown && selectedStar && selectedStar.userData && selectedStar.userData.real) deselectStar();
-                if (hoveredStar && hoveredStar.userData && hoveredStar.userData.real) { resetStarHoverState(hoveredStar); hoveredStar = null; }
+                const ours = obj => obj && obj.userData && obj.userData.layer === layer.id;
+                if (!shown && ours(selectedStar)) deselectStar();
+                if (!shown && ours(hoveredStar)) { resetStarHoverState(hoveredStar); hoveredStar = null; }
                 rebuildField();
                 labelsFrame = 0;
                 hoverStale = true;
             };
             button.addEventListener('click', () => {
-                try { localStorage.setItem(REAL_KEY, !realShown ? 'shown' : 'hidden'); } catch { /* this page only */ }
-                setReal(!realShown);
-                globalThis.dispatchEvent(new CustomEvent(REAL_KEY, { detail: realShown }));
+                const shown = !layerShown[layer.id];
+                try { localStorage.setItem(layerKey(layer), shown ? 'shown' : 'hidden'); } catch { /* this page only */ }
+                setShown(shown);
+                globalThis.dispatchEvent(new CustomEvent(layerKey(layer), { detail: shown }));
             });
             // Chosen on another map of the page (a 2D map, say): followed.
-            onRealChosen = event => { if (event.detail !== realShown) setReal(event.detail); };
-            globalThis.addEventListener(REAL_KEY, onRealChosen);
+            const listener = event => { if (event.detail !== layerShown[layer.id]) setShown(event.detail); };
+            globalThis.addEventListener(layerKey(layer), listener);
+            layerListeners.push([layerKey(layer), listener]);
             holder.appendChild(button);
-        })();
+        });
 
         // The procedural galaxy's dots and network, fetched once.
         function loadProcedural() {
@@ -2127,6 +2171,7 @@ export function createGalaxyMap(root, options = {}) {
         var travel = { panel: null, route: null, chosen: null, query: null, options: null, trips: null, flow: 0 };
         travelLookReady.then(look => {
             if (!look) return;
+            TRAVEL_DRIVES = [...BUILT_IN_DRIVES, ...Object.entries(travelModes).map(([name, mode]) => [name, mode.label || name])];
             if (CONFIG.travel) setUpTravel();
             setUpTrips();
         });
@@ -2227,7 +2272,10 @@ export function createGalaxyMap(root, options = {}) {
 
         // The drive slider's stops between the stars, slowest first: the way
         // names galaxy.travel gives. Sublight is a system's (centuries here).
-        const TRAVEL_DRIVES = [['gates', 'Jump gate'], ['own drive', 'Own drive'], ['catapult', 'Catapult'], ['AEGIS', 'AEGIS']];
+        // The drive slider's ways: the gates and the own drive, then the
+        // project's modes (set when travel.json is read).
+        const BUILT_IN_DRIVES = [['gates', 'Jump gate'], ['own drive', 'Own drive']];
+        var TRAVEL_DRIVES = BUILT_IN_DRIVES;
         const driveLabel = way => (TRAVEL_DRIVES.find(([w]) => w === way) || [way, way])[1];
 
         // A speed between the stars: ly a day, and as multiples
@@ -2259,7 +2307,7 @@ export function createGalaxyMap(root, options = {}) {
             clearRoute();
             none.textContent = option ? `${driveLabel(way)}: ${option.why}.`
                 : `${driveLabel(way)}: no way on this trip${way === 'gates' ? ' — no gate link, or none faster than the own drive'
-                    : way === 'catapult' ? ` — ${travel.query.start} has no catapult` : ''}.`;
+                    : (travelModes[way] || {}).from_point ? ` — ${travel.query.start} has no ${travelModes[way].from_point}` : ''}.`;
         }
 
         // The slider: from travel.json's lowest share to all of it, a tenth of
@@ -2290,7 +2338,7 @@ export function createGalaxyMap(root, options = {}) {
             const stops = option.legs.slice(0, -1).map(leg => leg.end);
             const how = [stops.length ? `via ${stops.map(escapeHtml).join(', ')}` : '',
                 unit === 'ly' ? `${Math.round(far).toLocaleString('en')} ly` : `${far.toFixed(3)} AU`,
-                // While moving; AEGIS has none — a shortcut, not a flight.
+                // While moving; a jump has none — a shortcut, not a flight.
                 unit === 'ly' && option.average ? `${lySpeed(option.average)} while moving` : ''].filter(Boolean).join(' · ');
             return `<strong>${escapeHtml(driveLabel(option.name))}</strong> ${duration(option.days)}`
                 + (option.arrival ? ` <span class="travel-via">arrives ${escapeHtml(option.arrival)}</span>` : '')
@@ -2586,7 +2634,7 @@ export function createGalaxyMap(root, options = {}) {
         // the camera and the territories stay).
         const reload = () => {
             const selected = selectedStar && selectedStar.userData.name;
-            return loadStarData(CONFIG.galaxy).then(() => {
+            return loadStarData().then(() => {
                 deselectStar();
                 const again = selected && stars.find(st => st.userData.name === selected);
                 if (again) selectStar(again);
@@ -2594,7 +2642,7 @@ export function createGalaxyMap(root, options = {}) {
         };
 
         // Use absolute path from site root to work from any page location
-        loadStarData(CONFIG.galaxy).then(async () => {
+        loadStarData().then(async () => {
             // Arrived from a system map: its star selected and in view — an
             // uncharted one's with the procedural layer shown.
             if (options.uncharted && CONFIG.procedural) await showProcedural();
@@ -2628,7 +2676,7 @@ export function createGalaxyMap(root, options = {}) {
                 fx.dispose();
                 PLANET_LOOK.releaseTextures();
                 globalThis.removeEventListener('resize', onResize);
-                if (onRealChosen) globalThis.removeEventListener(REAL_KEY, onRealChosen);
+                layerListeners.forEach(([key, listener]) => globalThis.removeEventListener(key, listener));
                 if (onNebulaeChosen) globalThis.removeEventListener(NEBULAE_KEY, onNebulaeChosen);
                 renderer.dispose();
                 renderer.forceContextLoss();   // or the context outlives the page: browsers cap them at about 16

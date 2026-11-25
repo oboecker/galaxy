@@ -16,7 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from galaxy import project, travel, trips
+from galaxy import catalogue, project, travel, trips
 
 
 def _override(pairs: list[str]) -> dict:
@@ -56,7 +56,7 @@ def main() -> None:
     parser.add_argument("--set", action="append", default=[], metavar="KEY=VALUE")
     project.add_argument(parser)
     args = parser.parse_args()
-    doc = json.loads(project.from_args(args).catalogue.read_text(encoding="utf-8"))
+    doc = catalogue.read(project.from_args(args))
     if args.json or args.system:
         try:
             found = trips.summary(doc, args.start, args.end, args.depart, args.by, args.system, args.efficiency,

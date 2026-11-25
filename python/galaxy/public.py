@@ -10,7 +10,8 @@ trips, nation territories, anything only an editor uses.
 
 `bundle(out)` writes it all into a fresh directory:
 
-    galaxy.json            the allowed fields of the project's galaxy.json
+    galaxy.json            the allowed fields of the whole catalogue, the layers merged
+    layers/<name>.json     the engine's layers (real-sky), the same fields: a switch each on the map
     systems.json           what the system maps draw (systemmap.export of it)
     glow.json              the galaxy's light, for the band in their skies
                            (galaxy.procedural.glow: no systems in it)
@@ -21,13 +22,14 @@ trips, nation territories, anything only an editor uses.
 
 from __future__ import annotations
 
+import copy
 import json
 import re
 import shutil
 from pathlib import Path
 from typing import Any, Optional
 
-from galaxy import project, systemmap
+from galaxy import catalogue, project, systemmap
 
 ORBIT = {"au": None, "km": None, "e": None, "i": None, "node": None, "periapsis": None, "anomaly": None}
 BODY = {"name": None, "id": None, "index": None, "class": None, "radius": None, "look": None, "tilt": None,
@@ -59,6 +61,8 @@ GALAXY = {
 # colours only ("settings"), at any depth — no text gets through.
 TRAVEL_MAPS = {"route_colours": "settings", "stream": "settings", "route_opacity": "settings",
                "stop_pixels": None, "drive_share_min": "settings", "gate_overlay": "settings"}
+# What the maps learn of a travel mode: its kind, label, leg kind, and where it starts.
+TRAVEL_MODE = ("kind", "label", "leg", "from_point")
 COLOUR = re.compile(r"#[0-9a-fA-F]{3,8}")
 
 
@@ -102,8 +106,12 @@ def galaxy(doc: dict[str, Any]) -> dict[str, Any]:
 
 
 def travel_settings(doc: dict[str, Any]) -> dict[str, Any]:
-    """travel.json's drawing settings (`maps`) with only what TRAVEL_MAPS allows."""
-    return {"maps": allowed(doc.get("maps") or {}, TRAVEL_MAPS)}
+    """travel.json's drawing settings (`maps`) with only what TRAVEL_MAPS
+    allows, and its modes as the maps name them (TRAVEL_MODE: no numbers)."""
+    from galaxy import travel
+    return {"maps": allowed(doc.get("maps") or {}, TRAVEL_MAPS),
+            "modes": {name: {k: v for k, v in mode.items() if k in TRAVEL_MODE}
+                      for name, mode in travel.modes(doc).items()}}
 
 
 def bundle(out: Path, *, galaxy_json: Optional[Path] = None, travel_json: Optional[Path] = None,
@@ -116,12 +124,13 @@ def bundle(out: Path, *, galaxy_json: Optional[Path] = None, travel_json: Option
     False; only within `procedural_within` ly of Sol if given (the test's
     quick look at what it publishes)."""
     here = project.current()
-    galaxy_json, travel_json = galaxy_json or here.catalogue, travel_json or here.travel
+    travel_json = travel_json or here.travel
     planets = planets or here.public_planets
     if out.exists():
         shutil.rmtree(out)
     (out / "planets" / "height").mkdir(parents=True)
-    doc = galaxy(json.loads(galaxy_json.read_text(encoding="utf-8")))
+    whole = catalogue.read(here, galaxy_json)
+    doc = galaxy(copy.deepcopy(whole))
     written = []
 
     def dump(name: str, data: Any) -> None:
@@ -130,6 +139,11 @@ def bundle(out: Path, *, galaxy_json: Optional[Path] = None, travel_json: Option
         written.append(path)
 
     dump("galaxy.json", doc)
+    # The engine's own layers beside it, each a switch on the galaxy map; the
+    # project's systems are the rest of galaxy.json.
+    (out / "layers").mkdir()
+    for path, layer in zip(here.layers[:-1], catalogue._layers(here)[:-1]):
+        dump(f"layers/{catalogue.layer_name(path)}.json", galaxy(copy.deepcopy(layer)))
     dump("systems.json", systemmap.export(doc))
     # The skies' nebulae, beside systems.json as a site has them.
     dump("nebulae.json", systemmap.sky_nebulae(doc))
@@ -140,7 +154,7 @@ def bundle(out: Path, *, galaxy_json: Optional[Path] = None, travel_json: Option
     # writes only its own systems and the gate network's names, which the
     # public galaxy.json has already.
     if with_procedural:
-        procedural.bundle(out, json.loads(galaxy_json.read_text(encoding="utf-8")), within=procedural_within)
+        procedural.bundle(out, whole, within=procedural_within)
         written += [out / "procedural.json", out / "procedural-gates.json"]
         written += sorted((out / "procedural").glob("*.json"))
     dump("travel-settings.json", travel_settings(json.loads(travel_json.read_text(encoding="utf-8"))))

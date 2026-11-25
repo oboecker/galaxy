@@ -5,7 +5,9 @@ A project describes itself in a `project.toml`; relative paths in it are
 read against the file's folder:
 
     root = "../.."                      paths in messages are written relative to it
-    catalogue = "galaxy.json"
+    catalogue = "galaxy.json"           the layer an editor writes
+    layers = ["@real-sky", "galaxy.json"]   optional: the catalogue's layers in order, the default
+                                        shown; `@name` for one the engine ships (galaxy.catalogue)
     nations = "nations.json"
     travel = "travel.json"              the travel planner's numbers
     medium = "medium.json"              the faster-than-light medium's density field
@@ -59,6 +61,7 @@ class Project:
     public: Optional[Path] = None
     public_planets: Optional[Path] = None
     svg: Optional[Path] = None
+    layers: tuple[Path, ...] = ()
 
     def relative(self, path: Path) -> str:
         """`path` as written relative to the project's root, or absolute if
@@ -85,11 +88,22 @@ def load(path: Union[str, Path]) -> Project:
     missing = [key for key in _REQUIRED if key not in raw]
     if missing:
         raise ValueError(f"{path}: missing {', '.join(missing)}")
-    unknown = set(raw) - {"root", "namer", *_REQUIRED, *_OPTIONAL}
+    unknown = set(raw) - {"root", "namer", "layers", *_REQUIRED, *_OPTIONAL}
     if unknown:
         raise ValueError(f"{path}: unknown {', '.join(sorted(unknown))}")
     paths = {key: _joined(base, raw[key]) for key in (*_REQUIRED, *_OPTIONAL) if key in raw}
-    return Project(root=_joined(base, raw.get("root", ".")), namer=raw.get("namer"), **paths)
+    layers = tuple(_layer(base, name) for name in raw.get("layers", ["@real-sky", raw["catalogue"]]))
+    if not layers or layers[-1] != paths["catalogue"]:
+        raise ValueError(f"{path}: the last of `layers` is the catalogue, the layer an editor writes")
+    return Project(root=_joined(base, raw.get("root", ".")), namer=raw.get("namer"), layers=layers, **paths)
+
+
+def _layer(base: Path, name: str) -> Path:
+    """A layer's file: one the engine ships (`@name`), else the project's."""
+    if name.startswith("@"):
+        from galaxy import catalogue
+        return catalogue.built_in(name[1:])
+    return _joined(base, name)
 
 
 def _joined(base: Path, relative: str) -> Path:

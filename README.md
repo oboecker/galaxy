@@ -30,7 +30,8 @@ A project describes itself in a `project.toml`. Paths in it are read against
 the file's folder (`galaxy.project`):
 
 ```toml
-catalogue = "galaxy.json"           # the systems, labels, gate links, trips, nebulae
+catalogue = "galaxy.json"           # the story's own systems, labels, gate links, trips, nebulae
+layers = ["@real-sky", "galaxy.json"]   # optional, the default: the catalogue's layers in order
 nations = "nations.json"            # who held which system, when, in which timeline branch
 travel = "travel.json"              # the travel planner's numbers
 medium = "medium.json"              # the faster-than-light medium's density field
@@ -43,9 +44,33 @@ drafts = "…"                        # optional: an editor's working state
 public = "…"                        # optional: where the maps' data is written
 ```
 
+The catalogue is a list of layers (`galaxy.catalogue`), merged in order by
+name: the engine ships `@real-sky` (Sol and its bodies, the bright stars, the
+real nebulae), and a story adds its own file, which may also extend a real
+star (planets for Vega, say). An editor works on the merged catalogue and
+writes only the story's layer back. A map is extended by adding a layer,
+never by rewriting one.
+
+Travel between stars always has the faster-than-light own drive (through the
+medium) and, where gate links exist, the gates; within a system, sublight and
+jumpgates. A story adds its own ways in `travel.json`:
+
+```json
+"modes": {
+  "Slingshot": {"kind": "straight", "ly_per_day": 1400, "from_point": "slingshot"},
+  "Warp": {"kind": "jump", "minutes": 10, "label": "Warp jump"}
+}
+```
+
+A `straight` mode flies straight at its speed, blocked by a void in between,
+and with `from_point` starts only where a point of interest of that kind is.
+A `jump` mode takes its minutes anywhere outside a void: a shortcut, not a
+flight.
+
 The CLIs take `--project`, or read `GALAXY_PROJECT`:
 
 ```sh
+python -m galaxy.cli.catalogue   --project my/project.toml --out public/galaxy.json --layers public/layers
 python -m galaxy.cli.system_maps --project my/project.toml --out public/systems.json
 python -m galaxy.cli.trips       --project my/project.toml --out public/trips.json
 python -m galaxy.cli.territories --project my/project.toml --out public/territories
@@ -77,7 +102,10 @@ import { createGalaxyMap } from 'galaxy/viewer/galaxy/galaxy-map.js'
 const map = createGalaxyMap(document.getElementById('map'), {
   title: '<strong>My galaxy</strong>',
   config: {                          // each file the build wrote; a layer without one is not drawn
-    galaxy: '/data/galaxy.json',
+    layers: [                        // the catalogue's layers, a switch each on the map
+      { id: 'real-sky', label: "the real sky's stars", url: '/data/layers/real-sky.json', real: true, icon: 'star' },
+      { id: 'story', label: "the story's systems", url: '/data/layers/galaxy.json', icon: 'planet' },
+    ],
     trips: '/data/trips.json',
     travelSettings: '/data/travel-settings.json',
     territories: '/data/territories/',
@@ -99,11 +127,6 @@ Icons are [Remix Icon](https://remixicon.com) (Apache 2.0, see
 
 Planned next:
 
-- the catalogue as a list of layer files: the real sky and the procedural
-  galaxy shipped with the engine, each story adding its own, every layer a
-  switch on the map;
-- travel modes as configuration: sublight and faster-than-light by default,
-  more defined by a story;
 - custom 3D objects beside the built-in nebulae, black holes and pulsars;
 - one build command writing everything the viewer reads, with a manifest;
 - an example project and a demo page.
@@ -111,7 +134,8 @@ Planned next:
 ## Data and credits
 
 - Bright stars: the HYG database (astronexus.com), CC BY-SA, in
-  `python/galaxy/data/bright-stars.csv`.
+  `python/galaxy/data/bright-stars.csv`, and placed from it in the real-sky
+  layer, `python/galaxy/data/real-sky.json` (CC BY-SA as well).
 - Constellation figures and boundaries: `python/galaxy/data/`.
 - Real nebulae: positions and distances checked against SIMBAD (CDS,
   Strasbourg), `python/galaxy/data/real-nebulae.csv`.

@@ -1,0 +1,6868 @@
+{
+  "star_systems": [
+    {
+      "name": "Achernar",
+      "x": -582.08,
+      "y": 24967.066,
+      "z": -73.0,
+      "coordinate_system": "galactic",
+      "spectral_class": "B3V",
+      "stars": [
+        {
+          "name": "Achernar",
+          "spectral_class": "B3V",
+          "hip": 7588
+        }
+      ],
+      "plane": {
+        "i": 82.3,
+        "node": 50.1,
+        "zero": 28.9
+      }
+    },
+    {
+      "name": "Acrux",
+      "x": -787.012,
+      "y": 24828.382,
+      "z": 47.97,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0.5IV",
+      "stars": [
+        {
+          "name": "Acrux",
+          "spectral_class": "B0.5IV",
+          "hip": 60718
+        }
+      ],
+      "plane": {
+        "i": 152.6,
+        "node": 180.0,
+        "zero": 280.1
+      }
+    },
+    {
+      "name": "Adhara",
+      "x": -882.511,
+      "y": 25199.766,
+      "z": -34.643,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2II",
+      "stars": [
+        {
+          "name": "Adhara",
+          "spectral_class": "B2II",
+          "hip": 33579
+        }
+      ],
+      "plane": {
+        "i": 134.9,
+        "node": 215.3,
+        "zero": 24.2
+      }
+    },
+    {
+      "name": "Alcyone",
+      "x": -441.967,
+      "y": 25324.763,
+      "z": -96.36,
+      "coordinate_system": "galactic",
+      "spectral_class": "B7III",
+      "stars": [
+        {
+          "name": "Alcyone",
+          "spectral_class": "B7III",
+          "hip": 17702
+        }
+      ],
+      "plane": {
+        "i": 148.1,
+        "node": 353.5,
+        "zero": 189.3
+      }
+    },
+    {
+      "name": "Aldebaran",
+      "x": -515.289,
+      "y": 25056.043,
+      "z": 27.466,
+      "coordinate_system": "galactic",
+      "spectral_class": "K5III",
+      "stars": [
+        {
+          "name": "Aldebaran",
+          "spectral_class": "K5III",
+          "hip": 21421
+        }
+      ],
+      "plane": {
+        "i": 51.8,
+        "node": 179.0,
+        "zero": 325.9
+      }
+    },
+    {
+      "name": "Alderamin",
+      "x": -465.907,
+      "y": 25005.16,
+      "z": 57.779,
+      "coordinate_system": "galactic",
+      "spectral_class": "A7IV",
+      "stars": [
+        {
+          "name": "Alderamin",
+          "spectral_class": "A7IV",
+          "hip": 105199
+        }
+      ],
+      "plane": {
+        "i": 108.1,
+        "node": 26.9,
+        "zero": 20.5
+      }
+    },
+    {
+      "name": "Algenib",
+      "x": -299.081,
+      "y": 25075.448,
+      "z": -192.396,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Algenib",
+          "spectral_class": "B2IV",
+          "hip": 1067
+        }
+      ],
+      "plane": {
+        "i": 79.3,
+        "node": 142.5,
+        "zero": 252.0
+      }
+    },
+    {
+      "name": "Algieba",
+      "x": -557.477,
+      "y": 25052.492,
+      "z": 152.478,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Algieba",
+          "spectral_class": "K0III",
+          "hip": 50583
+        }
+      ],
+      "plane": {
+        "i": 161.9,
+        "node": 300.7,
+        "zero": 103.0
+      }
+    },
+    {
+      "name": "Algol",
+      "x": -468.357,
+      "y": 25072.8,
+      "z": 26.133,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8V",
+      "stars": [
+        {
+          "name": "Algol",
+          "spectral_class": "B8V",
+          "hip": 14576
+        }
+      ],
+      "plane": {
+        "i": 119.2,
+        "node": 50.9,
+        "zero": 251.0
+      }
+    },
+    {
+      "name": "Alhena",
+      "x": -545.202,
+      "y": 25094.408,
+      "z": 58.137,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0IV",
+      "stars": [
+        {
+          "name": "Alhena",
+          "spectral_class": "A0IV",
+          "hip": 31681
+        }
+      ],
+      "plane": {
+        "i": 139.7,
+        "node": 175.1,
+        "zero": 265.0
+      }
+    },
+    {
+      "name": "Alioth",
+      "x": -480.398,
+      "y": 25016.462,
+      "z": 120.895,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0",
+      "stars": [
+        {
+          "name": "Alioth",
+          "spectral_class": "A0",
+          "hip": 62956
+        }
+      ],
+      "plane": {
+        "i": 45.9,
+        "node": 120.0,
+        "zero": 249.3
+      }
+    },
+    {
+      "name": "Alkaid",
+      "x": -471.856,
+      "y": 25003.649,
+      "z": 141.503,
+      "coordinate_system": "galactic",
+      "spectral_class": "B3V",
+      "stars": [
+        {
+          "name": "Alkaid",
+          "spectral_class": "B3V",
+          "hip": 67301
+        }
+      ],
+      "plane": {
+        "i": 158.4,
+        "node": 181.8,
+        "zero": 167.6
+      }
+    },
+    {
+      "name": "Alnair",
+      "x": -522.478,
+      "y": 24933.954,
+      "z": -30.433,
+      "coordinate_system": "galactic",
+      "spectral_class": "B7IV",
+      "stars": [
+        {
+          "name": "Alnair",
+          "spectral_class": "B7IV",
+          "hip": 109268
+        }
+      ],
+      "plane": {
+        "i": 121.1,
+        "node": 78.3,
+        "zero": 280.3
+      }
+    },
+    {
+      "name": "Alnath",
+      "x": -511.105,
+      "y": 25125.746,
+      "z": 41.44,
+      "coordinate_system": "galactic",
+      "spectral_class": "B7III",
+      "stars": [
+        {
+          "name": "Alnath",
+          "spectral_class": "B7III",
+          "hip": 25428
+        }
+      ],
+      "plane": {
+        "i": 10.8,
+        "node": 352.3,
+        "zero": 130.7
+      }
+    },
+    {
+      "name": "Alnilam",
+      "x": -1082.732,
+      "y": 26143.329,
+      "z": -347.836,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0Ia",
+      "stars": [
+        {
+          "name": "Alnilam",
+          "spectral_class": "B0Ia",
+          "hip": 26311
+        }
+      ],
+      "plane": {
+        "i": 47.8,
+        "node": 37.5,
+        "zero": 142.6
+      }
+    },
+    {
+      "name": "Alnitak",
+      "x": -876.295,
+      "y": 25689.094,
+      "z": -183.328,
+      "coordinate_system": "galactic",
+      "spectral_class": "O9.5Ib",
+      "stars": [
+        {
+          "name": "Alnitak",
+          "spectral_class": "O9.5Ib",
+          "hip": 26727
+        }
+      ],
+      "plane": {
+        "i": 123.9,
+        "node": 155.4,
+        "zero": 215.6
+      }
+    },
+    {
+      "name": "Alpha Aquarii",
+      "x": -20.013,
+      "y": 24722.907,
+      "z": -458.184,
+      "coordinate_system": "galactic",
+      "spectral_class": "G2Ib",
+      "stars": [
+        {
+          "name": "Alpha Aquarii",
+          "spectral_class": "G2Ib",
+          "hip": 109074
+        }
+      ],
+      "plane": {
+        "i": 63.0,
+        "node": 161.8,
+        "zero": 315.7
+      }
+    },
+    {
+      "name": "Alpha Arae",
+      "x": -587.268,
+      "y": 24767.359,
+      "z": 12.815,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2V",
+      "stars": [
+        {
+          "name": "Alpha Arae",
+          "spectral_class": "B2V",
+          "hip": 85792
+        }
+      ],
+      "plane": {
+        "i": 159.9,
+        "node": 267.6,
+        "zero": 179.2
+      }
+    },
+    {
+      "name": "Alpha Centauri",
+      "x": -515.998,
+      "y": 24991.794,
+      "z": 49.948,
+      "coordinate_system": "galactic",
+      "spectral_class": "G2V",
+      "stars": [
+        {
+          "name": "Rigil Kentaurus",
+          "spectral_class": "G2V",
+          "hip": 71683
+        },
+        {
+          "name": "Toliman",
+          "spectral_class": "K1V",
+          "orbit": {
+            "au": 23.52,
+            "e": 0.518,
+            "i": 0.0,
+            "node": 0.0,
+            "periapsis": 0.0,
+            "anomaly": 122.4
+          },
+          "hip": 71681
+        },
+        {
+          "name": "Proxima Centauri",
+          "spectral_class": "M5V",
+          "host": "Rigil Kentaurus+Toliman",
+          "orbit": {
+            "au": 8700.0,
+            "e": 0.5,
+            "i": 0.0,
+            "node": 0.0,
+            "periapsis": 0.0,
+            "anomaly": 180.0
+          },
+          "hip": 70890
+        }
+      ],
+      "plane": {
+        "i": 98.3,
+        "node": 62.5,
+        "zero": 309.7
+      }
+    },
+    {
+      "name": "Alpha Circini",
+      "x": -550.364,
+      "y": 24956.963,
+      "z": 45.718,
+      "coordinate_system": "galactic",
+      "spectral_class": "F1V",
+      "stars": [
+        {
+          "name": "Alpha Circini",
+          "spectral_class": "F1V",
+          "hip": 71908
+        }
+      ],
+      "plane": {
+        "i": 135.8,
+        "node": 108.5,
+        "zero": 58.0
+      }
+    },
+    {
+      "name": "Alpha Columbae",
+      "x": -716.41,
+      "y": 25112.512,
+      "z": -79.451,
+      "coordinate_system": "galactic",
+      "spectral_class": "B7IV",
+      "stars": [
+        {
+          "name": "Alpha Columbae",
+          "spectral_class": "B7IV",
+          "hip": 26634
+        }
+      ],
+      "plane": {
+        "i": 47.4,
+        "node": 5.7,
+        "zero": 119.8
+      }
+    },
+    {
+      "name": "Alpha Doradus",
+      "x": -644.286,
+      "y": 25006.467,
+      "z": -66.248,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0V",
+      "stars": [
+        {
+          "name": "Alpha Doradus",
+          "spectral_class": "A0V",
+          "hip": 21281
+        }
+      ],
+      "plane": {
+        "i": 122.7,
+        "node": 306.7,
+        "zero": 114.9
+      }
+    },
+    {
+      "name": "Alpha Hydri",
+      "x": -552.455,
+      "y": 24980.152,
+      "z": -7.515,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0V",
+      "stars": [
+        {
+          "name": "Alpha Hydri",
+          "spectral_class": "F0V",
+          "hip": 9236
+        }
+      ],
+      "plane": {
+        "i": 80.4,
+        "node": 48.5,
+        "zero": 305.5
+      }
+    },
+    {
+      "name": "Alpha Indi",
+      "x": -521.79,
+      "y": 24914.833,
+      "z": -11.233,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Alpha Indi",
+          "spectral_class": "K0III",
+          "hip": 101772
+        }
+      ],
+      "plane": {
+        "i": 41.0,
+        "node": 30.0,
+        "zero": 226.6
+      }
+    },
+    {
+      "name": "Alpha Lupi",
+      "x": -837.937,
+      "y": 24567.12,
+      "z": 158.691,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1.5III",
+      "stars": [
+        {
+          "name": "Alpha Lupi",
+          "spectral_class": "B1.5III",
+          "hip": 71860
+        }
+      ],
+      "plane": {
+        "i": 110.3,
+        "node": 36.6,
+        "zero": 331.4
+      }
+    },
+    {
+      "name": "Alpha Lyncis",
+      "x": -544.212,
+      "y": 25149.638,
+      "z": 206.238,
+      "coordinate_system": "galactic",
+      "spectral_class": "M0III",
+      "stars": [
+        {
+          "name": "Alpha Lyncis",
+          "spectral_class": "M0III",
+          "hip": 45860
+        }
+      ],
+      "plane": {
+        "i": 74.5,
+        "node": 342.4,
+        "zero": 106.7
+      }
+    },
+    {
+      "name": "Alpha Muscae",
+      "x": -768.302,
+      "y": 24830.269,
+      "z": 16.461,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Alpha Muscae",
+          "spectral_class": "B2IV",
+          "hip": 61585
+        }
+      ],
+      "plane": {
+        "i": 89.9,
+        "node": 244.5,
+        "zero": 302.0
+      }
+    },
+    {
+      "name": "Alpha Pavonis",
+      "x": -559.072,
+      "y": 24852.526,
+      "z": -55.602,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Alpha Pavonis",
+          "spectral_class": "B2IV",
+          "hip": 100751
+        }
+      ],
+      "plane": {
+        "i": 120.2,
+        "node": 232.9,
+        "zero": 14.4
+      }
+    },
+    {
+      "name": "Alpha Pictoris",
+      "x": -603.203,
+      "y": 24990.122,
+      "z": 9.593,
+      "coordinate_system": "galactic",
+      "spectral_class": "A7IV",
+      "stars": [
+        {
+          "name": "Alpha Pictoris",
+          "spectral_class": "A7IV",
+          "hip": 32607
+        }
+      ],
+      "plane": {
+        "i": 122.9,
+        "node": 227.8,
+        "zero": 338.7
+      }
+    },
+    {
+      "name": "Alpha Reticuli",
+      "x": -634.41,
+      "y": 24983.331,
+      "z": -58.493,
+      "coordinate_system": "galactic",
+      "spectral_class": "G7III",
+      "stars": [
+        {
+          "name": "Alpha Reticuli",
+          "spectral_class": "G7III",
+          "hip": 19780
+        }
+      ],
+      "plane": {
+        "i": 175.3,
+        "node": 285.0,
+        "zero": 240.7
+      }
+    },
+    {
+      "name": "Alpha Telescopii",
+      "x": -555.444,
+      "y": 24758.128,
+      "z": -15.311,
+      "coordinate_system": "galactic",
+      "spectral_class": "B3IV",
+      "stars": [
+        {
+          "name": "Alpha Telescopii",
+          "spectral_class": "B3IV",
+          "hip": 90422
+        }
+      ],
+      "plane": {
+        "i": 136.4,
+        "node": 277.4,
+        "zero": 71.5
+      }
+    },
+    {
+      "name": "Alpha Trianguli",
+      "x": -477.689,
+      "y": 25036.811,
+      "z": 16.588,
+      "coordinate_system": "galactic",
+      "spectral_class": "F6IV",
+      "stars": [
+        {
+          "name": "Alpha Trianguli",
+          "spectral_class": "F6IV",
+          "hip": 8796
+        }
+      ],
+      "plane": {
+        "i": 83.8,
+        "node": 232.9,
+        "zero": 239.7
+      }
+    },
+    {
+      "name": "Alpha Trianguli Australis",
+      "x": -755.842,
+      "y": 24676.091,
+      "z": -59.348,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2II",
+      "stars": [
+        {
+          "name": "Alpha Trianguli Australis",
+          "spectral_class": "K2II",
+          "hip": 82273
+        }
+      ],
+      "plane": {
+        "i": 42.0,
+        "node": 326.0,
+        "zero": 76.5
+      }
+    },
+    {
+      "name": "Alpha Tucanae",
+      "x": -576.674,
+      "y": 24878.228,
+      "z": -97.526,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3III",
+      "stars": [
+        {
+          "name": "Alpha Tucanae",
+          "spectral_class": "K3III",
+          "hip": 110130
+        }
+      ],
+      "plane": {
+        "i": 124.9,
+        "node": 230.5,
+        "zero": 63.4
+      }
+    },
+    {
+      "name": "Alphard",
+      "x": -650.662,
+      "y": 25066.162,
+      "z": 136.06,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3III",
+      "stars": [
+        {
+          "name": "Alphard",
+          "spectral_class": "K3III",
+          "hip": 46390
+        }
+      ],
+      "plane": {
+        "i": 149.3,
+        "node": 172.3,
+        "zero": 178.6
+      }
+    },
+    {
+      "name": "Alpha² Canum Venaticorum",
+      "x": -494.317,
+      "y": 25005.561,
+      "z": 158.08,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0",
+      "stars": [
+        {
+          "name": "Alpha² Canum Venaticorum",
+          "spectral_class": "A0",
+          "hip": 63125
+        }
+      ],
+      "plane": {
+        "i": 83.7,
+        "node": 148.0,
+        "zero": 167.3
+      }
+    },
+    {
+      "name": "Alpha² Librae",
+      "x": -532.299,
+      "y": 24937.315,
+      "z": 97.538,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3IV",
+      "stars": [
+        {
+          "name": "Alpha² Librae",
+          "spectral_class": "A3IV",
+          "hip": 72622
+        }
+      ],
+      "plane": {
+        "i": 100.9,
+        "node": 314.1,
+        "zero": 5.0
+      }
+    },
+    {
+      "name": "Alphekka",
+      "x": -482.858,
+      "y": 24962.728,
+      "z": 110.275,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0V",
+      "stars": [
+        {
+          "name": "Alphekka",
+          "spectral_class": "A0V",
+          "hip": 76267
+        }
+      ],
+      "plane": {
+        "i": 118.0,
+        "node": 344.3,
+        "zero": 159.1
+      }
+    },
+    {
+      "name": "Alpheratz",
+      "x": -437.878,
+      "y": 25026.745,
+      "z": -2.645,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9",
+      "stars": [
+        {
+          "name": "Alpheratz",
+          "spectral_class": "B9",
+          "hip": 677
+        }
+      ],
+      "plane": {
+        "i": 150.8,
+        "node": 25.7,
+        "zero": 3.6
+      }
+    },
+    {
+      "name": "Altair",
+      "x": -500.512,
+      "y": 24984.113,
+      "z": 47.403,
+      "coordinate_system": "galactic",
+      "spectral_class": "A7IV",
+      "stars": [
+        {
+          "name": "Altair",
+          "spectral_class": "A7IV",
+          "hip": 97649
+        }
+      ],
+      "plane": {
+        "i": 129.4,
+        "node": 83.7,
+        "zero": 42.2
+      }
+    },
+    {
+      "name": "Ankaa",
+      "x": -526.391,
+      "y": 24978.357,
+      "z": -24.394,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Ankaa",
+          "spectral_class": "K0III",
+          "hip": 2081
+        }
+      ],
+      "plane": {
+        "i": 98.0,
+        "node": 329.2,
+        "zero": 350.6
+      }
+    },
+    {
+      "name": "Antares",
+      "x": -582.836,
+      "y": 24415.962,
+      "z": 206.979,
+      "coordinate_system": "galactic",
+      "spectral_class": "M1Ib",
+      "stars": [
+        {
+          "name": "Antares",
+          "spectral_class": "M1Ib",
+          "hip": 80763
+        }
+      ],
+      "plane": {
+        "i": 98.0,
+        "node": 296.0,
+        "zero": 307.8
+      }
+    },
+    {
+      "name": "Arcturus",
+      "x": -509.339,
+      "y": 24982.433,
+      "z": 84.297,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Arcturus",
+          "spectral_class": "K2III",
+          "hip": 69673
+        }
+      ],
+      "plane": {
+        "i": 11.3,
+        "node": 263.1,
+        "zero": 66.3
+      }
+    },
+    {
+      "name": "Arneb",
+      "x": -1292.668,
+      "y": 25857.183,
+      "z": -495.545,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0Ib",
+      "stars": [
+        {
+          "name": "Arneb",
+          "spectral_class": "F0Ib",
+          "hip": 25985
+        }
+      ],
+      "plane": {
+        "i": 66.5,
+        "node": 206.0,
+        "zero": 282.5
+      }
+    },
+    {
+      "name": "Bellatrix",
+      "x": -585.613,
+      "y": 25217.112,
+      "z": -16.8,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2III",
+      "stars": [
+        {
+          "name": "Bellatrix",
+          "spectral_class": "B2III",
+          "hip": 25336
+        }
+      ],
+      "plane": {
+        "i": 127.2,
+        "node": 126.0,
+        "zero": 26.4
+      }
+    },
+    {
+      "name": "Beta Aquarii",
+      "x": -147.384,
+      "y": 24679.393,
+      "z": -325.717,
+      "coordinate_system": "galactic",
+      "spectral_class": "G0Ib",
+      "stars": [
+        {
+          "name": "Beta Aquarii",
+          "spectral_class": "G0Ib",
+          "hip": 106278
+        }
+      ],
+      "plane": {
+        "i": 132.0,
+        "node": 344.1,
+        "zero": 235.4
+      }
+    },
+    {
+      "name": "Beta Arae",
+      "x": -748.563,
+      "y": 24452.127,
+      "z": -65.168,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3Ib",
+      "stars": [
+        {
+          "name": "Beta Arae",
+          "spectral_class": "K3Ib",
+          "hip": 85258
+        }
+      ],
+      "plane": {
+        "i": 88.9,
+        "node": 61.7,
+        "zero": 170.1
+      }
+    },
+    {
+      "name": "Beta Arietis",
+      "x": -485.674,
+      "y": 25031.821,
+      "z": 11.957,
+      "coordinate_system": "galactic",
+      "spectral_class": "A5V",
+      "stars": [
+        {
+          "name": "Beta Arietis",
+          "spectral_class": "A5V",
+          "hip": 8903
+        }
+      ],
+      "plane": {
+        "i": 59.2,
+        "node": 317.0,
+        "zero": 320.2
+      }
+    },
+    {
+      "name": "Beta Aurigae",
+      "x": -497.083,
+      "y": 25074.174,
+      "z": 64.836,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2V",
+      "stars": [
+        {
+          "name": "Beta Aurigae",
+          "spectral_class": "A2V",
+          "hip": 28360
+        }
+      ],
+      "plane": {
+        "i": 168.9,
+        "node": 257.6,
+        "zero": 75.6
+      }
+    },
+    {
+      "name": "Beta Boötis",
+      "x": -411.15,
+      "y": 24955.484,
+      "z": 239.517,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Beta Boötis",
+          "spectral_class": "G8III",
+          "hip": 73555
+        }
+      ],
+      "plane": {
+        "i": 144.0,
+        "node": 96.5,
+        "zero": 119.9
+      }
+    },
+    {
+      "name": "Beta Canis Majoris",
+      "x": -868.376,
+      "y": 25323.671,
+      "z": -73.099,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1II",
+      "stars": [
+        {
+          "name": "Beta Canis Majoris",
+          "spectral_class": "B1II",
+          "hip": 30324
+        }
+      ],
+      "plane": {
+        "i": 112.6,
+        "node": 130.3,
+        "zero": 10.9
+      }
+    },
+    {
+      "name": "Beta Canis Minoris",
+      "x": -598.1,
+      "y": 25138.349,
+      "z": 84.458,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8V",
+      "stars": [
+        {
+          "name": "Beta Canis Minoris",
+          "spectral_class": "B8V",
+          "hip": 36188
+        }
+      ],
+      "plane": {
+        "i": 63.5,
+        "node": 31.3,
+        "zero": 201.3
+      }
+    },
+    {
+      "name": "Beta Capricorni",
+      "x": -357.361,
+      "y": 24728.928,
+      "z": -102.815,
+      "coordinate_system": "galactic",
+      "spectral_class": "A5",
+      "stars": [
+        {
+          "name": "Beta Capricorni",
+          "spectral_class": "A5",
+          "hip": 100345
+        }
+      ],
+      "plane": {
+        "i": 145.9,
+        "node": 85.1,
+        "zero": 11.4
+      }
+    },
+    {
+      "name": "Beta Carinae",
+      "x": -615.874,
+      "y": 24963.244,
+      "z": 22.342,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2IV",
+      "stars": [
+        {
+          "name": "Beta Carinae",
+          "spectral_class": "A2IV",
+          "hip": 45238
+        }
+      ],
+      "plane": {
+        "i": 141.6,
+        "node": 184.5,
+        "zero": 242.3
+      }
+    },
+    {
+      "name": "Beta Cephei",
+      "x": 33.904,
+      "y": 25180.276,
+      "z": 194.25,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2III",
+      "stars": [
+        {
+          "name": "Beta Cephei",
+          "spectral_class": "B2III",
+          "hip": 106032
+        }
+      ],
+      "plane": {
+        "i": 138.0,
+        "node": 306.4,
+        "zero": 153.5
+      }
+    },
+    {
+      "name": "Beta Columbae",
+      "x": -580.921,
+      "y": 25030.33,
+      "z": 10.893,
+      "coordinate_system": "galactic",
+      "spectral_class": "K1.5III",
+      "stars": [
+        {
+          "name": "Beta Columbae",
+          "spectral_class": "K1.5III",
+          "hip": 27628
+        }
+      ],
+      "plane": {
+        "i": 66.3,
+        "node": 40.8,
+        "zero": 74.4
+      }
+    },
+    {
+      "name": "Beta Corvi",
+      "x": -607.522,
+      "y": 24942.498,
+      "z": 138.523,
+      "coordinate_system": "galactic",
+      "spectral_class": "G5II",
+      "stars": [
+        {
+          "name": "Beta Corvi",
+          "spectral_class": "G5II",
+          "hip": 61359
+        }
+      ],
+      "plane": {
+        "i": 148.4,
+        "node": 163.7,
+        "zero": 185.8
+      }
+    },
+    {
+      "name": "Beta Crucis",
+      "x": -806.106,
+      "y": 24799.979,
+      "z": 69.558,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0.5III",
+      "stars": [
+        {
+          "name": "Beta Crucis",
+          "spectral_class": "B0.5III",
+          "hip": 62434
+        }
+      ],
+      "plane": {
+        "i": 40.5,
+        "node": 214.9,
+        "zero": 166.4
+      }
+    },
+    {
+      "name": "Beta Draconis",
+      "x": -214.741,
+      "y": 24946.451,
+      "z": 248.575,
+      "coordinate_system": "galactic",
+      "spectral_class": "G2II",
+      "stars": [
+        {
+          "name": "Beta Draconis",
+          "spectral_class": "G2II",
+          "hip": 85670
+        }
+      ],
+      "plane": {
+        "i": 78.0,
+        "node": 193.6,
+        "zero": 107.7
+      }
+    },
+    {
+      "name": "Beta Eridani",
+      "x": -548.854,
+      "y": 25066.871,
+      "z": 12.008,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3III",
+      "stars": [
+        {
+          "name": "Beta Eridani",
+          "spectral_class": "A3III",
+          "hip": 23875
+        }
+      ],
+      "plane": {
+        "i": 159.0,
+        "node": 116.0,
+        "zero": 102.5
+      }
+    },
+    {
+      "name": "Beta Gruis",
+      "x": -532.627,
+      "y": 24906.883,
+      "z": -94.214,
+      "coordinate_system": "galactic",
+      "spectral_class": "M5III",
+      "stars": [
+        {
+          "name": "Beta Gruis",
+          "spectral_class": "M5III",
+          "hip": 112122
+        }
+      ],
+      "plane": {
+        "i": 95.3,
+        "node": 92.3,
+        "zero": 286.2
+      }
+    },
+    {
+      "name": "Beta Herculis",
+      "x": -440.183,
+      "y": 24908.783,
+      "z": 145.411,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Beta Herculis",
+          "spectral_class": "G8III",
+          "hip": 80816
+        }
+      ],
+      "plane": {
+        "i": 80.4,
+        "node": 235.1,
+        "zero": 62.8
+      }
+    },
+    {
+      "name": "Beta Hydri",
+      "x": -528.166,
+      "y": 24983.999,
+      "z": 34.4,
+      "coordinate_system": "galactic",
+      "spectral_class": "G2IV",
+      "stars": [
+        {
+          "name": "Beta Hydri",
+          "spectral_class": "G2IV",
+          "hip": 2021
+        }
+      ],
+      "plane": {
+        "i": 60.4,
+        "node": 137.3,
+        "zero": 23.2
+      }
+    },
+    {
+      "name": "Beta Librae",
+      "x": -527.682,
+      "y": 24871.911,
+      "z": 151.224,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8V",
+      "stars": [
+        {
+          "name": "Beta Librae",
+          "spectral_class": "B8V",
+          "hip": 74785
+        }
+      ],
+      "plane": {
+        "i": 66.4,
+        "node": 222.2,
+        "zero": 311.9
+      }
+    },
+    {
+      "name": "Beta Lupi",
+      "x": -786.577,
+      "y": 24566.757,
+      "z": 175.846,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2III",
+      "stars": [
+        {
+          "name": "Beta Lupi",
+          "spectral_class": "B2III",
+          "hip": 73273
+        }
+      ],
+      "plane": {
+        "i": 144.1,
+        "node": 350.2,
+        "zero": 327.6
+      }
+    },
+    {
+      "name": "Beta Muscae",
+      "x": -771.063,
+      "y": 24823.381,
+      "z": 21.571,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2V",
+      "stars": [
+        {
+          "name": "Beta Muscae",
+          "spectral_class": "B2V",
+          "hip": 62322
+        }
+      ],
+      "plane": {
+        "i": 58.5,
+        "node": 24.8,
+        "zero": 27.2
+      }
+    },
+    {
+      "name": "Beta Ophiuchi",
+      "x": -473.377,
+      "y": 24927.434,
+      "z": 74.233,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Beta Ophiuchi",
+          "spectral_class": "K2III",
+          "hip": 86742
+        }
+      ],
+      "plane": {
+        "i": 82.8,
+        "node": 69.2,
+        "zero": 170.4
+      }
+    },
+    {
+      "name": "Beta Pavonis",
+      "x": -568.405,
+      "y": 24898.498,
+      "z": -30.873,
+      "coordinate_system": "galactic",
+      "spectral_class": "A5IV",
+      "stars": [
+        {
+          "name": "Beta Pavonis",
+          "spectral_class": "A5IV",
+          "hip": 102395
+        }
+      ],
+      "plane": {
+        "i": 17.3,
+        "node": 281.5,
+        "zero": 85.2
+      }
+    },
+    {
+      "name": "Beta Phoenicis",
+      "x": -572.98,
+      "y": 24964.858,
+      "z": -136.433,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Beta Phoenicis",
+          "spectral_class": "G8III",
+          "hip": 5165
+        }
+      ],
+      "plane": {
+        "i": 17.2,
+        "node": 338.2,
+        "zero": 1.5
+      }
+    },
+    {
+      "name": "Beta Trianguli",
+      "x": -443.329,
+      "y": 25083.293,
+      "z": -2.921,
+      "coordinate_system": "galactic",
+      "spectral_class": "A5III",
+      "stars": [
+        {
+          "name": "Beta Trianguli",
+          "spectral_class": "A5III",
+          "hip": 10064
+        }
+      ],
+      "plane": {
+        "i": 60.4,
+        "node": 303.8,
+        "zero": 246.8
+      }
+    },
+    {
+      "name": "Beta Trianguli Australis",
+      "x": -536.943,
+      "y": 24963.202,
+      "z": 44.743,
+      "coordinate_system": "galactic",
+      "spectral_class": "F2III",
+      "stars": [
+        {
+          "name": "Beta Trianguli Australis",
+          "spectral_class": "F2III",
+          "hip": 77952
+        }
+      ],
+      "plane": {
+        "i": 78.7,
+        "node": 340.9,
+        "zero": 208.6
+      }
+    },
+    {
+      "name": "Beta¹ Cygni",
+      "x": -169.718,
+      "y": 24822.238,
+      "z": 80.728,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3II",
+      "stars": [
+        {
+          "name": "Beta¹ Cygni",
+          "spectral_class": "K3II",
+          "hip": 95947
+        }
+      ],
+      "plane": {
+        "i": 39.1,
+        "node": 216.7,
+        "zero": 251.1
+      }
+    },
+    {
+      "name": "Beta¹ Scorpii",
+      "x": -560.687,
+      "y": 24511.369,
+      "z": 262.314,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0.5V",
+      "stars": [
+        {
+          "name": "Beta¹ Scorpii",
+          "spectral_class": "B0.5V",
+          "hip": 78820
+        }
+      ],
+      "plane": {
+        "i": 87.2,
+        "node": 189.7,
+        "zero": 347.0
+      }
+    },
+    {
+      "name": "Betelgeuse",
+      "x": -664.068,
+      "y": 25389.307,
+      "z": -16.567,
+      "coordinate_system": "galactic",
+      "spectral_class": "M2Ib",
+      "stars": [
+        {
+          "name": "Betelgeuse",
+          "spectral_class": "M2Ib",
+          "hip": 27989
+        }
+      ],
+      "plane": {
+        "i": 79.8,
+        "node": 211.3,
+        "zero": 46.6
+      }
+    },
+    {
+      "name": "Canopus",
+      "x": -793.242,
+      "y": 25032.452,
+      "z": -83.601,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0Ib",
+      "stars": [
+        {
+          "name": "Canopus",
+          "spectral_class": "F0Ib",
+          "hip": 30438
+        }
+      ],
+      "plane": {
+        "i": 169.8,
+        "node": 247.8,
+        "zero": 60.0
+      }
+    },
+    {
+      "name": "Capella",
+      "x": -501.238,
+      "y": 25035.388,
+      "z": 53.36,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Capella",
+          "spectral_class": "G8III",
+          "hip": 24608
+        },
+        {
+          "name": "Capella B",
+          "spectral_class": "G0",
+          "orbit": {
+            "au": 0.171,
+            "e": 0.459,
+            "i": 6.6,
+            "node": 256.5,
+            "periapsis": 53.4,
+            "anomaly": 167.1
+          }
+        }
+      ],
+      "plane": {
+        "i": 50.9,
+        "node": 270.0,
+        "zero": 71.1
+      }
+    },
+    {
+      "name": "Caph",
+      "x": -465.31,
+      "y": 25021.112,
+      "z": 46.887,
+      "coordinate_system": "galactic",
+      "spectral_class": "F2III",
+      "stars": [
+        {
+          "name": "Caph",
+          "spectral_class": "F2III",
+          "hip": 746
+        }
+      ],
+      "plane": {
+        "i": 125.0,
+        "node": 325.7,
+        "zero": 218.8
+      }
+    },
+    {
+      "name": "Castor",
+      "x": -520.136,
+      "y": 25042.095,
+      "z": 69.711,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2V",
+      "stars": [
+        {
+          "name": "Castor",
+          "spectral_class": "A2V",
+          "hip": 36850
+        }
+      ],
+      "plane": {
+        "i": 82.0,
+        "node": 147.7,
+        "zero": 59.1
+      }
+    },
+    {
+      "name": "Chi Carinae",
+      "x": -890.724,
+      "y": 25009.161,
+      "z": -32.555,
+      "coordinate_system": "galactic",
+      "spectral_class": "B3IV",
+      "stars": [
+        {
+          "name": "Chi Carinae",
+          "spectral_class": "B3IV",
+          "hip": 38827
+        }
+      ],
+      "plane": {
+        "i": 67.6,
+        "node": 77.4,
+        "zero": 56.4
+      }
+    },
+    {
+      "name": "Delta Andromedae",
+      "x": -439.334,
+      "y": 25039.342,
+      "z": -3.599,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3III",
+      "stars": [
+        {
+          "name": "Delta Andromedae",
+          "spectral_class": "K3III",
+          "hip": 3092
+        }
+      ],
+      "plane": {
+        "i": 64.8,
+        "node": 342.8,
+        "zero": 292.3
+      }
+    },
+    {
+      "name": "Delta Aquarii",
+      "x": -452.463,
+      "y": 24945.548,
+      "z": -89.113,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3V",
+      "stars": [
+        {
+          "name": "Delta Aquarii",
+          "spectral_class": "A3V",
+          "hip": 113136
+        }
+      ],
+      "plane": {
+        "i": 45.7,
+        "node": 129.9,
+        "zero": 201.8
+      }
+    },
+    {
+      "name": "Delta Aquilae",
+      "x": -480.429,
+      "y": 24957.258,
+      "z": 44.645,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0IV",
+      "stars": [
+        {
+          "name": "Delta Aquilae",
+          "spectral_class": "F0IV",
+          "hip": 95501
+        }
+      ],
+      "plane": {
+        "i": 110.6,
+        "node": 330.5,
+        "zero": 124.7
+      }
+    },
+    {
+      "name": "Delta Boötis",
+      "x": -463.38,
+      "y": 24959.33,
+      "z": 149.456,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Delta Boötis",
+          "spectral_class": "G8III",
+          "hip": 74666
+        }
+      ],
+      "plane": {
+        "i": 116.2,
+        "node": 199.8,
+        "zero": 254.5
+      }
+    },
+    {
+      "name": "Delta Canis Majoris",
+      "x": -2042.519,
+      "y": 25892.606,
+      "z": -207.661,
+      "coordinate_system": "galactic",
+      "spectral_class": "F8Ia",
+      "stars": [
+        {
+          "name": "Delta Canis Majoris",
+          "spectral_class": "F8Ia",
+          "hip": 34444
+        }
+      ],
+      "plane": {
+        "i": 73.7,
+        "node": 97.3,
+        "zero": 75.2
+      }
+    },
+    {
+      "name": "Delta Capricorni",
+      "x": -496.228,
+      "y": 24974.123,
+      "z": 22.256,
+      "coordinate_system": "galactic",
+      "spectral_class": "A5",
+      "stars": [
+        {
+          "name": "Delta Capricorni",
+          "spectral_class": "A5",
+          "hip": 107556
+        }
+      ],
+      "plane": {
+        "i": 129.7,
+        "node": 13.8,
+        "zero": 58.8
+      }
+    },
+    {
+      "name": "Delta Cassiopeiae",
+      "x": -435.121,
+      "y": 25056.649,
+      "z": 45.921,
+      "coordinate_system": "galactic",
+      "spectral_class": "A5V",
+      "stars": [
+        {
+          "name": "Delta Cassiopeiae",
+          "spectral_class": "A5V",
+          "hip": 6686
+        }
+      ],
+      "plane": {
+        "i": 139.0,
+        "node": 197.1,
+        "zero": 349.6
+      }
+    },
+    {
+      "name": "Delta Centauri",
+      "x": -857.565,
+      "y": 24818.129,
+      "z": 129.28,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Delta Centauri",
+          "spectral_class": "B2IV",
+          "hip": 59196
+        }
+      ],
+      "plane": {
+        "i": 72.8,
+        "node": 198.8,
+        "zero": 97.1
+      }
+    },
+    {
+      "name": "Delta Corvi",
+      "x": -567.525,
+      "y": 24967.638,
+      "z": 113.27,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9.5V",
+      "stars": [
+        {
+          "name": "Delta Corvi",
+          "spectral_class": "B9.5V",
+          "hip": 60965
+        }
+      ],
+      "plane": {
+        "i": 77.7,
+        "node": 332.2,
+        "zero": 225.7
+      }
+    },
+    {
+      "name": "Delta Crucis",
+      "x": -829.422,
+      "y": 24816.671,
+      "z": 74.068,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Delta Crucis",
+          "spectral_class": "B2IV",
+          "hip": 59747
+        }
+      ],
+      "plane": {
+        "i": 60.6,
+        "node": 280.1,
+        "zero": 130.4
+      }
+    },
+    {
+      "name": "Delta Cygni",
+      "x": -347.312,
+      "y": 24965.442,
+      "z": 80.413,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9.5III",
+      "stars": [
+        {
+          "name": "Delta Cygni",
+          "spectral_class": "B9.5III",
+          "hip": 97165
+        }
+      ],
+      "plane": {
+        "i": 137.7,
+        "node": 176.2,
+        "zero": 287.8
+      }
+    },
+    {
+      "name": "Delta Draconis",
+      "x": -422.089,
+      "y": 25010.754,
+      "z": 89.154,
+      "coordinate_system": "galactic",
+      "spectral_class": "G9III",
+      "stars": [
+        {
+          "name": "Delta Draconis",
+          "spectral_class": "G9III",
+          "hip": 94376
+        }
+      ],
+      "plane": {
+        "i": 151.0,
+        "node": 101.2,
+        "zero": 109.0
+      }
+    },
+    {
+      "name": "Delta Geminorum",
+      "x": -529.692,
+      "y": 25049.055,
+      "z": 66.1,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0IV",
+      "stars": [
+        {
+          "name": "Delta Geminorum",
+          "spectral_class": "F0IV",
+          "hip": 35550
+        }
+      ],
+      "plane": {
+        "i": 108.1,
+        "node": 145.1,
+        "zero": 45.4
+      }
+    },
+    {
+      "name": "Delta Herculis",
+      "x": -463.219,
+      "y": 24950.177,
+      "z": 90.927,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3IV",
+      "stars": [
+        {
+          "name": "Delta Herculis",
+          "spectral_class": "A3IV",
+          "hip": 84379
+        }
+      ],
+      "plane": {
+        "i": 143.6,
+        "node": 61.0,
+        "zero": 93.7
+      }
+    },
+    {
+      "name": "Delta Leonis",
+      "x": -529.17,
+      "y": 25010.944,
+      "z": 103.054,
+      "coordinate_system": "galactic",
+      "spectral_class": "A4V",
+      "stars": [
+        {
+          "name": "Delta Leonis",
+          "spectral_class": "A4V",
+          "hip": 54872
+        }
+      ],
+      "plane": {
+        "i": 159.4,
+        "node": 101.0,
+        "zero": 80.5
+      }
+    },
+    {
+      "name": "Delta Lupi",
+      "x": -741.884,
+      "y": 24555.361,
+      "z": 171.894,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1.5IV",
+      "stars": [
+        {
+          "name": "Delta Lupi",
+          "spectral_class": "B1.5IV",
+          "hip": 75141
+        }
+      ],
+      "plane": {
+        "i": 52.2,
+        "node": 254.0,
+        "zero": 223.4
+      }
+    },
+    {
+      "name": "Delta Ophiuchi",
+      "x": -487.938,
+      "y": 24853.144,
+      "z": 140.703,
+      "coordinate_system": "galactic",
+      "spectral_class": "M1III",
+      "stars": [
+        {
+          "name": "Delta Ophiuchi",
+          "spectral_class": "M1III",
+          "hip": 79593
+        }
+      ],
+      "plane": {
+        "i": 146.5,
+        "node": 116.0,
+        "zero": 91.0
+      }
+    },
+    {
+      "name": "Delta Orionis",
+      "x": -882.217,
+      "y": 25785.646,
+      "z": -229.151,
+      "coordinate_system": "galactic",
+      "spectral_class": "O9.5II",
+      "stars": [
+        {
+          "name": "Delta Orionis",
+          "spectral_class": "O9.5II",
+          "hip": 25930
+        }
+      ],
+      "plane": {
+        "i": 68.6,
+        "node": 10.9,
+        "zero": 306.4
+      }
+    },
+    {
+      "name": "Delta Persei",
+      "x": -262.12,
+      "y": 25456.277,
+      "z": -3.044,
+      "coordinate_system": "galactic",
+      "spectral_class": "B5III",
+      "stars": [
+        {
+          "name": "Delta Persei",
+          "spectral_class": "B5III",
+          "hip": 17358
+        }
+      ],
+      "plane": {
+        "i": 76.7,
+        "node": 277.1,
+        "zero": 59.4
+      }
+    },
+    {
+      "name": "Delta Sagittarii",
+      "x": -490.91,
+      "y": 24692.506,
+      "z": 11.929,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3III",
+      "stars": [
+        {
+          "name": "Delta Sagittarii",
+          "spectral_class": "K3III",
+          "hip": 89931
+        }
+      ],
+      "plane": {
+        "i": 15.8,
+        "node": 77.3,
+        "zero": 317.4
+      }
+    },
+    {
+      "name": "Delta Scorpii",
+      "x": -569.31,
+      "y": 24628.177,
+      "z": 203.651,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0.2IV",
+      "stars": [
+        {
+          "name": "Delta Scorpii",
+          "spectral_class": "B0.2IV",
+          "hip": 78401
+        }
+      ],
+      "plane": {
+        "i": 62.4,
+        "node": 158.2,
+        "zero": 107.0
+      }
+    },
+    {
+      "name": "Delta Ursae Majoris",
+      "x": -483.065,
+      "y": 25023.65,
+      "z": 120.111,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3V",
+      "stars": [
+        {
+          "name": "Delta Ursae Majoris",
+          "spectral_class": "A3V",
+          "hip": 59774
+        }
+      ],
+      "plane": {
+        "i": 110.0,
+        "node": 340.1,
+        "zero": 73.5
+      }
+    },
+    {
+      "name": "Delta Velorum",
+      "x": -591.954,
+      "y": 24990.511,
+      "z": 39.77,
+      "coordinate_system": "galactic",
+      "spectral_class": "A1V",
+      "stars": [
+        {
+          "name": "Delta Velorum",
+          "spectral_class": "A1V",
+          "hip": 42913
+        }
+      ],
+      "plane": {
+        "i": 137.2,
+        "node": 47.9,
+        "zero": 43.1
+      }
+    },
+    {
+      "name": "Delta Virginis",
+      "x": -578.388,
+      "y": 24946.275,
+      "z": 235.312,
+      "coordinate_system": "galactic",
+      "spectral_class": "M3III",
+      "stars": [
+        {
+          "name": "Delta Virginis",
+          "spectral_class": "M3III",
+          "hip": 63090
+        }
+      ],
+      "plane": {
+        "i": 106.5,
+        "node": 357.9,
+        "zero": 282.1
+      }
+    },
+    {
+      "name": "Deneb",
+      "x": 2704.184,
+      "y": 24739.57,
+      "z": 162.562,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2Ia",
+      "stars": [
+        {
+          "name": "Deneb",
+          "spectral_class": "A2Ia",
+          "hip": 102098
+        }
+      ],
+      "plane": {
+        "i": 164.4,
+        "node": 60.5,
+        "zero": 180.5
+      }
+    },
+    {
+      "name": "Denebola",
+      "x": -524.304,
+      "y": 24998.713,
+      "z": 84.168,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3V",
+      "stars": [
+        {
+          "name": "Denebola",
+          "spectral_class": "A3V",
+          "hip": 57632
+        }
+      ],
+      "plane": {
+        "i": 85.8,
+        "node": 167.9,
+        "zero": 271.2
+      }
+    },
+    {
+      "name": "Diphda",
+      "x": -498.665,
+      "y": 25000.938,
+      "z": -44.555,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Diphda",
+          "spectral_class": "K0III",
+          "hip": 3419
+        }
+      ],
+      "plane": {
+        "i": 82.3,
+        "node": 351.8,
+        "zero": 206.6
+      }
+    },
+    {
+      "name": "Dubhe",
+      "x": -467.3,
+      "y": 25057.956,
+      "z": 146.098,
+      "coordinate_system": "galactic",
+      "spectral_class": "F7V",
+      "stars": [
+        {
+          "name": "Dubhe",
+          "spectral_class": "F7V",
+          "hip": 54061
+        }
+      ],
+      "plane": {
+        "i": 146.4,
+        "node": 221.2,
+        "zero": 202.8
+      }
+    },
+    {
+      "name": "Enif",
+      "x": 14.054,
+      "y": 24768.524,
+      "z": -300.95,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2Ib",
+      "stars": [
+        {
+          "name": "Enif",
+          "spectral_class": "K2Ib",
+          "hip": 107315
+        }
+      ],
+      "plane": {
+        "i": 162.1,
+        "node": 192.7,
+        "zero": 45.5
+      }
+    },
+    {
+      "name": "Epsilon Aurigae",
+      "x": 49.989,
+      "y": 26953.736,
+      "z": 91.928,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0Ia",
+      "stars": [
+        {
+          "name": "Epsilon Aurigae",
+          "spectral_class": "F0Ia",
+          "hip": 23416
+        }
+      ],
+      "plane": {
+        "i": 53.2,
+        "node": 292.7,
+        "zero": 317.5
+      }
+    },
+    {
+      "name": "Epsilon Carinae",
+      "x": -1127.065,
+      "y": 24936.29,
+      "z": -87.896,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3III",
+      "stars": [
+        {
+          "name": "Epsilon Carinae",
+          "spectral_class": "K3III",
+          "hip": 41037
+        }
+      ],
+      "plane": {
+        "i": 114.5,
+        "node": 353.7,
+        "zero": 70.3
+      }
+    },
+    {
+      "name": "Epsilon Cassiopeiae",
+      "x": -179.699,
+      "y": 25284.946,
+      "z": 62.699,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2",
+      "stars": [
+        {
+          "name": "Epsilon Cassiopeiae",
+          "spectral_class": "B2",
+          "hip": 8886
+        }
+      ],
+      "plane": {
+        "i": 66.2,
+        "node": 290.3,
+        "zero": 158.9
+      }
+    },
+    {
+      "name": "Epsilon Centauri",
+      "x": -791.741,
+      "y": 24749.535,
+      "z": 106.974,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1III",
+      "stars": [
+        {
+          "name": "Epsilon Centauri",
+          "spectral_class": "B1III",
+          "hip": 66657
+        }
+      ],
+      "plane": {
+        "i": 133.1,
+        "node": 241.3,
+        "zero": 357.6
+      }
+    },
+    {
+      "name": "Epsilon Corvi",
+      "x": -731.169,
+      "y": 24907.888,
+      "z": 242.003,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Epsilon Corvi",
+          "spectral_class": "K2III",
+          "hip": 59316
+        }
+      ],
+      "plane": {
+        "i": 73.9,
+        "node": 275.5,
+        "zero": 306.7
+      }
+    },
+    {
+      "name": "Epsilon Cygni",
+      "x": -443.101,
+      "y": 24979.024,
+      "z": 42.824,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Epsilon Cygni",
+          "spectral_class": "K0III",
+          "hip": 102488
+        }
+      ],
+      "plane": {
+        "i": 24.6,
+        "node": 276.6,
+        "zero": 76.1
+      }
+    },
+    {
+      "name": "Epsilon Geminorum",
+      "x": -678.563,
+      "y": 25870.229,
+      "z": 201.124,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3",
+      "stars": [
+        {
+          "name": "Epsilon Geminorum",
+          "spectral_class": "A3",
+          "hip": 32246
+        }
+      ],
+      "plane": {
+        "i": 104.5,
+        "node": 320.1,
+        "zero": 171.3
+      }
+    },
+    {
+      "name": "Epsilon Gruis",
+      "x": -538.061,
+      "y": 24928.038,
+      "z": -58.13,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3V",
+      "stars": [
+        {
+          "name": "Epsilon Gruis",
+          "spectral_class": "A3V",
+          "hip": 112623
+        }
+      ],
+      "plane": {
+        "i": 47.2,
+        "node": 219.9,
+        "zero": 64.0
+      }
+    },
+    {
+      "name": "Epsilon Hydrae",
+      "x": -592.305,
+      "y": 25083.405,
+      "z": 114.546,
+      "coordinate_system": "galactic",
+      "spectral_class": "G0III",
+      "stars": [
+        {
+          "name": "Epsilon Hydrae",
+          "spectral_class": "G0III",
+          "hip": 43109
+        }
+      ],
+      "plane": {
+        "i": 137.9,
+        "node": 42.4,
+        "zero": 22.9
+      }
+    },
+    {
+      "name": "Epsilon Leonis",
+      "x": -591.423,
+      "y": 25142.537,
+      "z": 236.904,
+      "coordinate_system": "galactic",
+      "spectral_class": "G0II",
+      "stars": [
+        {
+          "name": "Epsilon Leonis",
+          "spectral_class": "G0II",
+          "hip": 47908
+        }
+      ],
+      "plane": {
+        "i": 125.8,
+        "node": 27.2,
+        "zero": 339.5
+      }
+    },
+    {
+      "name": "Epsilon Leporis",
+      "x": -646.452,
+      "y": 25131.171,
+      "z": -72.549,
+      "coordinate_system": "galactic",
+      "spectral_class": "K4III",
+      "stars": [
+        {
+          "name": "Epsilon Leporis",
+          "spectral_class": "K4III",
+          "hip": 23685
+        }
+      ],
+      "plane": {
+        "i": 84.5,
+        "node": 11.8,
+        "zero": 191.4
+      }
+    },
+    {
+      "name": "Epsilon Lupi",
+      "x": -757.942,
+      "y": 24563.757,
+      "z": 140.333,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Epsilon Lupi",
+          "spectral_class": "B2IV",
+          "hip": 75264
+        }
+      ],
+      "plane": {
+        "i": 135.0,
+        "node": 246.0,
+        "zero": 162.8
+      }
+    },
+    {
+      "name": "Epsilon Ophiuchi",
+      "x": -497.378,
+      "y": 24904.003,
+      "z": 105.061,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Epsilon Ophiuchi",
+          "spectral_class": "G8III",
+          "hip": 79882
+        }
+      ],
+      "plane": {
+        "i": 101.3,
+        "node": 352.1,
+        "zero": 310.2
+      }
+    },
+    {
+      "name": "Epsilon Persei",
+      "x": -319.049,
+      "y": 25488.118,
+      "z": -44.277,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0.5V",
+      "stars": [
+        {
+          "name": "Epsilon Persei",
+          "spectral_class": "B0.5V",
+          "hip": 18532
+        }
+      ],
+      "plane": {
+        "i": 62.2,
+        "node": 164.5,
+        "zero": 248.4
+      }
+    },
+    {
+      "name": "Epsilon Scorpii",
+      "x": -524.3,
+      "y": 24930.988,
+      "z": 57.475,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Epsilon Scorpii",
+          "spectral_class": "K2III",
+          "hip": 82396
+        }
+      ],
+      "plane": {
+        "i": 108.8,
+        "node": 320.6,
+        "zero": 347.9
+      }
+    },
+    {
+      "name": "Eta Aurigae",
+      "x": -461.906,
+      "y": 25208.303,
+      "z": 51.04,
+      "coordinate_system": "galactic",
+      "spectral_class": "B3V",
+      "stars": [
+        {
+          "name": "Eta Aurigae",
+          "spectral_class": "B3V",
+          "hip": 23767
+        }
+      ],
+      "plane": {
+        "i": 125.7,
+        "node": 228.0,
+        "zero": 156.7
+      }
+    },
+    {
+      "name": "Eta Boötis",
+      "x": -511.784,
+      "y": 24984.273,
+      "z": 85.379,
+      "coordinate_system": "galactic",
+      "spectral_class": "G0IV",
+      "stars": [
+        {
+          "name": "Eta Boötis",
+          "spectral_class": "G0IV",
+          "hip": 67927
+        }
+      ],
+      "plane": {
+        "i": 139.9,
+        "node": 79.6,
+        "zero": 322.2
+      }
+    },
+    {
+      "name": "Eta Canis Majoris",
+      "x": -3363.532,
+      "y": 26398.11,
+      "z": -311.188,
+      "coordinate_system": "galactic",
+      "spectral_class": "B5Ia",
+      "stars": [
+        {
+          "name": "Eta Canis Majoris",
+          "spectral_class": "B5Ia",
+          "hip": 35904
+        }
+      ],
+      "plane": {
+        "i": 50.5,
+        "node": 284.3,
+        "zero": 269.4
+      }
+    },
+    {
+      "name": "Eta Cassiopeiae",
+      "x": -496.924,
+      "y": 25005.759,
+      "z": 48.289,
+      "coordinate_system": "galactic",
+      "spectral_class": "G0V",
+      "stars": [
+        {
+          "name": "Eta Cassiopeiae",
+          "spectral_class": "G0V",
+          "hip": 3821
+        }
+      ],
+      "plane": {
+        "i": 146.0,
+        "node": 117.3,
+        "zero": 176.1
+      }
+    },
+    {
+      "name": "Eta Centauri",
+      "x": -686.96,
+      "y": 24756.004,
+      "z": 138.512,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1V",
+      "stars": [
+        {
+          "name": "Eta Centauri",
+          "spectral_class": "B1V",
+          "hip": 71352
+        }
+      ],
+      "plane": {
+        "i": 60.9,
+        "node": 54.8,
+        "zero": 171.9
+      }
+    },
+    {
+      "name": "Eta Cephei",
+      "x": -467.762,
+      "y": 25002.199,
+      "z": 59.438,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0IV",
+      "stars": [
+        {
+          "name": "Eta Cephei",
+          "spectral_class": "K0IV",
+          "hip": 102422
+        }
+      ],
+      "plane": {
+        "i": 70.6,
+        "node": 55.4,
+        "zero": 348.1
+      }
+    },
+    {
+      "name": "Eta Ceti",
+      "x": -489.589,
+      "y": 25021.308,
+      "z": -62.224,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Eta Ceti",
+          "spectral_class": "K2III",
+          "hip": 5364
+        }
+      ],
+      "plane": {
+        "i": 55.0,
+        "node": 329.7,
+        "zero": 119.9
+      }
+    },
+    {
+      "name": "Eta Draconis",
+      "x": -446.89,
+      "y": 24999.345,
+      "z": 107.493,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Eta Draconis",
+          "spectral_class": "G8III",
+          "hip": 80331
+        }
+      ],
+      "plane": {
+        "i": 51.5,
+        "node": 316.4,
+        "zero": 285.4
+      }
+    },
+    {
+      "name": "Eta Geminorum",
+      "x": -573.754,
+      "y": 25338.532,
+      "z": 65.345,
+      "coordinate_system": "galactic",
+      "spectral_class": "M3III",
+      "stars": [
+        {
+          "name": "Eta Geminorum",
+          "spectral_class": "M3III",
+          "hip": 29655
+        }
+      ],
+      "plane": {
+        "i": 79.4,
+        "node": 344.5,
+        "zero": 106.3
+      }
+    },
+    {
+      "name": "Eta Herculis",
+      "x": -437.244,
+      "y": 24957.159,
+      "z": 123.363,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Eta Herculis",
+          "spectral_class": "G8III",
+          "hip": 81833
+        }
+      ],
+      "plane": {
+        "i": 43.4,
+        "node": 11.3,
+        "zero": 47.8
+      }
+    },
+    {
+      "name": "Eta Leonis",
+      "x": -1392.629,
+      "y": 26017.453,
+      "z": 1700.805,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0Ib",
+      "stars": [
+        {
+          "name": "Eta Leonis",
+          "spectral_class": "A0Ib",
+          "hip": 49583
+        }
+      ],
+      "plane": {
+        "i": 55.6,
+        "node": 261.0,
+        "zero": 54.0
+      }
+    },
+    {
+      "name": "Eta Lupi",
+      "x": -679.056,
+      "y": 24540.006,
+      "z": 144.227,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2.5IV",
+      "stars": [
+        {
+          "name": "Eta Lupi",
+          "spectral_class": "B2.5IV",
+          "hip": 78384
+        }
+      ],
+      "plane": {
+        "i": 33.4,
+        "node": 266.9,
+        "zero": 190.4
+      }
+    },
+    {
+      "name": "Eta Ophiuchi",
+      "x": -501.785,
+      "y": 24914.146,
+      "z": 70.364,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2.5V",
+      "stars": [
+        {
+          "name": "Eta Ophiuchi",
+          "spectral_class": "A2.5V",
+          "hip": 84012
+        },
+        {
+          "name": "Eta Ophiuchi B",
+          "spectral_class": "A3",
+          "orbit": {
+            "au": 0.09,
+            "e": 0.028,
+            "i": 4.9,
+            "node": 115.9,
+            "periapsis": 91.7,
+            "anomaly": 118.8
+          }
+        }
+      ],
+      "plane": {
+        "i": 137.0,
+        "node": 86.2,
+        "zero": 294.6
+      }
+    },
+    {
+      "name": "Eta Orionis",
+      "x": -883.762,
+      "y": 25753.78,
+      "z": -263.932,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1V",
+      "stars": [
+        {
+          "name": "Eta Orionis",
+          "spectral_class": "B1V",
+          "hip": 25281
+        }
+      ],
+      "plane": {
+        "i": 120.2,
+        "node": 217.4,
+        "zero": 279.8
+      }
+    },
+    {
+      "name": "Eta Pegasi",
+      "x": -318.597,
+      "y": 25007.475,
+      "z": -40.645,
+      "coordinate_system": "galactic",
+      "spectral_class": "G2II",
+      "stars": [
+        {
+          "name": "Eta Pegasi",
+          "spectral_class": "G2II",
+          "hip": 112158
+        }
+      ],
+      "plane": {
+        "i": 76.5,
+        "node": 182.2,
+        "zero": 189.8
+      }
+    },
+    {
+      "name": "Eta Sagittarii",
+      "x": -519.132,
+      "y": 24848.12,
+      "z": 24.932,
+      "coordinate_system": "galactic",
+      "spectral_class": "M2III",
+      "stars": [
+        {
+          "name": "Eta Sagittarii",
+          "spectral_class": "M2III",
+          "hip": 89642
+        }
+      ],
+      "plane": {
+        "i": 56.5,
+        "node": 273.1,
+        "zero": 282.5
+      }
+    },
+    {
+      "name": "Eta Scorpii",
+      "x": -530.861,
+      "y": 24925.734,
+      "z": 47.123,
+      "coordinate_system": "galactic",
+      "spectral_class": "F3",
+      "stars": [
+        {
+          "name": "Eta Scorpii",
+          "spectral_class": "F3",
+          "hip": 84143
+        }
+      ],
+      "plane": {
+        "i": 35.8,
+        "node": 350.9,
+        "zero": 281.2
+      }
+    },
+    {
+      "name": "Eta Serpentis",
+      "x": -484.063,
+      "y": 24940.745,
+      "z": 55.771,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Eta Serpentis",
+          "spectral_class": "K0III",
+          "hip": 89962
+        }
+      ],
+      "plane": {
+        "i": 47.1,
+        "node": 98.0,
+        "zero": 299.8
+      }
+    },
+    {
+      "name": "Etamin",
+      "x": -386.064,
+      "y": 24973.145,
+      "z": 122.037,
+      "coordinate_system": "galactic",
+      "spectral_class": "K5III",
+      "stars": [
+        {
+          "name": "Etamin",
+          "spectral_class": "K5III",
+          "hip": 87833
+        }
+      ],
+      "plane": {
+        "i": 33.6,
+        "node": 90.8,
+        "zero": 111.6
+      }
+    },
+    {
+      "name": "Fomalhaut",
+      "x": -509.075,
+      "y": 24985.12,
+      "z": 27.296,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3V",
+      "stars": [
+        {
+          "name": "Fomalhaut",
+          "spectral_class": "A3V",
+          "hip": 113368
+        }
+      ],
+      "plane": {
+        "i": 72.1,
+        "node": 31.5,
+        "zero": 144.5
+      }
+    },
+    {
+      "name": "Gamma Arae",
+      "x": -969.168,
+      "y": 23979.008,
+      "z": -176.151,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1Ib",
+      "stars": [
+        {
+          "name": "Gamma Arae",
+          "spectral_class": "B1Ib",
+          "hip": 85267
+        }
+      ],
+      "plane": {
+        "i": 138.3,
+        "node": 210.5,
+        "zero": 127.6
+      }
+    },
+    {
+      "name": "Gamma Boötis",
+      "x": -480.996,
+      "y": 24982.353,
+      "z": 127.92,
+      "coordinate_system": "galactic",
+      "spectral_class": "A7III",
+      "stars": [
+        {
+          "name": "Gamma Boötis",
+          "spectral_class": "A7III",
+          "hip": 71075
+        }
+      ],
+      "plane": {
+        "i": 159.5,
+        "node": 200.1,
+        "zero": 280.1
+      }
+    },
+    {
+      "name": "Gamma Cassiopeiae",
+      "x": -9.635,
+      "y": 25344.231,
+      "z": 27.017,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0IV",
+      "stars": [
+        {
+          "name": "Gamma Cassiopeiae",
+          "spectral_class": "B0IV",
+          "hip": 4427
+        }
+      ],
+      "plane": {
+        "i": 116.2,
+        "node": 193.6,
+        "zero": 14.8
+      }
+    },
+    {
+      "name": "Gamma Centauri",
+      "x": -619.857,
+      "y": 24927.105,
+      "z": 81.283,
+      "coordinate_system": "galactic",
+      "spectral_class": "A1IV",
+      "stars": [
+        {
+          "name": "Gamma Centauri",
+          "spectral_class": "A1IV",
+          "hip": 61932
+        }
+      ],
+      "plane": {
+        "i": 88.9,
+        "node": 24.8,
+        "zero": 337.6
+      }
+    },
+    {
+      "name": "Gamma Cephei",
+      "x": -475.485,
+      "y": 25016.806,
+      "z": 61.883,
+      "coordinate_system": "galactic",
+      "spectral_class": "K1IV",
+      "stars": [
+        {
+          "name": "Gamma Cephei",
+          "spectral_class": "K1IV",
+          "hip": 116727
+        }
+      ],
+      "plane": {
+        "i": 80.9,
+        "node": 49.2,
+        "zero": 213.1
+      }
+    },
+    {
+      "name": "Gamma Ceti",
+      "x": -503.818,
+      "y": 25047.581,
+      "z": -12.236,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3V",
+      "stars": [
+        {
+          "name": "Gamma Ceti",
+          "spectral_class": "A3V",
+          "hip": 12706
+        }
+      ],
+      "plane": {
+        "i": 100.3,
+        "node": 242.4,
+        "zero": 357.8
+      }
+    },
+    {
+      "name": "Gamma Corvi",
+      "x": -621.917,
+      "y": 24950.638,
+      "z": 165.576,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8III",
+      "stars": [
+        {
+          "name": "Gamma Corvi",
+          "spectral_class": "B8III",
+          "hip": 59803
+        }
+      ],
+      "plane": {
+        "i": 38.3,
+        "node": 131.0,
+        "zero": 173.8
+      }
+    },
+    {
+      "name": "Gamma Crucis",
+      "x": -587.74,
+      "y": 24949.477,
+      "z": 58.658,
+      "coordinate_system": "galactic",
+      "spectral_class": "M4III",
+      "stars": [
+        {
+          "name": "Gamma Crucis",
+          "spectral_class": "M4III",
+          "hip": 61084
+        }
+      ],
+      "plane": {
+        "i": 153.5,
+        "node": 51.8,
+        "zero": 117.8
+      }
+    },
+    {
+      "name": "Gamma Cygni",
+      "x": 983.915,
+      "y": 24712.814,
+      "z": 99.657,
+      "coordinate_system": "galactic",
+      "spectral_class": "F8Ib",
+      "stars": [
+        {
+          "name": "Gamma Cygni",
+          "spectral_class": "F8Ib",
+          "hip": 100453
+        }
+      ],
+      "plane": {
+        "i": 26.4,
+        "node": 268.7,
+        "zero": 199.3
+      }
+    },
+    {
+      "name": "Gamma Eridani",
+      "x": -583.004,
+      "y": 25136.409,
+      "z": -104.91,
+      "coordinate_system": "galactic",
+      "spectral_class": "M1III",
+      "stars": [
+        {
+          "name": "Gamma Eridani",
+          "spectral_class": "M1III",
+          "hip": 18543
+        }
+      ],
+      "plane": {
+        "i": 22.1,
+        "node": 186.6,
+        "zero": 118.4
+      }
+    },
+    {
+      "name": "Gamma Gruis",
+      "x": -496.974,
+      "y": 24869.598,
+      "z": -108.777,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8III",
+      "stars": [
+        {
+          "name": "Gamma Gruis",
+          "spectral_class": "B8III",
+          "hip": 108085
+        }
+      ],
+      "plane": {
+        "i": 137.1,
+        "node": 298.6,
+        "zero": 250.7
+      }
+    },
+    {
+      "name": "Gamma Hydrae",
+      "x": -588.678,
+      "y": 24926.201,
+      "z": 133.606,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Gamma Hydrae",
+          "spectral_class": "G8III",
+          "hip": 64962
+        }
+      ],
+      "plane": {
+        "i": 108.3,
+        "node": 61.3,
+        "zero": 274.8
+      }
+    },
+    {
+      "name": "Gamma Hydri",
+      "x": -671.7,
+      "y": 24936.278,
+      "z": -81.248,
+      "coordinate_system": "galactic",
+      "spectral_class": "M2III",
+      "stars": [
+        {
+          "name": "Gamma Hydri",
+          "spectral_class": "M2III",
+          "hip": 17678
+        }
+      ],
+      "plane": {
+        "i": 158.8,
+        "node": 273.4,
+        "zero": 206.1
+      }
+    },
+    {
+      "name": "Gamma Lupi",
+      "x": -753.095,
+      "y": 24494.557,
+      "z": 166.882,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Gamma Lupi",
+          "spectral_class": "B2IV",
+          "hip": 76297
+        }
+      ],
+      "plane": {
+        "i": 35.2,
+        "node": 29.1,
+        "zero": 39.3
+      }
+    },
+    {
+      "name": "Gamma Lyrae",
+      "x": 45.441,
+      "y": 24728.567,
+      "z": 190.706,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9III",
+      "stars": [
+        {
+          "name": "Gamma Lyrae",
+          "spectral_class": "B9III",
+          "hip": 93194
+        }
+      ],
+      "plane": {
+        "i": 81.2,
+        "node": 313.1,
+        "zero": 157.9
+      }
+    },
+    {
+      "name": "Gamma Persei",
+      "x": -359.999,
+      "y": 25199.843,
+      "z": 30.61,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Gamma Persei",
+          "spectral_class": "G8III",
+          "hip": 14328
+        }
+      ],
+      "plane": {
+        "i": 114.4,
+        "node": 303.6,
+        "zero": 356.4
+      }
+    },
+    {
+      "name": "Gamma Phoenicis",
+      "x": -583.159,
+      "y": 24980.468,
+      "z": -172.73,
+      "coordinate_system": "galactic",
+      "spectral_class": "K5II",
+      "stars": [
+        {
+          "name": "Gamma Phoenicis",
+          "spectral_class": "K5II",
+          "hip": 6867
+        }
+      ],
+      "plane": {
+        "i": 36.0,
+        "node": 326.2,
+        "zero": 287.8
+      }
+    },
+    {
+      "name": "Gamma Trianguli Australis",
+      "x": -636.146,
+      "y": 24863.46,
+      "z": 19.686,
+      "coordinate_system": "galactic",
+      "spectral_class": "A1V",
+      "stars": [
+        {
+          "name": "Gamma Trianguli Australis",
+          "spectral_class": "A1V",
+          "hip": 74946
+        }
+      ],
+      "plane": {
+        "i": 19.2,
+        "node": 330.8,
+        "zero": 82.6
+      }
+    },
+    {
+      "name": "Gamma Ursae Minoris",
+      "x": -170.722,
+      "y": 25117.143,
+      "z": 364.106,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3II",
+      "stars": [
+        {
+          "name": "Gamma Ursae Minoris",
+          "spectral_class": "A3II",
+          "hip": 75097
+        }
+      ],
+      "plane": {
+        "i": 71.7,
+        "node": 3.8,
+        "zero": 238.8
+      }
+    },
+    {
+      "name": "Gamma Virginis",
+      "x": -529.189,
+      "y": 24986.022,
+      "z": 83.849,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0V",
+      "stars": [
+        {
+          "name": "Gamma Virginis",
+          "spectral_class": "F0V",
+          "hip": 61941
+        }
+      ],
+      "plane": {
+        "i": 79.4,
+        "node": 255.7,
+        "zero": 34.5
+      }
+    },
+    {
+      "name": "Gamma² Sagittarii",
+      "x": -509.498,
+      "y": 24899.265,
+      "z": 42.397,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Gamma² Sagittarii",
+          "spectral_class": "K0III",
+          "hip": 88635
+        }
+      ],
+      "plane": {
+        "i": 93.5,
+        "node": 253.7,
+        "zero": 262.9
+      }
+    },
+    {
+      "name": "Gamma² Velorum",
+      "x": -1341.462,
+      "y": 25082.391,
+      "z": -62.424,
+      "coordinate_system": "galactic",
+      "spectral_class": "O9I",
+      "stars": [
+        {
+          "name": "Gamma² Velorum",
+          "spectral_class": "O9I",
+          "hip": 39953
+        }
+      ],
+      "plane": {
+        "i": 65.8,
+        "node": 271.7,
+        "zero": 251.9
+      }
+    },
+    {
+      "name": "Gamma¹ Andromedae",
+      "x": -288.488,
+      "y": 25245.577,
+      "z": -62.958,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8V",
+      "stars": [
+        {
+          "name": "Gamma¹ Andromedae",
+          "spectral_class": "B8V",
+          "hip": 9640
+        }
+      ],
+      "plane": {
+        "i": 77.5,
+        "node": 228.3,
+        "zero": 288.0
+      }
+    },
+    {
+      "name": "Hadar",
+      "x": -897.38,
+      "y": 24637.276,
+      "z": 61.468,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1III",
+      "stars": [
+        {
+          "name": "Hadar",
+          "spectral_class": "B1III",
+          "hip": 68702
+        }
+      ],
+      "plane": {
+        "i": 141.9,
+        "node": 18.1,
+        "zero": 170.7
+      }
+    },
+    {
+      "name": "Hamal",
+      "x": -483.066,
+      "y": 25038.969,
+      "z": 11.062,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Hamal",
+          "spectral_class": "K2III",
+          "hip": 9884
+        }
+      ],
+      "plane": {
+        "i": 51.2,
+        "node": 70.6,
+        "zero": 135.3
+      }
+    },
+    {
+      "name": "HIP 22449",
+      "x": -518.266,
+      "y": 25018.504,
+      "z": 39.743,
+      "coordinate_system": "galactic",
+      "spectral_class": "F6V",
+      "stars": [
+        {
+          "name": "HIP 22449",
+          "spectral_class": "F6V",
+          "hip": 22449
+        }
+      ],
+      "plane": {
+        "i": 97.0,
+        "node": 78.2,
+        "zero": 150.0
+      }
+    },
+    {
+      "name": "HIP 45080",
+      "x": -923.267,
+      "y": 24931.0,
+      "z": -3.727,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "HIP 45080",
+          "spectral_class": "B2IV",
+          "hip": 45080
+        }
+      ],
+      "plane": {
+        "i": 92.6,
+        "node": 64.5,
+        "zero": 132.7
+      }
+    },
+    {
+      "name": "HIP 46701",
+      "x": -746.936,
+      "y": 24956.337,
+      "z": 32.972,
+      "coordinate_system": "galactic",
+      "spectral_class": "K5III",
+      "stars": [
+        {
+          "name": "HIP 46701",
+          "spectral_class": "K5III",
+          "hip": 46701
+        }
+      ],
+      "plane": {
+        "i": 97.0,
+        "node": 247.4,
+        "zero": 346.0
+      }
+    },
+    {
+      "name": "HIP 50371",
+      "x": -1216.79,
+      "y": 24784.424,
+      "z": 1.141,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3II",
+      "stars": [
+        {
+          "name": "HIP 50371",
+          "spectral_class": "K3II",
+          "hip": 50371
+        }
+      ],
+      "plane": {
+        "i": 118.2,
+        "node": 142.9,
+        "zero": 293.4
+      }
+    },
+    {
+      "name": "HIP 51576",
+      "x": -984.178,
+      "y": 24838.663,
+      "z": 22.646,
+      "coordinate_system": "galactic",
+      "spectral_class": "B4V",
+      "stars": [
+        {
+          "name": "HIP 51576",
+          "spectral_class": "B4V",
+          "hip": 51576
+        }
+      ],
+      "plane": {
+        "i": 30.6,
+        "node": 60.6,
+        "zero": 87.7
+      }
+    },
+    {
+      "name": "HIP 82514",
+      "x": -693.319,
+      "y": 24195.447,
+      "z": 106.078,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1.5IV",
+      "stars": [
+        {
+          "name": "HIP 82514",
+          "spectral_class": "B1.5IV",
+          "hip": 82514
+        }
+      ],
+      "plane": {
+        "i": 86.8,
+        "node": 345.7,
+        "zero": 145.0
+      }
+    },
+    {
+      "name": "HIP 87261",
+      "x": -524.722,
+      "y": 24869.156,
+      "z": 39.076,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0",
+      "stars": [
+        {
+          "name": "HIP 87261",
+          "spectral_class": "K0",
+          "hip": 87261
+        }
+      ],
+      "plane": {
+        "i": 124.8,
+        "node": 193.1,
+        "zero": 150.3
+      }
+    },
+    {
+      "name": "Iota Aurigae",
+      "x": -440.092,
+      "y": 25498.816,
+      "z": -4.938,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3II",
+      "stars": [
+        {
+          "name": "Iota Aurigae",
+          "spectral_class": "K3II",
+          "hip": 23015
+        }
+      ],
+      "plane": {
+        "i": 119.8,
+        "node": 141.4,
+        "zero": 306.8
+      }
+    },
+    {
+      "name": "Iota Carinae",
+      "x": -1190.607,
+      "y": 24879.966,
+      "z": -34.526,
+      "coordinate_system": "galactic",
+      "spectral_class": "A8Ib",
+      "stars": [
+        {
+          "name": "Iota Carinae",
+          "spectral_class": "A8Ib",
+          "hip": 45556
+        }
+      ],
+      "plane": {
+        "i": 159.2,
+        "node": 348.2,
+        "zero": 168.0
+      }
+    },
+    {
+      "name": "Iota Centauri",
+      "x": -553.077,
+      "y": 24960.655,
+      "z": 75.506,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2V",
+      "stars": [
+        {
+          "name": "Iota Centauri",
+          "spectral_class": "A2V",
+          "hip": 65109
+        }
+      ],
+      "plane": {
+        "i": 12.5,
+        "node": 140.2,
+        "zero": 292.5
+      }
+    },
+    {
+      "name": "Iota Cephei",
+      "x": -406.833,
+      "y": 25038.415,
+      "z": 62.41,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Iota Cephei",
+          "spectral_class": "K0III",
+          "hip": 112724
+        }
+      ],
+      "plane": {
+        "i": 124.9,
+        "node": 291.7,
+        "zero": 123.6
+      }
+    },
+    {
+      "name": "Iota Draconis",
+      "x": -445.737,
+      "y": 25001.058,
+      "z": 126.679,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Iota Draconis",
+          "spectral_class": "K2III",
+          "hip": 75458
+        }
+      ],
+      "plane": {
+        "i": 17.5,
+        "node": 356.7,
+        "zero": 333.6
+      }
+    },
+    {
+      "name": "Iota Orionis",
+      "x": -1150.703,
+      "y": 26069.104,
+      "z": -394.395,
+      "coordinate_system": "galactic",
+      "spectral_class": "O9III",
+      "stars": [
+        {
+          "name": "Iota Orionis",
+          "spectral_class": "O9III",
+          "hip": 26241
+        }
+      ],
+      "plane": {
+        "i": 106.2,
+        "node": 214.8,
+        "zero": 247.3
+      }
+    },
+    {
+      "name": "Iota Ursae Majoris",
+      "x": -508.403,
+      "y": 25030.825,
+      "z": 81.218,
+      "coordinate_system": "galactic",
+      "spectral_class": "A7IV",
+      "stars": [
+        {
+          "name": "Iota Ursae Majoris",
+          "spectral_class": "A7IV",
+          "hip": 44127
+        }
+      ],
+      "plane": {
+        "i": 150.8,
+        "node": 352.3,
+        "zero": 105.2
+      }
+    },
+    {
+      "name": "Iota¹ Scorpii",
+      "x": -767.627,
+      "y": 23231.452,
+      "z": -141.253,
+      "coordinate_system": "galactic",
+      "spectral_class": "F3Ia",
+      "stars": [
+        {
+          "name": "Iota¹ Scorpii",
+          "spectral_class": "F3Ia",
+          "hip": 87073
+        }
+      ],
+      "plane": {
+        "i": 98.4,
+        "node": 305.7,
+        "zero": 239.7
+      }
+    },
+    {
+      "name": "Izar",
+      "x": -454.894,
+      "y": 24927.111,
+      "z": 239.763,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0",
+      "stars": [
+        {
+          "name": "Izar",
+          "spectral_class": "A0",
+          "hip": 72105
+        }
+      ],
+      "plane": {
+        "i": 47.5,
+        "node": 187.5,
+        "zero": 100.8
+      }
+    },
+    {
+      "name": "Kappa Canis Majoris",
+      "x": -1197.438,
+      "y": 25335.786,
+      "z": -147.656,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1.5IV",
+      "stars": [
+        {
+          "name": "Kappa Canis Majoris",
+          "spectral_class": "B1.5IV",
+          "hip": 32759
+        }
+      ],
+      "plane": {
+        "i": 82.1,
+        "node": 175.1,
+        "zero": 185.6
+      }
+    },
+    {
+      "name": "Kappa Centauri",
+      "x": -788.891,
+      "y": 24552.66,
+      "z": 187.29,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Kappa Centauri",
+          "spectral_class": "B2IV",
+          "hip": 73334
+        }
+      ],
+      "plane": {
+        "i": 118.9,
+        "node": 231.4,
+        "zero": 292.9
+      }
+    },
+    {
+      "name": "Kappa Ophiuchi",
+      "x": -476.161,
+      "y": 24929.996,
+      "z": 92.28,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Kappa Ophiuchi",
+          "spectral_class": "K2III",
+          "hip": 83000
+        }
+      ],
+      "plane": {
+        "i": 118.6,
+        "node": 140.2,
+        "zero": 110.0
+      }
+    },
+    {
+      "name": "Kappa Scorpii",
+      "x": -575.595,
+      "y": 24536.879,
+      "z": 11.83,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1.5III",
+      "stars": [
+        {
+          "name": "Kappa Scorpii",
+          "spectral_class": "B1.5III",
+          "hip": 86670
+        }
+      ],
+      "plane": {
+        "i": 25.2,
+        "node": 268.6,
+        "zero": 192.4
+      }
+    },
+    {
+      "name": "Kappa Velorum",
+      "x": -1046.995,
+      "y": 24928.884,
+      "z": 16.737,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Kappa Velorum",
+          "spectral_class": "B2IV",
+          "hip": 45941
+        }
+      ],
+      "plane": {
+        "i": 112.0,
+        "node": 316.5,
+        "zero": 114.1
+      }
+    },
+    {
+      "name": "Kaus Australis",
+      "x": -512.08,
+      "y": 24852.477,
+      "z": 25.362,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9.5III",
+      "stars": [
+        {
+          "name": "Kaus Australis",
+          "spectral_class": "B9.5III",
+          "hip": 90185
+        }
+      ],
+      "plane": {
+        "i": 41.0,
+        "node": 316.5,
+        "zero": 196.5
+      }
+    },
+    {
+      "name": "Kochab",
+      "x": -425.029,
+      "y": 25033.842,
+      "z": 132.14,
+      "coordinate_system": "galactic",
+      "spectral_class": "K4III",
+      "stars": [
+        {
+          "name": "Kochab",
+          "spectral_class": "K4III",
+          "hip": 72607
+        }
+      ],
+      "plane": {
+        "i": 142.8,
+        "node": 149.9,
+        "zero": 93.5
+      }
+    },
+    {
+      "name": "Lambda Aquilae",
+      "x": -448.005,
+      "y": 24888.67,
+      "z": 37.971,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9V",
+      "stars": [
+        {
+          "name": "Lambda Aquilae",
+          "spectral_class": "B9V",
+          "hip": 93805
+        }
+      ],
+      "plane": {
+        "i": 68.9,
+        "node": 161.3,
+        "zero": 338.9
+      }
+    },
+    {
+      "name": "Lambda Centauri",
+      "x": -882.257,
+      "y": 24817.697,
+      "z": 40.008,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9II",
+      "stars": [
+        {
+          "name": "Lambda Centauri",
+          "spectral_class": "B9II",
+          "hip": 56561
+        }
+      ],
+      "plane": {
+        "i": 167.9,
+        "node": 177.8,
+        "zero": 316.0
+      }
+    },
+    {
+      "name": "Lambda Sagittarii",
+      "x": -501.204,
+      "y": 24919.122,
+      "z": 41.221,
+      "coordinate_system": "galactic",
+      "spectral_class": "K1III",
+      "stars": [
+        {
+          "name": "Lambda Sagittarii",
+          "spectral_class": "K1III",
+          "hip": 90496
+        }
+      ],
+      "plane": {
+        "i": 64.9,
+        "node": 40.7,
+        "zero": 99.3
+      }
+    },
+    {
+      "name": "Lambda Tauri",
+      "x": -510.452,
+      "y": 25317.599,
+      "z": -131.6,
+      "coordinate_system": "galactic",
+      "spectral_class": "B3V",
+      "stars": [
+        {
+          "name": "Lambda Tauri",
+          "spectral_class": "B3V",
+          "hip": 18724
+        }
+      ],
+      "plane": {
+        "i": 104.4,
+        "node": 298.7,
+        "zero": 292.0
+      }
+    },
+    {
+      "name": "Lambda Ursae Majoris",
+      "x": -509.037,
+      "y": 25071.82,
+      "z": 160.198,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2IV",
+      "stars": [
+        {
+          "name": "Lambda Ursae Majoris",
+          "spectral_class": "A2IV",
+          "hip": 50372
+        }
+      ],
+      "plane": {
+        "i": 42.2,
+        "node": 220.4,
+        "zero": 81.3
+      }
+    },
+    {
+      "name": "Lambda Velorum",
+      "x": -1084.788,
+      "y": 25023.857,
+      "z": 78.212,
+      "coordinate_system": "galactic",
+      "spectral_class": "K4Ib",
+      "stars": [
+        {
+          "name": "Lambda Velorum",
+          "spectral_class": "K4Ib",
+          "hip": 44816
+        }
+      ],
+      "plane": {
+        "i": 109.1,
+        "node": 275.1,
+        "zero": 336.1
+      }
+    },
+    {
+      "name": "Markab",
+      "x": -406.649,
+      "y": 24993.989,
+      "z": -40.455,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9.5III",
+      "stars": [
+        {
+          "name": "Markab",
+          "spectral_class": "B9.5III",
+          "hip": 113963
+        }
+      ],
+      "plane": {
+        "i": 42.4,
+        "node": 118.9,
+        "zero": 232.0
+      }
+    },
+    {
+      "name": "Menkar",
+      "x": -498.218,
+      "y": 25148.283,
+      "z": -107.229,
+      "coordinate_system": "galactic",
+      "spectral_class": "M2III",
+      "stars": [
+        {
+          "name": "Menkar",
+          "spectral_class": "M2III",
+          "hip": 14135
+        }
+      ],
+      "plane": {
+        "i": 52.8,
+        "node": 211.7,
+        "zero": 330.8
+      }
+    },
+    {
+      "name": "Merak",
+      "x": -490.352,
+      "y": 25034.774,
+      "z": 114.893,
+      "coordinate_system": "galactic",
+      "spectral_class": "A1V",
+      "stars": [
+        {
+          "name": "Merak",
+          "spectral_class": "A1V",
+          "hip": 53910
+        }
+      ],
+      "plane": {
+        "i": 113.5,
+        "node": 274.4,
+        "zero": 46.3
+      }
+    },
+    {
+      "name": "Mirach",
+      "x": -373.694,
+      "y": 25104.95,
+      "z": -40.825,
+      "coordinate_system": "galactic",
+      "spectral_class": "M0III",
+      "stars": [
+        {
+          "name": "Mirach",
+          "spectral_class": "M0III",
+          "hip": 5447
+        }
+      ],
+      "plane": {
+        "i": 67.5,
+        "node": 7.3,
+        "zero": 78.7
+      }
+    },
+    {
+      "name": "Mirphak",
+      "x": -198.74,
+      "y": 25492.963,
+      "z": -10.46,
+      "coordinate_system": "galactic",
+      "spectral_class": "F5Ib",
+      "stars": [
+        {
+          "name": "Mirphak",
+          "spectral_class": "F5Ib",
+          "hip": 15863
+        }
+      ],
+      "plane": {
+        "i": 4.8,
+        "node": 261.2,
+        "zero": 146.9
+      }
+    },
+    {
+      "name": "Mizar",
+      "x": -479.092,
+      "y": 25010.301,
+      "z": 118.74,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2V",
+      "stars": [
+        {
+          "name": "Mizar",
+          "spectral_class": "A2V",
+          "hip": 65378
+        }
+      ],
+      "plane": {
+        "i": 83.6,
+        "node": 2.8,
+        "zero": 58.1
+      }
+    },
+    {
+      "name": "Mu Centauri",
+      "x": -862.484,
+      "y": 24640.434,
+      "z": 222.564,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Mu Centauri",
+          "spectral_class": "B2IV",
+          "hip": 67472
+        }
+      ],
+      "plane": {
+        "i": 63.0,
+        "node": 53.8,
+        "zero": 31.6
+      }
+    },
+    {
+      "name": "Mu Geminorum",
+      "x": -556.726,
+      "y": 25222.024,
+      "z": 66.853,
+      "coordinate_system": "galactic",
+      "spectral_class": "M3III",
+      "stars": [
+        {
+          "name": "Mu Geminorum",
+          "spectral_class": "M3III",
+          "hip": 30343
+        }
+      ],
+      "plane": {
+        "i": 141.8,
+        "node": 47.8,
+        "zero": 169.7
+      }
+    },
+    {
+      "name": "Mu Herculis",
+      "x": -493.111,
+      "y": 24980.345,
+      "z": 61.85,
+      "coordinate_system": "galactic",
+      "spectral_class": "G5IV",
+      "stars": [
+        {
+          "name": "Mu Herculis",
+          "spectral_class": "G5IV",
+          "hip": 86974
+        }
+      ],
+      "plane": {
+        "i": 138.6,
+        "node": 16.8,
+        "zero": 207.7
+      }
+    },
+    {
+      "name": "Mu Leporis",
+      "x": -613.311,
+      "y": 25121.442,
+      "z": -39.121,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9IV",
+      "stars": [
+        {
+          "name": "Mu Leporis",
+          "spectral_class": "B9IV",
+          "hip": 24305
+        }
+      ],
+      "plane": {
+        "i": 82.5,
+        "node": 229.2,
+        "zero": 161.0
+      }
+    },
+    {
+      "name": "Mu Ursae Majoris",
+      "x": -510.785,
+      "y": 25132.798,
+      "z": 257.119,
+      "coordinate_system": "galactic",
+      "spectral_class": "M0III",
+      "stars": [
+        {
+          "name": "Mu Ursae Majoris",
+          "spectral_class": "M0III",
+          "hip": 50801
+        }
+      ],
+      "plane": {
+        "i": 24.0,
+        "node": 68.0,
+        "zero": 233.9
+      }
+    },
+    {
+      "name": "Mu Velorum",
+      "x": -623.949,
+      "y": 24966.921,
+      "z": 67.252,
+      "coordinate_system": "galactic",
+      "spectral_class": "G5III",
+      "stars": [
+        {
+          "name": "Mu Velorum",
+          "spectral_class": "G5III",
+          "hip": 52727
+        }
+      ],
+      "plane": {
+        "i": 147.0,
+        "node": 177.2,
+        "zero": 282.1
+      }
+    },
+    {
+      "name": "Nihal",
+      "x": -612.648,
+      "y": 25095.568,
+      "z": -22.764,
+      "coordinate_system": "galactic",
+      "spectral_class": "G5II",
+      "stars": [
+        {
+          "name": "Nihal",
+          "spectral_class": "G5II",
+          "hip": 25606
+        }
+      ],
+      "plane": {
+        "i": 33.9,
+        "node": 304.6,
+        "zero": 13.8
+      }
+    },
+    {
+      "name": "Nu Centauri",
+      "x": -825.416,
+      "y": 24676.086,
+      "z": 211.485,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Nu Centauri",
+          "spectral_class": "B2IV",
+          "hip": 67464
+        }
+      ],
+      "plane": {
+        "i": 133.5,
+        "node": 105.7,
+        "zero": 134.1
+      }
+    },
+    {
+      "name": "Nu Hydrae",
+      "x": -622.593,
+      "y": 25002.225,
+      "z": 134.459,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0",
+      "stars": [
+        {
+          "name": "Nu Hydrae",
+          "spectral_class": "K0",
+          "hip": 52943
+        }
+      ],
+      "plane": {
+        "i": 108.4,
+        "node": 10.2,
+        "zero": 228.2
+      }
+    },
+    {
+      "name": "Nu Ophiuchi",
+      "x": -462.771,
+      "y": 24851.921,
+      "z": 68.551,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Nu Ophiuchi",
+          "spectral_class": "K0III",
+          "hip": 88048
+        }
+      ],
+      "plane": {
+        "i": 141.6,
+        "node": 272.0,
+        "zero": 241.9
+      }
+    },
+    {
+      "name": "Nu Puppis",
+      "x": -892.059,
+      "y": 25110.087,
+      "z": -98.405,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8III",
+      "stars": [
+        {
+          "name": "Nu Puppis",
+          "spectral_class": "B8III",
+          "hip": 31685
+        }
+      ],
+      "plane": {
+        "i": 143.7,
+        "node": 325.3,
+        "zero": 112.3
+      }
+    },
+    {
+      "name": "Nu Ursae Majoris",
+      "x": -544.032,
+      "y": 25142.22,
+      "z": 443.615,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3III",
+      "stars": [
+        {
+          "name": "Nu Ursae Majoris",
+          "spectral_class": "K3III",
+          "hip": 55219
+        }
+      ],
+      "plane": {
+        "i": 142.1,
+        "node": 73.1,
+        "zero": 163.0
+      }
+    },
+    {
+      "name": "Nunki",
+      "x": -472.209,
+      "y": 24779.774,
+      "z": 1.696,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2.5V",
+      "stars": [
+        {
+          "name": "Nunki",
+          "spectral_class": "B2.5V",
+          "hip": 92855
+        }
+      ],
+      "plane": {
+        "i": 116.5,
+        "node": 333.4,
+        "zero": 306.9
+      }
+    },
+    {
+      "name": "Omega Carinae",
+      "x": -851.285,
+      "y": 24862.838,
+      "z": -21.778,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8III",
+      "stars": [
+        {
+          "name": "Omega Carinae",
+          "spectral_class": "B8III",
+          "hip": 50099
+        }
+      ],
+      "plane": {
+        "i": 140.4,
+        "node": 228.6,
+        "zero": 25.1
+      }
+    },
+    {
+      "name": "Omicron Ursae Majoris",
+      "x": -454.893,
+      "y": 25132.906,
+      "z": 156.456,
+      "coordinate_system": "galactic",
+      "spectral_class": "G4II",
+      "stars": [
+        {
+          "name": "Omicron Ursae Majoris",
+          "spectral_class": "G4II",
+          "hip": 41704
+        }
+      ],
+      "plane": {
+        "i": 111.7,
+        "node": 239.0,
+        "zero": 50.7
+      }
+    },
+    {
+      "name": "Omicron² Canis Majoris",
+      "x": -2638.132,
+      "y": 26389.337,
+      "z": -317.536,
+      "coordinate_system": "galactic",
+      "spectral_class": "B3Ia",
+      "stars": [
+        {
+          "name": "Omicron² Canis Majoris",
+          "spectral_class": "B3Ia",
+          "hip": 33977
+        }
+      ],
+      "plane": {
+        "i": 127.7,
+        "node": 326.3,
+        "zero": 329.4
+      }
+    },
+    {
+      "name": "Phad",
+      "x": -488.344,
+      "y": 25026.576,
+      "z": 123.433,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0V",
+      "stars": [
+        {
+          "name": "Phad",
+          "spectral_class": "A0V",
+          "hip": 58001
+        }
+      ],
+      "plane": {
+        "i": 135.5,
+        "node": 200.9,
+        "zero": 310.2
+      }
+    },
+    {
+      "name": "Phi Sagittarii",
+      "x": -476.881,
+      "y": 24771.303,
+      "z": 6.88,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8.5III",
+      "stars": [
+        {
+          "name": "Phi Sagittarii",
+          "spectral_class": "B8.5III",
+          "hip": 92041
+        }
+      ],
+      "plane": {
+        "i": 111.5,
+        "node": 348.7,
+        "zero": 290.9
+      }
+    },
+    {
+      "name": "Pi Herculis",
+      "x": -245.939,
+      "y": 24852.022,
+      "z": 256.97,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3II",
+      "stars": [
+        {
+          "name": "Pi Herculis",
+          "spectral_class": "K3II",
+          "hip": 84380
+        }
+      ],
+      "plane": {
+        "i": 45.7,
+        "node": 193.0,
+        "zero": 107.5
+      }
+    },
+    {
+      "name": "Pi Hydrae",
+      "x": -562.626,
+      "y": 24926.251,
+      "z": 105.596,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Pi Hydrae",
+          "spectral_class": "K2III",
+          "hip": 68895
+        }
+      ],
+      "plane": {
+        "i": 71.4,
+        "node": 214.8,
+        "zero": 297.2
+      }
+    },
+    {
+      "name": "Pi Puppis",
+      "x": -1522.801,
+      "y": 25358.82,
+      "z": -164.066,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3Ib",
+      "stars": [
+        {
+          "name": "Pi Puppis",
+          "spectral_class": "K3Ib",
+          "hip": 35264
+        }
+      ],
+      "plane": {
+        "i": 118.8,
+        "node": 116.2,
+        "zero": 263.9
+      }
+    },
+    {
+      "name": "Pi Sagittarii",
+      "x": -387.318,
+      "y": 24585.487,
+      "z": -51.211,
+      "coordinate_system": "galactic",
+      "spectral_class": "F2II",
+      "stars": [
+        {
+          "name": "Pi Sagittarii",
+          "spectral_class": "F2II",
+          "hip": 94141
+        }
+      ],
+      "plane": {
+        "i": 43.0,
+        "node": 348.1,
+        "zero": 270.1
+      }
+    },
+    {
+      "name": "Pi Scorpii",
+      "x": -599.74,
+      "y": 24572.787,
+      "z": 208.849,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1V",
+      "stars": [
+        {
+          "name": "Pi Scorpii",
+          "spectral_class": "B1V",
+          "hip": 78265
+        }
+      ],
+      "plane": {
+        "i": 176.3,
+        "node": 6.5,
+        "zero": 27.7
+      }
+    },
+    {
+      "name": "Polaris",
+      "x": -194.537,
+      "y": 25213.515,
+      "z": 242.238,
+      "coordinate_system": "galactic",
+      "spectral_class": "F7Ib",
+      "stars": [
+        {
+          "name": "Polaris",
+          "spectral_class": "F7Ib",
+          "hip": 11767
+        }
+      ],
+      "plane": {
+        "i": 75.9,
+        "node": 22.0,
+        "zero": 4.7
+      }
+    },
+    {
+      "name": "Pollux",
+      "x": -520.172,
+      "y": 25025.093,
+      "z": 63.392,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Pollux",
+          "spectral_class": "K0III",
+          "hip": 37826
+        }
+      ],
+      "plane": {
+        "i": 111.1,
+        "node": 305.6,
+        "zero": 339.8
+      }
+    },
+    {
+      "name": "Procyon",
+      "x": -519.357,
+      "y": 25004.12,
+      "z": 52.571,
+      "coordinate_system": "galactic",
+      "spectral_class": "F5IV",
+      "stars": [
+        {
+          "name": "Procyon",
+          "spectral_class": "F5IV",
+          "hip": 37279
+        }
+      ],
+      "plane": {
+        "i": 97.3,
+        "node": 193.4,
+        "zero": 147.6
+      }
+    },
+    {
+      "name": "Psi Ursae Majoris",
+      "x": -498.098,
+      "y": 25059.441,
+      "z": 181.112,
+      "coordinate_system": "galactic",
+      "spectral_class": "K1III",
+      "stars": [
+        {
+          "name": "Psi Ursae Majoris",
+          "spectral_class": "K1III",
+          "hip": 54539
+        }
+      ],
+      "plane": {
+        "i": 102.9,
+        "node": 178.8,
+        "zero": 342.0
+      }
+    },
+    {
+      "name": "Rasalgethi",
+      "x": -310.856,
+      "y": 24723.896,
+      "z": 228.436,
+      "coordinate_system": "galactic",
+      "spectral_class": "M5II",
+      "stars": [
+        {
+          "name": "Rasalgethi",
+          "spectral_class": "M5II",
+          "hip": 84345
+        }
+      ],
+      "plane": {
+        "i": 104.2,
+        "node": 136.7,
+        "zero": 252.0
+      }
+    },
+    {
+      "name": "Rasalhague",
+      "x": -487.005,
+      "y": 24960.592,
+      "z": 67.923,
+      "coordinate_system": "galactic",
+      "spectral_class": "A5III",
+      "stars": [
+        {
+          "name": "Rasalhague",
+          "spectral_class": "A5III",
+          "hip": 86032
+        }
+      ],
+      "plane": {
+        "i": 27.4,
+        "node": 319.3,
+        "zero": 343.6
+      }
+    },
+    {
+      "name": "Regulus",
+      "x": -550.593,
+      "y": 25029.323,
+      "z": 108.425,
+      "coordinate_system": "galactic",
+      "spectral_class": "B7V",
+      "stars": [
+        {
+          "name": "Regulus",
+          "spectral_class": "B7V",
+          "hip": 49669
+        }
+      ],
+      "plane": {
+        "i": 102.1,
+        "node": 273.3,
+        "zero": 257.7
+      }
+    },
+    {
+      "name": "Rho Persei",
+      "x": -361.171,
+      "y": 25266.37,
+      "z": -45.122,
+      "coordinate_system": "galactic",
+      "spectral_class": "M3III",
+      "stars": [
+        {
+          "name": "Rho Persei",
+          "spectral_class": "M3III",
+          "hip": 14354
+        }
+      ],
+      "plane": {
+        "i": 75.9,
+        "node": 353.4,
+        "zero": 51.7
+      }
+    },
+    {
+      "name": "Rho Puppis",
+      "x": -569.369,
+      "y": 25022.099,
+      "z": 54.815,
+      "coordinate_system": "galactic",
+      "spectral_class": "F2",
+      "stars": [
+        {
+          "name": "Rho Puppis",
+          "spectral_class": "F2",
+          "hip": 39757
+        }
+      ],
+      "plane": {
+        "i": 54.8,
+        "node": 132.5,
+        "zero": 255.1
+      }
+    },
+    {
+      "name": "Rigel",
+      "x": -866.927,
+      "y": 25597.846,
+      "z": -279.63,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8Ia",
+      "stars": [
+        {
+          "name": "Rigel",
+          "spectral_class": "B8Ia",
+          "hip": 24436
+        }
+      ],
+      "plane": {
+        "i": 85.9,
+        "node": 352.4,
+        "zero": 187.2
+      }
+    },
+    {
+      "name": "Saiph",
+      "x": -912.225,
+      "y": 25550.782,
+      "z": -178.918,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0.5Ia",
+      "stars": [
+        {
+          "name": "Saiph",
+          "spectral_class": "B0.5Ia",
+          "hip": 27366
+        }
+      ],
+      "plane": {
+        "i": 62.3,
+        "node": 89.8,
+        "zero": 342.0
+      }
+    },
+    {
+      "name": "Scheat",
+      "x": -340.087,
+      "y": 25015.997,
+      "z": -46.73,
+      "coordinate_system": "galactic",
+      "spectral_class": "M2II",
+      "stars": [
+        {
+          "name": "Scheat",
+          "spectral_class": "M2II",
+          "hip": 113881
+        }
+      ],
+      "plane": {
+        "i": 129.7,
+        "node": 23.7,
+        "zero": 216.0
+      }
+    },
+    {
+      "name": "Shaula",
+      "x": -599.571,
+      "y": 24297.96,
+      "z": 22.841,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1.5IV",
+      "stars": [
+        {
+          "name": "Shaula",
+          "spectral_class": "B1.5IV",
+          "hip": 85927
+        }
+      ],
+      "plane": {
+        "i": 124.3,
+        "node": 138.8,
+        "zero": 257.3
+      }
+    },
+    {
+      "name": "Shedir",
+      "x": -321.596,
+      "y": 25117.371,
+      "z": 24.911,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0II",
+      "stars": [
+        {
+          "name": "Shedir",
+          "spectral_class": "K0II",
+          "hip": 3179
+        }
+      ],
+      "plane": {
+        "i": 73.8,
+        "node": 234.4,
+        "zero": 201.1
+      }
+    },
+    {
+      "name": "Sigma Canis Majoris",
+      "x": -1553.637,
+      "y": 25587.495,
+      "z": -167.054,
+      "coordinate_system": "galactic",
+      "spectral_class": "K4III",
+      "stars": [
+        {
+          "name": "Sigma Canis Majoris",
+          "spectral_class": "K4III",
+          "hip": 33856
+        }
+      ],
+      "plane": {
+        "i": 174.5,
+        "node": 140.8,
+        "zero": 240.8
+      }
+    },
+    {
+      "name": "Sigma Librae",
+      "x": -607.364,
+      "y": 24756.683,
+      "z": 189.852,
+      "coordinate_system": "galactic",
+      "spectral_class": "M3",
+      "stars": [
+        {
+          "name": "Sigma Librae",
+          "spectral_class": "M3",
+          "hip": 73714
+        }
+      ],
+      "plane": {
+        "i": 128.7,
+        "node": 204.8,
+        "zero": 135.1
+      }
+    },
+    {
+      "name": "Sigma Puppis",
+      "x": -688.218,
+      "y": 25035.735,
+      "z": 12.052,
+      "coordinate_system": "galactic",
+      "spectral_class": "K5III",
+      "stars": [
+        {
+          "name": "Sigma Puppis",
+          "spectral_class": "K5III",
+          "hip": 36377
+        }
+      ],
+      "plane": {
+        "i": 109.4,
+        "node": 250.0,
+        "zero": 104.9
+      }
+    },
+    {
+      "name": "Sigma Scorpii",
+      "x": -604.83,
+      "y": 24298.532,
+      "z": 264.76,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1III",
+      "stars": [
+        {
+          "name": "Sigma Scorpii",
+          "spectral_class": "B1III",
+          "hip": 80112
+        }
+      ],
+      "plane": {
+        "i": 116.7,
+        "node": 75.8,
+        "zero": 299.2
+      }
+    },
+    {
+      "name": "Sirius",
+      "x": -519.354,
+      "y": 25000.641,
+      "z": 48.671,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0",
+      "stars": [
+        {
+          "name": "Sirius",
+          "spectral_class": "A0",
+          "hip": 32349
+        }
+      ],
+      "plane": {
+        "i": 149.0,
+        "node": 21.9,
+        "zero": 29.5
+      }
+    },
+    {
+      "name": "Sol",
+      "x": -513,
+      "y": 24995,
+      "coordinate_system": "galactic",
+      "z": 50,
+      "spectral_class": "G2V",
+      "planets": [
+        {
+          "name": "Mercury",
+          "index": 1,
+          "class": "terrestrial-barren",
+          "radius": 2440,
+          "look": 1175,
+          "orbit": {
+            "au": 0.387,
+            "e": 0.20563,
+            "i": 7.005,
+            "node": 48.331,
+            "periapsis": 29.125,
+            "anomaly": 27.5
+          },
+          "tilt": 0.03,
+          "tilt_bearing": 318.2,
+          "id": "p1"
+        },
+        {
+          "name": "Venus",
+          "index": 2,
+          "class": "terrestrial-desert",
+          "radius": 6052,
+          "look": 1213,
+          "orbit": {
+            "au": 0.723,
+            "e": 0.00677,
+            "i": 3.395,
+            "node": 76.68,
+            "periapsis": 54.853,
+            "anomaly": 79.4
+          },
+          "tilt": 177.4,
+          "tilt_bearing": 210.2,
+          "id": "p2"
+        },
+        {
+          "name": "Earth",
+          "index": 3,
+          "class": "terrestrial-habitable",
+          "radius": 6371,
+          "orbit": {
+            "au": 1.0,
+            "e": 0.01671,
+            "i": 0.0,
+            "node": 348.739,
+            "periapsis": 114.208,
+            "anomaly": 357.5
+          },
+          "tilt": 23.44,
+          "tilt_bearing": 90.0,
+          "moons": [
+            {
+              "name": "Luna",
+              "index": 1,
+              "class": "terrestrial-barren",
+              "radius": 1737,
+              "look": 1456,
+              "orbit": {
+                "km": 384400,
+                "e": 0.0549,
+                "i": 5.145,
+                "node": 1.4,
+                "periapsis": 101.9,
+                "anomaly": 179.9
+              },
+              "id": "m1"
+            }
+          ],
+          "id": "p3"
+        },
+        {
+          "name": "Mars",
+          "index": 4,
+          "class": "terrestrial-desert",
+          "radius": 3390,
+          "look": 1246,
+          "orbit": {
+            "au": 1.524,
+            "e": 0.0934,
+            "i": 1.85,
+            "node": 49.558,
+            "periapsis": 286.483,
+            "anomaly": 275.7
+          },
+          "tilt": 25.19,
+          "tilt_bearing": 352.9,
+          "id": "p4",
+          "moons": [
+            {
+              "name": "Phobos",
+              "index": 1,
+              "orbit": {
+                "km": 9376,
+                "e": 0.0151,
+                "i": 1.08,
+                "node": 103.4,
+                "periapsis": 5.6,
+                "anomaly": 237.7
+              },
+              "id": "m1",
+              "class": "terrestrial-barren",
+              "radius": 11,
+              "look": 338
+            },
+            {
+              "name": "Deimos",
+              "index": 2,
+              "orbit": {
+                "km": 23463,
+                "e": 0.0003,
+                "i": 1.79,
+                "node": 318.2,
+                "periapsis": 269.8,
+                "anomaly": 270.0
+              },
+              "id": "m2",
+              "class": "terrestrial-barren",
+              "radius": 6,
+              "look": 373
+            }
+          ]
+        },
+        {
+          "name": "Ceres",
+          "index": 1,
+          "dwarf": true,
+          "orbit": {
+            "au": 2.768,
+            "e": 0.0758,
+            "i": 10.59,
+            "node": 80.3,
+            "periapsis": 73.6,
+            "anomaly": 43.4
+          },
+          "id": "p10",
+          "class": "terrestrial-barren",
+          "radius": 470,
+          "look": 58,
+          "tilt": 39.9,
+          "tilt_bearing": 98.1
+        },
+        {
+          "name": "Jupiter",
+          "index": 5,
+          "class": "gas-giant-warm",
+          "radius": 69911,
+          "look": 1280,
+          "orbit": {
+            "au": 5.203,
+            "e": 0.04849,
+            "i": 1.303,
+            "node": 100.464,
+            "periapsis": 273.867,
+            "anomaly": 169.6
+          },
+          "tilt": 3.13,
+          "tilt_bearing": 247.8,
+          "rings": [
+            {
+              "inner": 1.4,
+              "outer": 1.8,
+              "density": 0.03
+            }
+          ],
+          "id": "p5",
+          "moons": [
+            {
+              "name": "Io",
+              "index": 1,
+              "orbit": {
+                "km": 421700,
+                "e": 0.0041,
+                "i": 0.05,
+                "node": 267.7,
+                "periapsis": 108.1,
+                "anomaly": 41.0
+              },
+              "id": "m1",
+              "class": "volcanic",
+              "radius": 1822,
+              "look": 406
+            },
+            {
+              "name": "Europa",
+              "index": 2,
+              "orbit": {
+                "km": 671034,
+                "e": 0.009,
+                "i": 0.47,
+                "node": 90.5,
+                "periapsis": 334.9,
+                "anomaly": 117.8
+              },
+              "id": "m2",
+              "class": "ice-world",
+              "radius": 1561,
+              "look": 441
+            },
+            {
+              "name": "Ganymede",
+              "index": 3,
+              "orbit": {
+                "km": 1070412,
+                "e": 0.0013,
+                "i": 0.2,
+                "node": 173.0,
+                "periapsis": 354.9,
+                "anomaly": 145.2
+              },
+              "id": "m3",
+              "class": "ice-world",
+              "radius": 2634,
+              "look": 478
+            },
+            {
+              "name": "Callisto",
+              "index": 4,
+              "orbit": {
+                "km": 1882709,
+                "e": 0.0074,
+                "i": 0.19,
+                "node": 8.1,
+                "periapsis": 224.4,
+                "anomaly": 346.8
+              },
+              "id": "m4",
+              "class": "terrestrial-barren",
+              "radius": 2410,
+              "look": 513
+            }
+          ]
+        },
+        {
+          "name": "Saturn",
+          "index": 6,
+          "class": "gas-giant-warm",
+          "radius": 58232,
+          "look": 1316,
+          "orbit": {
+            "au": 9.555,
+            "e": 0.05551,
+            "i": 2.489,
+            "node": 113.666,
+            "periapsis": 339.391,
+            "anomaly": 338.5
+          },
+          "tilt": 26.73,
+          "tilt_bearing": 79.5,
+          "rings": [
+            {
+              "inner": 1.11,
+              "outer": 1.95,
+              "density": 1.0
+            },
+            {
+              "inner": 2.03,
+              "outer": 2.27,
+              "density": 0.6
+            }
+          ],
+          "id": "p6",
+          "moons": [
+            {
+              "name": "Mimas",
+              "index": 1,
+              "orbit": {
+                "km": 185539,
+                "e": 0.0196,
+                "i": 1.57,
+                "node": 119.7,
+                "periapsis": 350.1,
+                "anomaly": 258.1
+              },
+              "id": "m1",
+              "class": "ice-world",
+              "radius": 198,
+              "look": 548
+            },
+            {
+              "name": "Enceladus",
+              "index": 2,
+              "orbit": {
+                "km": 237948,
+                "e": 0.0047,
+                "i": 0.02,
+                "node": 143.2,
+                "periapsis": 329.9,
+                "anomaly": 215.9
+              },
+              "id": "m2",
+              "class": "ice-world",
+              "radius": 252,
+              "look": 584
+            },
+            {
+              "name": "Tethys",
+              "index": 3,
+              "orbit": {
+                "km": 294619,
+                "e": 0.0001,
+                "i": 1.09,
+                "node": 52.7,
+                "periapsis": 89.2,
+                "anomaly": 316.6
+              },
+              "id": "m3",
+              "class": "ice-world",
+              "radius": 531,
+              "look": 619
+            },
+            {
+              "name": "Dione",
+              "index": 4,
+              "orbit": {
+                "km": 377396,
+                "e": 0.0022,
+                "i": 0.02,
+                "node": 214.7,
+                "periapsis": 141.7,
+                "anomaly": 133.8
+              },
+              "id": "m4",
+              "class": "ice-world",
+              "radius": 561,
+              "look": 653
+            },
+            {
+              "name": "Rhea",
+              "index": 5,
+              "orbit": {
+                "km": 527108,
+                "e": 0.0012,
+                "i": 0.35,
+                "node": 125.3,
+                "periapsis": 265.6,
+                "anomaly": 178.5
+              },
+              "id": "m5",
+              "class": "ice-world",
+              "radius": 764,
+              "look": 685
+            },
+            {
+              "name": "Titan",
+              "index": 6,
+              "orbit": {
+                "km": 1221870,
+                "e": 0.0288,
+                "i": 0.35,
+                "node": 105.4,
+                "periapsis": 238.1,
+                "anomaly": 276.4
+              },
+              "id": "m6",
+              "class": "terrestrial-desert",
+              "radius": 2575,
+              "look": 720
+            },
+            {
+              "name": "Hyperion",
+              "index": 7,
+              "orbit": {
+                "km": 1500880,
+                "e": 0.123,
+                "i": 0.43,
+                "node": 73.1,
+                "periapsis": 145.3,
+                "anomaly": 170.3
+              },
+              "id": "m7",
+              "class": "ice-world",
+              "radius": 135,
+              "look": 758
+            },
+            {
+              "name": "Iapetus",
+              "index": 8,
+              "orbit": {
+                "km": 3560820,
+                "e": 0.0286,
+                "i": 15.47,
+                "node": 227.9,
+                "periapsis": 0.3,
+                "anomaly": 6.8
+              },
+              "id": "m8",
+              "class": "ice-world",
+              "radius": 735,
+              "look": 793
+            },
+            {
+              "name": "Phoebe",
+              "index": 9,
+              "orbit": {
+                "km": 12947780,
+                "e": 0.1562,
+                "i": 175.3,
+                "node": 82.4,
+                "periapsis": 279.7,
+                "anomaly": 304.9
+              },
+              "id": "m9",
+              "class": "terrestrial-barren",
+              "radius": 107,
+              "look": 828
+            }
+          ]
+        },
+        {
+          "name": "Uranus",
+          "index": 7,
+          "class": "gas-giant-cold",
+          "radius": 25362,
+          "look": 1352,
+          "orbit": {
+            "au": 19.22,
+            "e": 0.0463,
+            "i": 0.773,
+            "node": 74.006,
+            "periapsis": 98.999,
+            "anomaly": 278.8
+          },
+          "tilt": 97.77,
+          "tilt_bearing": 77.6,
+          "rings": [
+            {
+              "inner": 1.64,
+              "outer": 2.0,
+              "density": 0.1
+            }
+          ],
+          "id": "p7",
+          "moons": [
+            {
+              "name": "Miranda",
+              "index": 1,
+              "orbit": {
+                "km": 129390,
+                "e": 0.0013,
+                "i": 4.34,
+                "node": 228.2,
+                "periapsis": 217.7,
+                "anomaly": 127.2
+              },
+              "id": "m1",
+              "class": "ice-world",
+              "radius": 236,
+              "look": 863
+            },
+            {
+              "name": "Ariel",
+              "index": 2,
+              "orbit": {
+                "km": 190900,
+                "e": 0.0012,
+                "i": 0.04,
+                "node": 175.7,
+                "periapsis": 352.8,
+                "anomaly": 259.8
+              },
+              "id": "m2",
+              "class": "ice-world",
+              "radius": 579,
+              "look": 895
+            },
+            {
+              "name": "Umbriel",
+              "index": 3,
+              "orbit": {
+                "km": 266000,
+                "e": 0.0039,
+                "i": 0.13,
+                "node": 35.3,
+                "periapsis": 336.1,
+                "anomaly": 298.5
+              },
+              "id": "m3",
+              "class": "terrestrial-barren",
+              "radius": 585,
+              "look": 933
+            },
+            {
+              "name": "Titania",
+              "index": 4,
+              "orbit": {
+                "km": 435910,
+                "e": 0.0011,
+                "i": 0.08,
+                "node": 188.3,
+                "periapsis": 148.5,
+                "anomaly": 206.7
+              },
+              "id": "m4",
+              "class": "ice-world",
+              "radius": 789,
+              "look": 968
+            },
+            {
+              "name": "Oberon",
+              "index": 5,
+              "orbit": {
+                "km": 583520,
+                "e": 0.0014,
+                "i": 0.07,
+                "node": 88.3,
+                "periapsis": 13.0,
+                "anomaly": 11.5
+              },
+              "id": "m5",
+              "class": "ice-world",
+              "radius": 761,
+              "look": 1003
+            }
+          ]
+        },
+        {
+          "name": "Neptune",
+          "index": 8,
+          "class": "gas-giant-cold",
+          "radius": 24622,
+          "look": 1386,
+          "orbit": {
+            "au": 30.11,
+            "e": 0.00899,
+            "i": 1.77,
+            "node": 131.784,
+            "periapsis": 276.34,
+            "anomaly": 171.5
+          },
+          "tilt": 28.32,
+          "tilt_bearing": 319.2,
+          "rings": [
+            {
+              "inner": 1.69,
+              "outer": 2.54,
+              "density": 0.05
+            }
+          ],
+          "id": "p8",
+          "moons": [
+            {
+              "name": "Proteus",
+              "index": 1,
+              "orbit": {
+                "km": 117647,
+                "e": 0.0005,
+                "i": 0.08,
+                "node": 188.5,
+                "periapsis": 62.5,
+                "anomaly": 54.7
+              },
+              "id": "m2",
+              "class": "terrestrial-barren",
+              "radius": 210,
+              "look": 1073
+            },
+            {
+              "name": "Triton",
+              "index": 2,
+              "orbit": {
+                "km": 354759,
+                "e": 2e-05,
+                "i": 156.9,
+                "node": 140.1,
+                "periapsis": 351.4,
+                "anomaly": 133.8
+              },
+              "id": "m1",
+              "class": "ice-world",
+              "radius": 1353,
+              "look": 1036
+            },
+            {
+              "name": "Nereid",
+              "index": 3,
+              "orbit": {
+                "km": 5513818,
+                "e": 0.7507,
+                "i": 7.09,
+                "node": 255.3,
+                "periapsis": 294.5,
+                "anomaly": 290.8
+              },
+              "id": "m3",
+              "class": "ice-world",
+              "radius": 170,
+              "look": 1108
+            }
+          ]
+        },
+        {
+          "name": "Orcus",
+          "index": 2,
+          "dwarf": true,
+          "orbit": {
+            "au": 39.42,
+            "e": 0.22,
+            "i": 20.57,
+            "node": 268.8,
+            "periapsis": 72.3,
+            "anomaly": 336.7
+          },
+          "id": "p17",
+          "class": "ice-world",
+          "radius": 455,
+          "look": 303,
+          "tilt": 21.2,
+          "tilt_bearing": 229.0
+        },
+        {
+          "name": "Pluto",
+          "index": 3,
+          "dwarf": true,
+          "class": "ice-world",
+          "radius": 1188,
+          "look": 1421,
+          "orbit": {
+            "au": 39.48,
+            "e": 0.2488,
+            "i": 17.14,
+            "node": 110.3,
+            "periapsis": 113.77,
+            "anomaly": 197.5
+          },
+          "tilt": 119.6,
+          "tilt_bearing": 137.4,
+          "id": "p9",
+          "moons": [
+            {
+              "name": "Charon",
+              "index": 1,
+              "orbit": {
+                "km": 19591,
+                "e": 0.0002,
+                "i": 0.0,
+                "node": 11.4,
+                "periapsis": 109.4,
+                "anomaly": 191.3
+              },
+              "id": "m1",
+              "class": "ice-world",
+              "radius": 606,
+              "look": 1143
+            }
+          ]
+        },
+        {
+          "name": "Haumea",
+          "index": 4,
+          "dwarf": true,
+          "orbit": {
+            "au": 43.13,
+            "e": 0.195,
+            "i": 28.21,
+            "node": 121.9,
+            "periapsis": 239.5,
+            "anomaly": 261.5
+          },
+          "id": "p11",
+          "class": "ice-world",
+          "radius": 798,
+          "look": 94,
+          "tilt": 10.4,
+          "tilt_bearing": 289.2
+        },
+        {
+          "name": "Quaoar",
+          "index": 5,
+          "dwarf": true,
+          "orbit": {
+            "au": 43.69,
+            "e": 0.04,
+            "i": 7.99,
+            "node": 188.8,
+            "periapsis": 147.5,
+            "anomaly": 321.9
+          },
+          "id": "p16",
+          "class": "ice-world",
+          "radius": 545,
+          "look": 266,
+          "tilt": 21.8,
+          "tilt_bearing": 209.5
+        },
+        {
+          "name": "Makemake",
+          "index": 6,
+          "dwarf": true,
+          "orbit": {
+            "au": 45.43,
+            "e": 0.161,
+            "i": 29.01,
+            "node": 79.62,
+            "periapsis": 294.8,
+            "anomaly": 152.6
+          },
+          "id": "p12",
+          "class": "ice-world",
+          "radius": 715,
+          "look": 126,
+          "tilt": 38.2,
+          "tilt_bearing": 109.4
+        },
+        {
+          "name": "Gonggong",
+          "index": 7,
+          "dwarf": true,
+          "orbit": {
+            "au": 67.4,
+            "e": 0.5,
+            "i": 30.66,
+            "node": 336.8,
+            "periapsis": 207.2,
+            "anomaly": 137.7
+          },
+          "id": "p15",
+          "class": "terrestrial-barren",
+          "radius": 615,
+          "look": 232,
+          "tilt": 31.6,
+          "tilt_bearing": 48.2
+        },
+        {
+          "name": "Eris",
+          "index": 8,
+          "dwarf": true,
+          "orbit": {
+            "au": 67.86,
+            "e": 0.436,
+            "i": 44.04,
+            "node": 35.95,
+            "periapsis": 151.6,
+            "anomaly": 235.1
+          },
+          "id": "p13",
+          "class": "ice-world",
+          "radius": 1163,
+          "look": 164,
+          "tilt": 4.1,
+          "tilt_bearing": 221.3
+        },
+        {
+          "name": "Sedna",
+          "index": 9,
+          "dwarf": true,
+          "orbit": {
+            "au": 506.0,
+            "e": 0.855,
+            "i": 11.93,
+            "node": 144.25,
+            "periapsis": 311.35,
+            "anomaly": 17.3
+          },
+          "id": "p14",
+          "class": "terrestrial-barren",
+          "radius": 500,
+          "look": 197,
+          "tilt": 33.3,
+          "tilt_bearing": 330.8
+        }
+      ],
+      "planet_count": 8,
+      "stars": [
+        {
+          "name": "Sol",
+          "spectral_class": "G2V"
+        }
+      ],
+      "belts": [
+        {
+          "name": "Main belt",
+          "id": "b1",
+          "inner": 2.2,
+          "outer": 3.2
+        },
+        {
+          "name": "Kuiper belt",
+          "id": "b2",
+          "inner": 30.0,
+          "outer": 50.0
+        }
+      ],
+      "plane": {
+        "i": 60.189,
+        "node": 97.56,
+        "zero": 269.977
+      }
+    },
+    {
+      "name": "Spica",
+      "x": -625.292,
+      "y": 24873.36,
+      "z": 253.304,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1V",
+      "stars": [
+        {
+          "name": "Spica",
+          "spectral_class": "B1V",
+          "hip": 65474
+        }
+      ],
+      "plane": {
+        "i": 35.0,
+        "node": 244.4,
+        "zero": 299.1
+      }
+    },
+    {
+      "name": "Tarazed",
+      "x": -163.302,
+      "y": 24700.546,
+      "z": -6.789,
+      "coordinate_system": "galactic",
+      "spectral_class": "K3II",
+      "stars": [
+        {
+          "name": "Tarazed",
+          "spectral_class": "K3II",
+          "hip": 97278
+        }
+      ],
+      "plane": {
+        "i": 61.9,
+        "node": 327.9,
+        "zero": 55.2
+      }
+    },
+    {
+      "name": "Tau Ceti",
+      "x": -512.663,
+      "y": 24998.375,
+      "z": 38.594,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8V",
+      "stars": [
+        {
+          "name": "Tau Ceti",
+          "spectral_class": "G8V",
+          "hip": 8102
+        }
+      ],
+      "plane": {
+        "i": 38.8,
+        "node": 223.3,
+        "zero": 285.3
+      }
+    },
+    {
+      "name": "Tau Puppis",
+      "x": -681.793,
+      "y": 25020.712,
+      "z": -15.072,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Tau Puppis",
+          "spectral_class": "K0III",
+          "hip": 32768
+        }
+      ],
+      "plane": {
+        "i": 68.4,
+        "node": 295.5,
+        "zero": 140.4
+      }
+    },
+    {
+      "name": "Tau Sagittarii",
+      "x": -491.823,
+      "y": 24880.853,
+      "z": 18.091,
+      "coordinate_system": "galactic",
+      "spectral_class": "K1",
+      "stars": [
+        {
+          "name": "Tau Sagittarii",
+          "spectral_class": "K1",
+          "hip": 93864
+        }
+      ],
+      "plane": {
+        "i": 97.8,
+        "node": 108.2,
+        "zero": 157.9
+      }
+    },
+    {
+      "name": "Tau Scorpii",
+      "x": -566.167,
+      "y": 24579.359,
+      "z": 145.263,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0V",
+      "stars": [
+        {
+          "name": "Tau Scorpii",
+          "spectral_class": "B0V",
+          "hip": 81266
+        }
+      ],
+      "plane": {
+        "i": 93.7,
+        "node": 337.7,
+        "zero": 180.8
+      }
+    },
+    {
+      "name": "Theta Aquilae",
+      "x": -327.718,
+      "y": 24794.601,
+      "z": -39.123,
+      "coordinate_system": "galactic",
+      "spectral_class": "B9.5III",
+      "stars": [
+        {
+          "name": "Theta Aquilae",
+          "spectral_class": "B9.5III",
+          "hip": 99473
+        }
+      ],
+      "plane": {
+        "i": 48.9,
+        "node": 134.5,
+        "zero": 156.2
+      }
+    },
+    {
+      "name": "Theta Aurigae",
+      "x": -499.546,
+      "y": 25166.49,
+      "z": 70.297,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0",
+      "stars": [
+        {
+          "name": "Theta Aurigae",
+          "spectral_class": "A0",
+          "hip": 28380
+        }
+      ],
+      "plane": {
+        "i": 36.9,
+        "node": 203.9,
+        "zero": 279.6
+      }
+    },
+    {
+      "name": "Theta Carinae",
+      "x": -921.931,
+      "y": 24839.877,
+      "z": 12.491,
+      "coordinate_system": "galactic",
+      "spectral_class": "B0V",
+      "stars": [
+        {
+          "name": "Theta Carinae",
+          "spectral_class": "B0V",
+          "hip": 52419
+        }
+      ],
+      "plane": {
+        "i": 75.0,
+        "node": 295.5,
+        "zero": 209.4
+      }
+    },
+    {
+      "name": "Theta Centauri",
+      "x": -548.292,
+      "y": 24951.987,
+      "z": 74.861,
+      "coordinate_system": "galactic",
+      "spectral_class": "K0III",
+      "stars": [
+        {
+          "name": "Theta Centauri",
+          "spectral_class": "K0III",
+          "hip": 68933
+        }
+      ],
+      "plane": {
+        "i": 34.7,
+        "node": 143.8,
+        "zero": 317.9
+      }
+    },
+    {
+      "name": "Theta Leonis",
+      "x": -576.608,
+      "y": 25037.025,
+      "z": 210.449,
+      "coordinate_system": "galactic",
+      "spectral_class": "A2V",
+      "stars": [
+        {
+          "name": "Theta Leonis",
+          "spectral_class": "A2V",
+          "hip": 54879
+        }
+      ],
+      "plane": {
+        "i": 138.9,
+        "node": 144.9,
+        "zero": 337.8
+      }
+    },
+    {
+      "name": "Theta Ophiuchi",
+      "x": -496.981,
+      "y": 24435.599,
+      "z": 114.28,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Theta Ophiuchi",
+          "spectral_class": "B2IV",
+          "hip": 84970
+        }
+      ],
+      "plane": {
+        "i": 50.9,
+        "node": 214.2,
+        "zero": 267.9
+      }
+    },
+    {
+      "name": "Theta Scorpii",
+      "x": -567.794,
+      "y": 24730.065,
+      "z": 21.681,
+      "coordinate_system": "galactic",
+      "spectral_class": "F1II",
+      "stars": [
+        {
+          "name": "Theta Scorpii",
+          "spectral_class": "F1II",
+          "hip": 86228
+        }
+      ],
+      "plane": {
+        "i": 136.8,
+        "node": 243.9,
+        "zero": 48.9
+      }
+    },
+    {
+      "name": "Theta Ursae Majoris",
+      "x": -505.892,
+      "y": 25024.917,
+      "z": 81.457,
+      "coordinate_system": "galactic",
+      "spectral_class": "F6IV",
+      "stars": [
+        {
+          "name": "Theta Ursae Majoris",
+          "spectral_class": "F6IV",
+          "hip": 46853
+        }
+      ],
+      "plane": {
+        "i": 132.1,
+        "node": 50.1,
+        "zero": 13.3
+      }
+    },
+    {
+      "name": "Theta² Tauri",
+      "x": -516.672,
+      "y": 25133.091,
+      "z": -5.842,
+      "coordinate_system": "galactic",
+      "spectral_class": "A7III",
+      "stars": [
+        {
+          "name": "Theta² Tauri",
+          "spectral_class": "A7III",
+          "hip": 20894
+        }
+      ],
+      "plane": {
+        "i": 142.3,
+        "node": 173.4,
+        "zero": 313.8
+      }
+    },
+    {
+      "name": "Theta¹ Eridani",
+      "x": -586.627,
+      "y": 25023.216,
+      "z": -90.715,
+      "coordinate_system": "galactic",
+      "spectral_class": "A4III",
+      "stars": [
+        {
+          "name": "Theta¹ Eridani",
+          "spectral_class": "A4III",
+          "hip": 13847
+        }
+      ],
+      "plane": {
+        "i": 137.0,
+        "node": 66.0,
+        "zero": 279.1
+      }
+    },
+    {
+      "name": "Unukalhai",
+      "x": -499.049,
+      "y": 24944.277,
+      "z": 100.943,
+      "coordinate_system": "galactic",
+      "spectral_class": "K2III",
+      "stars": [
+        {
+          "name": "Unukalhai",
+          "spectral_class": "K2III",
+          "hip": 77070
+        }
+      ],
+      "plane": {
+        "i": 155.7,
+        "node": 170.2,
+        "zero": 29.6
+      }
+    },
+    {
+      "name": "Upsilon Carinae",
+      "x": -2052.704,
+      "y": 24547.259,
+      "z": -198.796,
+      "coordinate_system": "galactic",
+      "spectral_class": "A9",
+      "stars": [
+        {
+          "name": "Upsilon Carinae",
+          "spectral_class": "A9",
+          "hip": 48002
+        }
+      ],
+      "plane": {
+        "i": 39.2,
+        "node": 166.6,
+        "zero": 79.8
+      }
+    },
+    {
+      "name": "Upsilon Scorpii",
+      "x": -581.097,
+      "y": 24481.232,
+      "z": 33.31,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2IV",
+      "stars": [
+        {
+          "name": "Upsilon Scorpii",
+          "spectral_class": "B2IV",
+          "hip": 85696
+        }
+      ],
+      "plane": {
+        "i": 55.2,
+        "node": 318.3,
+        "zero": 331.7
+      }
+    },
+    {
+      "name": "Vega",
+      "x": -490.756,
+      "y": 24986.293,
+      "z": 58.336,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0V",
+      "stars": [
+        {
+          "name": "Vega",
+          "spectral_class": "A0V",
+          "hip": 91262
+        }
+      ],
+      "plane": {
+        "i": 69.2,
+        "node": 119.6,
+        "zero": 353.9
+      }
+    },
+    {
+      "name": "Vindemiatrix",
+      "x": -533.895,
+      "y": 24975.169,
+      "z": 148.098,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Vindemiatrix",
+          "spectral_class": "G8III",
+          "hip": 63608
+        }
+      ],
+      "plane": {
+        "i": 19.7,
+        "node": 84.7,
+        "zero": 340.0
+      }
+    },
+    {
+      "name": "Xi Geminorum",
+      "x": -534.283,
+      "y": 25047.903,
+      "z": 54.49,
+      "coordinate_system": "galactic",
+      "spectral_class": "F5IV",
+      "stars": [
+        {
+          "name": "Xi Geminorum",
+          "spectral_class": "F5IV",
+          "hip": 32362
+        }
+      ],
+      "plane": {
+        "i": 109.0,
+        "node": 131.9,
+        "zero": 240.6
+      }
+    },
+    {
+      "name": "Xi Puppis",
+      "x": -1709.827,
+      "y": 25614.56,
+      "z": 63.48,
+      "coordinate_system": "galactic",
+      "spectral_class": "G6Ia",
+      "stars": [
+        {
+          "name": "Xi Puppis",
+          "spectral_class": "G6Ia",
+          "hip": 38170
+        }
+      ],
+      "plane": {
+        "i": 49.9,
+        "node": 201.3,
+        "zero": 324.7
+      }
+    },
+    {
+      "name": "Zeta Aquilae",
+      "x": -451.203,
+      "y": 24939.417,
+      "z": 54.713,
+      "coordinate_system": "galactic",
+      "spectral_class": "A0V",
+      "stars": [
+        {
+          "name": "Zeta Aquilae",
+          "spectral_class": "A0V",
+          "hip": 93747
+        }
+      ],
+      "plane": {
+        "i": 106.8,
+        "node": 68.9,
+        "zero": 119.7
+      }
+    },
+    {
+      "name": "Zeta Arae",
+      "x": -762.35,
+      "y": 24484.277,
+      "z": -31.949,
+      "coordinate_system": "galactic",
+      "spectral_class": "K5III",
+      "stars": [
+        {
+          "name": "Zeta Arae",
+          "spectral_class": "K5III",
+          "hip": 83081
+        }
+      ],
+      "plane": {
+        "i": 108.0,
+        "node": 195.9,
+        "zero": 109.9
+      }
+    },
+    {
+      "name": "Zeta Canis Majoris",
+      "x": -783.928,
+      "y": 25159.742,
+      "z": -61.872,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2.5V",
+      "stars": [
+        {
+          "name": "Zeta Canis Majoris",
+          "spectral_class": "B2.5V",
+          "hip": 30122
+        }
+      ],
+      "plane": {
+        "i": 84.8,
+        "node": 316.6,
+        "zero": 108.5
+      }
+    },
+    {
+      "name": "Zeta Centauri",
+      "x": -775.538,
+      "y": 24730.21,
+      "z": 144.302,
+      "coordinate_system": "galactic",
+      "spectral_class": "B2.5IV",
+      "stars": [
+        {
+          "name": "Zeta Centauri",
+          "spectral_class": "B2.5IV",
+          "hip": 68002
+        }
+      ],
+      "plane": {
+        "i": 147.2,
+        "node": 310.2,
+        "zero": 209.1
+      }
+    },
+    {
+      "name": "Zeta Cephei",
+      "x": 190.798,
+      "y": 25173.588,
+      "z": 71.11,
+      "coordinate_system": "galactic",
+      "spectral_class": "K1Ib",
+      "stars": [
+        {
+          "name": "Zeta Cephei",
+          "spectral_class": "K1Ib",
+          "hip": 109492
+        }
+      ],
+      "plane": {
+        "i": 144.7,
+        "node": 101.3,
+        "zero": 305.3
+      }
+    },
+    {
+      "name": "Zeta Cygni",
+      "x": -368.946,
+      "y": 24964.196,
+      "z": 17.471,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8II",
+      "stars": [
+        {
+          "name": "Zeta Cygni",
+          "spectral_class": "G8II",
+          "hip": 104732
+        }
+      ],
+      "plane": {
+        "i": 152.7,
+        "node": 4.9,
+        "zero": 58.2
+      }
+    },
+    {
+      "name": "Zeta Draconis",
+      "x": -237.015,
+      "y": 25029.794,
+      "z": 245.068,
+      "coordinate_system": "galactic",
+      "spectral_class": "B6III",
+      "stars": [
+        {
+          "name": "Zeta Draconis",
+          "spectral_class": "B6III",
+          "hip": 83895
+        }
+      ],
+      "plane": {
+        "i": 95.2,
+        "node": 43.0,
+        "zero": 299.7
+      }
+    },
+    {
+      "name": "Zeta Herculis",
+      "x": -491.317,
+      "y": 24979.151,
+      "z": 72.768,
+      "coordinate_system": "galactic",
+      "spectral_class": "F9IV",
+      "stars": [
+        {
+          "name": "Zeta Herculis",
+          "spectral_class": "F9IV",
+          "hip": 81693
+        }
+      ],
+      "plane": {
+        "i": 82.4,
+        "node": 210.1,
+        "zero": 278.3
+      }
+    },
+    {
+      "name": "Zeta Hydrae",
+      "x": -602.7,
+      "y": 25089.462,
+      "z": 125.812,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Zeta Hydrae",
+          "spectral_class": "G8III",
+          "hip": 43813
+        }
+      ],
+      "plane": {
+        "i": 54.7,
+        "node": 129.6,
+        "zero": 77.5
+      }
+    },
+    {
+      "name": "Zeta Leonis",
+      "x": -590.697,
+      "y": 25122.271,
+      "z": 262.6,
+      "coordinate_system": "galactic",
+      "spectral_class": "F0III",
+      "stars": [
+        {
+          "name": "Zeta Leonis",
+          "spectral_class": "F0III",
+          "hip": 50335
+        }
+      ],
+      "plane": {
+        "i": 108.7,
+        "node": 48.8,
+        "zero": 292.6
+      }
+    },
+    {
+      "name": "Zeta Lupi",
+      "x": -579.528,
+      "y": 24900.217,
+      "z": 60.098,
+      "coordinate_system": "galactic",
+      "spectral_class": "G8III",
+      "stars": [
+        {
+          "name": "Zeta Lupi",
+          "spectral_class": "G8III",
+          "hip": 74395
+        }
+      ],
+      "plane": {
+        "i": 160.6,
+        "node": 19.7,
+        "zero": 289.7
+      }
+    },
+    {
+      "name": "Zeta Ophiuchi",
+      "x": -458.517,
+      "y": 24578.744,
+      "z": 233.302,
+      "coordinate_system": "galactic",
+      "spectral_class": "O9.5V",
+      "stars": [
+        {
+          "name": "Zeta Ophiuchi",
+          "spectral_class": "O9.5V",
+          "hip": 81377
+        }
+      ],
+      "plane": {
+        "i": 107.7,
+        "node": 64.6,
+        "zero": 132.0
+      }
+    },
+    {
+      "name": "Zeta Pegasi",
+      "x": -357.195,
+      "y": 24967.624,
+      "z": -85.884,
+      "coordinate_system": "galactic",
+      "spectral_class": "B8.5V",
+      "stars": [
+        {
+          "name": "Zeta Pegasi",
+          "spectral_class": "B8.5V",
+          "hip": 112029
+        }
+      ],
+      "plane": {
+        "i": 87.8,
+        "node": 289.0,
+        "zero": 37.1
+      }
+    },
+    {
+      "name": "Zeta Persei",
+      "x": -245.185,
+      "y": 25897.097,
+      "z": -232.145,
+      "coordinate_system": "galactic",
+      "spectral_class": "B1Ib",
+      "stars": [
+        {
+          "name": "Zeta Persei",
+          "spectral_class": "B1Ib",
+          "hip": 18246
+        }
+      ],
+      "plane": {
+        "i": 63.0,
+        "node": 75.0,
+        "zero": 36.7
+      }
+    },
+    {
+      "name": "Zeta Puppis",
+      "x": -1873.162,
+      "y": 25305.226,
+      "z": -64.836,
+      "coordinate_system": "galactic",
+      "spectral_class": "O5I",
+      "stars": [
+        {
+          "name": "Zeta Puppis",
+          "spectral_class": "O5I",
+          "hip": 39429
+        }
+      ],
+      "plane": {
+        "i": 71.4,
+        "node": 69.4,
+        "zero": 59.8
+      }
+    },
+    {
+      "name": "Zeta Sagittarii",
+      "x": -501.02,
+      "y": 24909.929,
+      "z": 26.411,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3IV",
+      "stars": [
+        {
+          "name": "Zeta Sagittarii",
+          "spectral_class": "A3IV",
+          "hip": 93506
+        }
+      ],
+      "plane": {
+        "i": 99.9,
+        "node": 328.2,
+        "zero": 242.2
+      }
+    },
+    {
+      "name": "Zeta Tauri",
+      "x": -562.592,
+      "y": 25407.09,
+      "z": 9.039,
+      "coordinate_system": "galactic",
+      "spectral_class": "B4III",
+      "stars": [
+        {
+          "name": "Zeta Tauri",
+          "spectral_class": "B4III",
+          "hip": 26451
+        }
+      ],
+      "plane": {
+        "i": 155.8,
+        "node": 347.7,
+        "zero": 122.8
+      }
+    },
+    {
+      "name": "Zeta Virginis",
+      "x": -533.007,
+      "y": 24964.861,
+      "z": 113.648,
+      "coordinate_system": "galactic",
+      "spectral_class": "A3V",
+      "stars": [
+        {
+          "name": "Zeta Virginis",
+          "spectral_class": "A3V",
+          "hip": 66249
+        }
+      ],
+      "plane": {
+        "i": 101.3,
+        "node": 11.0,
+        "zero": 65.0
+      }
+    }
+  ],
+  "nebulae": [
+    {
+      "name": "Orion Nebula",
+      "kind": "emission",
+      "x": -1150.479,
+      "y": 26090.891,
+      "z": -396.07,
+      "size": [
+        17.594,
+        11.729,
+        14.365
+      ],
+      "real": "M42",
+      "id": "n1"
+    },
+    {
+      "name": "Flame Nebula",
+      "kind": "emission",
+      "x": -1114.48,
+      "y": 26142.414,
+      "z": -329.686,
+      "size": [
+        5.891,
+        5.891,
+        5.891
+      ],
+      "real": "NGC 2024",
+      "id": "n2"
+    },
+    {
+      "name": "Horsehead Nebula",
+      "kind": "dark",
+      "x": -1133.727,
+      "y": 26155.962,
+      "z": -346.85,
+      "size": [
+        1.2,
+        0.8,
+        0.98
+      ],
+      "real": "B33",
+      "id": "n3"
+    },
+    {
+      "name": "Rosette Nebula",
+      "kind": "emission",
+      "x": -2893.768,
+      "y": 29613.491,
+      "z": -153.677,
+      "size": [
+        60.507,
+        37.816,
+        47.835
+      ],
+      "real": "NGC 2237",
+      "id": "n4"
+    },
+    {
+      "name": "Eagle Nebula",
+      "kind": "emission",
+      "x": 1260.49,
+      "y": 19578.496,
+      "z": 128.838,
+      "size": [
+        99.494,
+        20.726,
+        45.41
+      ],
+      "real": "M16",
+      "id": "n5"
+    },
+    {
+      "name": "Lagoon Nebula",
+      "kind": "emission",
+      "x": -3.01,
+      "y": 20927.715,
+      "z": -34.261,
+      "size": [
+        26.835,
+        17.89,
+        21.91
+      ],
+      "real": "M8",
+      "id": "n6"
+    },
+    {
+      "name": "Trifid Nebula",
+      "kind": "emission",
+      "x": 76.14,
+      "y": 20937.601,
+      "z": 29.405,
+      "size": [
+        16.697,
+        16.697,
+        16.697
+      ],
+      "real": "M20",
+      "id": "n7"
+    },
+    {
+      "name": "Omega Nebula",
+      "kind": "emission",
+      "x": 1027.897,
+      "y": 19715.747,
+      "z": -21.578,
+      "size": [
+        10.079,
+        10.079,
+        10.079
+      ],
+      "real": "M17",
+      "id": "n8"
+    },
+    {
+      "name": "Carina Nebula",
+      "kind": "emission",
+      "x": -8598.142,
+      "y": 22232.073,
+      "z": -67.201,
+      "size": [
+        149.154,
+        149.154,
+        149.154
+      ],
+      "real": "NGC 3372",
+      "id": "n9"
+    },
+    {
+      "name": "North America Nebula",
+      "kind": "emission",
+      "x": 2072.841,
+      "y": 24854.321,
+      "z": 8.316,
+      "size": [
+        45.209,
+        11.301,
+        22.603
+      ],
+      "real": "NGC 7000",
+      "id": "n10"
+    },
+    {
+      "name": "California Nebula",
+      "kind": "emission",
+      "x": -207.723,
+      "y": 25923.908,
+      "z": -159.608,
+      "size": [
+        23.275,
+        5.818,
+        11.637
+      ],
+      "real": "NGC 1499",
+      "id": "n11"
+    },
+    {
+      "name": "Merope Nebula",
+      "kind": "reflection",
+      "x": -427.578,
+      "y": 25391.809,
+      "z": -129.948,
+      "size": [
+        1.937,
+        1.937,
+        1.937
+      ],
+      "real": "NGC 1435",
+      "id": "n12"
+    },
+    {
+      "name": "Coalsack Nebula",
+      "kind": "dark",
+      "x": -1022.399,
+      "y": 24678.121,
+      "z": 39.963,
+      "size": [
+        36.698,
+        26.197,
+        31.006
+      ],
+      "real": "C99",
+      "id": "n13"
+    },
+    {
+      "name": "Crab Nebula",
+      "kind": "remnant",
+      "x": -1159.033,
+      "y": 31429.555,
+      "z": -605.091,
+      "size": [
+        7.563,
+        3.782,
+        5.348
+      ],
+      "real": "M1",
+      "id": "n14"
+    },
+    {
+      "name": "Veil Nebula",
+      "kind": "remnant",
+      "x": 1777.672,
+      "y": 24356.405,
+      "z": -274.062,
+      "size": [
+        73.327,
+        55.861,
+        64.001
+      ],
+      "real": "NGC 6960",
+      "id": "n15"
+    },
+    {
+      "name": "Ring Nebula",
+      "kind": "planetary",
+      "x": 1735.046,
+      "y": 23915.272,
+      "z": 670.789,
+      "size": [
+        0.475,
+        0.475,
+        0.475
+      ],
+      "real": "M57",
+      "id": "n16"
+    },
+    {
+      "name": "Helix Nebula",
+      "kind": "planetary",
+      "x": -297.328,
+      "y": 24712.267,
+      "z": -500.066,
+      "size": [
+        1.556,
+        1.556,
+        1.556
+      ],
+      "real": "NGC 7293",
+      "id": "n17"
+    },
+    {
+      "name": "Dumbbell Nebula",
+      "kind": "planetary",
+      "x": 605.252,
+      "y": 24400.71,
+      "z": -31.812,
+      "size": [
+        1.237,
+        1.237,
+        1.237
+      ],
+      "real": "M27",
+      "id": "n18"
+    },
+    {
+      "name": "Cat's Eye Nebula",
+      "kind": "planetary",
+      "x": 3312.61,
+      "y": 25508.433,
+      "z": 2274.436,
+      "size": [
+        0.583,
+        0.583,
+        0.583
+      ],
+      "real": "NGC 6543",
+      "id": "n19"
+    },
+    {
+      "name": "Pipe Nebula",
+      "kind": "dark",
+      "x": -492.304,
+      "y": 24547.221,
+      "z": 89.563,
+      "size": [
+        27.523,
+        3.927,
+        10.396
+      ],
+      "real": "B59/B78",
+      "id": "n20"
+    },
+    {
+      "name": "Vela Supernova Remnant",
+      "kind": "remnant",
+      "x": -1323.637,
+      "y": 25064.285,
+      "z": 2.116,
+      "size": [
+        56.99,
+        56.99,
+        56.99
+      ],
+      "real": "Gum 16",
+      "id": "n21"
+    }
+  ]
+}
