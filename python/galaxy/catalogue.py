@@ -25,7 +25,8 @@ earlier layers do not already say (`split`) and writes that to the project's
 layer.
 
     doc = catalogue.read()          # merged, a private copy
-    catalogue.write(doc)            # the project's layer, split off
+    catalogue.own(doc)              # the project's layer of it (a map's switch, say)
+    catalogue.write(doc)            # that layer, written
 """
 
 from __future__ import annotations
@@ -220,6 +221,14 @@ def write_layers(out: Path, here: Optional[project.Project] = None) -> list[Path
     return written
 
 
+def own(doc: dict[str, Any], here: Optional[project.Project] = None) -> dict[str, Any]:
+    """The project's layer of the merged `doc` (`split` against the current
+    project's layers): what an editor saves, and what a map shows as the
+    project's layer while the document is a draft."""
+    layers = _layers(here)
+    return split(doc, layers[:-1], layers[-1])
+
+
 def write(doc: dict[str, Any], validator: Optional[Callable[[Any], None]] = None,
           here: Optional[project.Project] = None) -> bool:
     """Validate the merged `doc` (`validator`), then write the project's
@@ -227,5 +236,4 @@ def write(doc: dict[str, Any], validator: Optional[Callable[[Any], None]] = None
     here = here or project.current()
     if validator is not None:
         validator(doc)
-    layers = _layers(here)
-    return store.write(here.catalogue, split(doc, layers[:-1], layers[-1]))
+    return store.write(here.catalogue, own(doc, here))

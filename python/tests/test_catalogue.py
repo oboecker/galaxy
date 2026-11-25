@@ -63,5 +63,6 @@ def test_the_project_names_its_layers_the_engines_with_an_at(tmp_path):
     doc = catalogue.read(here)
     assert {"Sol", "Sirius", "Aster"} <= {s["name"] for s in doc["star_systems"]}
     assert catalogue.write(doc, here=here) is False, "nothing changed: the layer is as it was"
+    assert catalogue.own(doc, here) == STORY
     with pytest.raises(ValueError, match="no layer @moon"):
         catalogue.built_in("moon")

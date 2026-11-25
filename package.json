@@ -1,6 +1,6 @@
 {
   "name": "galaxy",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "A fictional galaxy for telling stories in: three linked 3D maps (the galaxy, a star system, a planet's globe) on three.js",
   "license": "MIT",
   "type": "module",
